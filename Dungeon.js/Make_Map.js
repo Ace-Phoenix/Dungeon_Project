@@ -43,3 +43,11 @@ text += "+"
 return text;
 
 }
+var grid = grid(30, Person);
+// this is what physiaclly draws the grid
+document.getElementById("blah").innerHTML = draw(grid);
+// this is is calling the grid to the html
+// this is my automatic update variable
+  document.getElementById("button").onclick = function(){
+    // this calls the update function
+}
