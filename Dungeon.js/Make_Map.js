@@ -3,7 +3,6 @@
 // this si going to be the grid to pit the dungeon on
 
 function grid(number, element, name){
-<<<<<<< HEAD
 var number = number
 var make = [];
 for (var i = 0; i < number; i++) {
@@ -20,15 +19,3 @@ function draw(grid){
   var borders = "";
   var
 }
-=======
-var make = [];
-for (var i = 0; i < make.length; i++) {
-  make[i] = []
-
-}
-for (var j = 0; j < make.length; j++) {
-  make[i][j] = new element()
-}
-return make;
-}
->>>>>>> a00a89e1018b1119ccf60be493d3594b080b1b44
