@@ -2,6 +2,9 @@
 // enemies
 // this si going to be the grid to pit the dungeon on
 
+<<<<<<< HEAD
+function grid(){
+=======
 function grid(number, element, name){
 var number = number
 var make = [];
@@ -19,3 +22,31 @@ function draw(grid){
   var borders = "";
   var
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f37f72891b2b16c9af4df2524bb405114e4775ff
+var make = [];
+for (var i = 0; i < make.length; i++) {
+  make[i]
+
+}
+for (var j = 0; j < make.length; j++) {
+  make[j]
+}
+return make[i][j];
+}
+
+fucntion draw(grid){
+  var text = " ";
+  var lengt = grid.length;
+  var top =  
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+}
+>>>>>>> a00a89e1018b1119ccf60be493d3594b080b1b44
+>>>>>>> e41b4ce2c7fda9ed1948d82411f5666b819b0556
