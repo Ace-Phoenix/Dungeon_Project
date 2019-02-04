@@ -2,14 +2,14 @@
 // enemies
 // this si going to be the grid to pit the dungeon on
 
-function grid(){
+function grid(number, element, name){
 var make = [];
 for (var i = 0; i < make.length; i++) {
-  make[i]
+  make[i] = []
 
 }
 for (var j = 0; j < make.length; j++) {
-  make[j]
+  make[i][j] = new element()
 }
-return make[i][j];
+return make;
 }
