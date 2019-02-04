@@ -3,6 +3,7 @@
 // able to use items from chest if we have any
 // the enemys will all be the same and use some atributes form the person class
 class Enemy extends Dungeon{
+constructor(grid){
 
-  
+}
 }
