@@ -3,7 +3,11 @@
 
 class Dungeon {
   constructor() {
-    
+
 
   }
+  //kill counter for players total kills
+}
+function kills(){
+
 }

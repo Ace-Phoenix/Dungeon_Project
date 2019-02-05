@@ -10,10 +10,10 @@ constructor(grid){
 //Base/Start enemyHealth : 100
 //adds enemyHealth by 100 every lvl that the player passes
 function enemyHealth(){
-
+var health_E_base = 100;
 }
 //Base/Start enemyDamage : 5
 //adds enemyDamage by 5 every lvl that the player passes
 function enemyDamage(){
-
+var damage_E_base = 5;
 }
