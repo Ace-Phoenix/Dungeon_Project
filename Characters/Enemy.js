@@ -6,14 +6,19 @@ class Enemy extends Dungeon{
 constructor(grid){
 
 }
-}
+
 //Base/Start enemyHealth : 100
 //adds enemyHealth by 100 every lvl that the player passes
-function enemyHealth(){
+enemyHealth(){
+//E references for Enemy(The one o  the grid)
 var health_E_base = 100;
+var new_E_health = health_E_base
+
 }
 //Base/Start enemyDamage : 5
 //adds enemyDamage by 5 every lvl that the player passes
-function enemyDamage(){
+enemyDamage(){
 var damage_E_base = 5;
+var new_E_damage = damage_E_base
+}
 }

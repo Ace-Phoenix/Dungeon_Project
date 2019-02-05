@@ -3,20 +3,26 @@ class Player extends Dungeon{
 constructor(grid){
 
 }
-}
+
 //playerHealth base : 75
 //playerHealth goes up by 75 every level compleate
-function playerHealth(){
-var health_P_base = 75
+playerHealth(){
+//P references Player(not the file but the player on the grid)
+var health_P_base = 75;
+var new_P_health = health_P_base
 }
 //playerDamage base : 5
 //playerDamage goes up by 5 every enemy kiled compleate
-function playerDamage(){
+playerDamage(){
+var damage_P_base = 5;
+var new_P_damage = damage_P_base
 
 }
 //gives the player hp total and damage total
-function currentPlayerStats(){
+currentPlayerStats(){
   //health
-
-  //damage
+var total_P_health = health_P_base + dungeon_room_cleared;
+//damage
+var total_P_damage = damage_P_base + kills;
+}
 }

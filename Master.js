@@ -2,12 +2,22 @@
 // everything if it can be (anyhintg that reapets and can be put into a function)
 
 class Dungeon {
-  constructor() {
+  constructor(grid) {
 
 
   }
   //kill counter for players total kills
-}
-function kills(){
 
+kills(grid){
+
+}
+dungeon_Math_Plus(){
+
+}
+dungeon_room_cleared(grid){
+
+}
+enemy_killed(grid){
+
+}
 }
