@@ -6,11 +6,12 @@ function grid(number, element, name = "o"){
   // this is going to be the empty array that we can pcuh and pull from
     var number = number;
     var make = [];
-  for (var i = 0; i < number; i++) {
+  for (var i = 0; i < make.length; i++) {
     make.push([]);
-  for (var j = 0; j < number; j++) {
+  for (var j = 0; j < make.length; j++) {
     make[i].push(new element(name,[i,j]));
     }
+    var num = number.toString()
   }
 // this is going to be the grid[i][j
     return make;
@@ -37,7 +38,7 @@ function draw(grid){
   for (var i = 0; i < lengt; i++) {
     text += "| ";
 
-  for (var j = 0; j < lengt; j++) {
+  for (var j = 0; j < array.length; j++) {
     grid[i][j];
     text += " " + grid[i][j];
   }
@@ -53,8 +54,7 @@ text += "+";
 return text;
 
 }
-//var somthing = new Dungeon("o");
-var grid = grid(30, Dungeon);
+var grid = grid(30);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html

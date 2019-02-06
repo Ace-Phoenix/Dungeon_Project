@@ -6,6 +6,9 @@ class Dungeon {
 this.name = name;
 
   }
+toString(){
+  return this._name;
+}
   //kill counter for players total kills
 
 kills(grid){
