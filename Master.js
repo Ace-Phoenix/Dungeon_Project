@@ -3,9 +3,16 @@
 
 class Dungeon {
   constructor(name) {
+<<<<<<< HEAD
 this._name = name;
+=======
+this.name = name;
+>>>>>>> f023f89c97dfb61911529b86c9850e039c34013c
 
   }
+toString(){
+  return this._name;
+}
   //kill counter for players total kills
 
 // kills(grid){
