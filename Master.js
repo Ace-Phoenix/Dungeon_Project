@@ -2,8 +2,8 @@
 // everything if it can be (anyhintg that reapets and can be put into a function)
 
 class Dungeon {
-  constructor(grid) {
-
+  constructor(grid, name) {
+this.name = name;
 
   }
   //kill counter for players total kills
