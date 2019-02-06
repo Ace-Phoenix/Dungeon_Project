@@ -2,22 +2,31 @@
 // everything if it can be (anyhintg that reapets and can be put into a function)
 
 class Dungeon {
-  constructor(grid, name) {
-this.name = name;
+  constructor(name) {
+this._name = name;
 
   }
   //kill counter for players total kills
 
-kills(grid){
-
+// kills(grid){
+//
+// }
+// dungeon_Math_Plus(){
+//
+// }
+// dungeon_room_cleared(grid){
+//
+// }
+// enemy_killed(grid){
+//
+// }
+toString(){
+  return this._name;
 }
-dungeon_Math_Plus(){
-
+get name(){
+  return this._name;
 }
-dungeon_room_cleared(grid){
-
-}
-enemy_killed(grid){
-
+set name(name){
+  return this._name;
 }
 }

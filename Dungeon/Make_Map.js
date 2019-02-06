@@ -36,7 +36,6 @@ function draw(grid){
 // this for satement is for the sides of the grid usaing pipes
   for (var i = 0; i < lengt; i++) {
     text += "| ";
-
   for (var j = 0; j < lengt; j++) {
     grid[i][j];
     text += " " + grid[i][j];
