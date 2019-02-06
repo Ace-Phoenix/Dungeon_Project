@@ -53,7 +53,7 @@ text += "+";
 return text;
 
 }
-//var somthing = new Dungeon("o");
+
 var grid = grid(30, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
