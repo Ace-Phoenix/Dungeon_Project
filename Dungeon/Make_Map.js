@@ -54,7 +54,12 @@ text += "+";
 return text;
 
 }
+<<<<<<< HEAD
 var grid = grid(30);
+=======
+
+var grid = grid(30, Dungeon);
+>>>>>>> 4201d9156c1398a97015c897aec1640bfc937f0e
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
