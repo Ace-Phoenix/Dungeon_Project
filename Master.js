@@ -2,7 +2,7 @@
 // everything if it can be (anyhintg that reapets and can be put into a function)
 
 class Dungeon {
-  constructor(grid, name) {
+  constructor(name) {
 this.name = name;
 
   }
