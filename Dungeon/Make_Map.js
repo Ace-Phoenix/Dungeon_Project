@@ -32,7 +32,6 @@ function draw(grid){
   var top = lengt *2;
   // this is so text knows what to use for the grid
   text += "&#8943";
-    text += "&#8943";
   // this makes the top border
   for (var i = 0; i < grid.length; i++) {
     top = text += "&#8943";
@@ -49,7 +48,6 @@ function draw(grid){
     text += "" + grid[i][j];
 
   }
-  text += "&#9926";
 text += "&#8942<BR>";
 }
 text += "&#8943";
@@ -58,14 +56,15 @@ for (var i = 0; i < grid.length; i++) {
   top = text += "&#8943";
 }
 text += "&#8943";
-text += "&#8943";
+
+
 
 // return the text strings so its appears on the screen
 return text;
 
 }
 
-var grid = grid({x:15,y:60}, Dungeon);
+var grid = grid({x:30,y:40}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
