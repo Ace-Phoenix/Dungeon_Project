@@ -30,11 +30,13 @@ function draw(grid){
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
   var top = lengt *2;
+
+  var fixtop = grid[0].length;
   // this is so text knows what to use for the grid
   text += "&#8943";
     text += "&#8943";
   // this makes the top border
-  for (var i = 0; i < grid.length; i++) {
+  for (var i = 0; i < fixtop; i++) {
     top = text += "&#8943";
   }
   // this is so the grid is square for now
@@ -42,7 +44,7 @@ function draw(grid){
   text += "&#8943<BR>";
 
 // this for satement is for the sides of the grid usaing pipes
-  for (var i = 0; i < grid.length; i++) {
+  for (var i = 0; i < lengt; i++) {
     text += "&#8942";
 
   for (var j = 0; j < grid[0].length; j++) {
@@ -54,7 +56,7 @@ text += "&#8942<BR>";
 }
 text += "&#8943";
 
-for (var i = 0; i < grid.length; i++) {
+for (var i = 0; i < fixtop; i++) {
   top = text += "&#8943";
 }
 text += "&#8943";
@@ -65,7 +67,7 @@ return text;
 
 }
 
-var grid = grid({x:15,y:60}, Dungeon);
+var grid = grid({x:40,y:140}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
