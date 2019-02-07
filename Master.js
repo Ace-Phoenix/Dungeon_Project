@@ -6,9 +6,6 @@ class Dungeon {
 this._name = name;
 
   }
-toString(){
-  return this._name;
-}
   //kill counter for players total kills
 
 // kills(grid){
@@ -23,13 +20,14 @@ toString(){
 // enemy_killed(grid){
 //
 // }
-toString(){
-  return this._name;
-}
+
 get name(){
   return this._name;
 }
 set name(name){
+  this._name = name;
+}
+toString(){
   return this._name;
 }
 }
