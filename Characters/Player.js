@@ -26,3 +26,5 @@ var total_P_health = health_P_base + dungeon_room_cleared;
 var total_P_damage = damage_P_base + kills;
 }
 }
+// make somthign to find itself on the grid
+// give it random bounds based on th grid size
