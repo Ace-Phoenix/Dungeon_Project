@@ -2,8 +2,7 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(size, element, name = "o"){
-  console.log(size);
+function grid(size, element, name = "&#9926"){
   // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
@@ -27,38 +26,40 @@ function grid(size, element, name = "o"){
 function draw(grid){
   // this is going to be the text variable
   var text = "";
-// this is the variable for the grid length so we can store it
+// thSis the variable for the grid length so we can store it
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
   var top = lengt *2;
   // this is so text knows what to use for the grid
-  text += "+";
+  text += "&#8943";
+    text += "&#8943";
   // this makes the top border
-  for (var i = 0; i < lengt; i++) {
-    top = text += "--";
+  for (var i = 0; i < grid.length; i++) {
+    top = text += "&#8943";
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
-  text += "+<BR>";
+  text += "&#8943<BR>";
 
 // this for satement is for the sides of the grid usaing pipes
-  for (var i = 0; i < lengt; i++) {
-    // this is on the sides of the grid to make it look good
-    text += "| ";
+  for (var i = 0; i < grid.length; i++) {
+    text += "&#8942";
+
   for (var j = 0; j < grid[0].length; j++) {
-    grid[i][j];
-    text += " " + grid[i][j];
+    text += "" + grid[i][j];
+
   }
-  // this is so the grid has | at the end of the kines ater the brake <BR>
-text += "|<BR>";
+  text += "&#9926";
+text += "&#8942<BR>";
 }
-// this will be on the top but the ends only so the top corners
-text += "+";
-// this is going to be the top border
-for (var i = 0; i < lengt; i++) {
-  top = text += "--";
+text += "&#8943";
+
+for (var i = 0; i < grid.length; i++) {
+  top = text += "&#8943";
 }
-text += "+";
+text += "&#8943";
+text += "&#8943";
+
 // return the text strings so its appears on the screen
 return text;
 

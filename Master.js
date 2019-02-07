@@ -20,13 +20,14 @@ class Dungeon {
 // enemy_killed(grid){
 //
 // }
-toString(){
-  return this._name;
-}
+
 get name(){
 return this._name;
 }
 set name(name){
   this._name = name;
+}
+toString(){
+  return this._name;
 }
 }
