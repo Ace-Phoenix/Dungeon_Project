@@ -2,15 +2,22 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(number, element, name = "&#9926"){
+function grid(size, element, name = "&#9926"){
   // this is going to be the empty array that we can pcuh and pull from
-    var number = number;
+    //var number = number;
+    // this is the empty array that u push and pull from
     var make = [];
-  for (var i = 0; i < number; i++) {
-    make[i] = [];
-  for (var j = 0; j < number; j++) {
-    make[i][j] = new element(name,[i,j]);
+    // this is to push into the make array
+  for (var i = 0; i < size.x; i++) {
+    // this is array.push
+    make.push([]);
+  for (var j = 0; j < size.y; j++) {
+    // this si to push the new element into the array so it has the name and
+    // grid locations
+    make[i].push(new element(name,[i,j]));
+
     }
+
   }
 // this is going to be the grid[i][j
     return make;
@@ -38,7 +45,7 @@ function draw(grid){
   for (var i = 0; i < grid.length; i++) {
     text += "&#8942";
 
-  for (var j = 0; j < grid.length; j++) {
+  for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];
 
   }
@@ -58,8 +65,7 @@ return text;
 
 }
 
-
-var grid = grid(30, Dungeon);
+var grid = grid({x:15,y:60}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html

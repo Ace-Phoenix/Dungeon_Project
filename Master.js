@@ -3,7 +3,7 @@
 
 class Dungeon {
   constructor(name) {
-this._name = name;
+    this._name = name;
 
   }
   //kill counter for players total kills
@@ -22,7 +22,7 @@ this._name = name;
 // }
 
 get name(){
-  return this._name;
+return this._name;
 }
 set name(name){
   this._name = name;
