@@ -122,11 +122,17 @@ class room extends space {
 
 
 
+<<<<<<< HEAD
 var grid = grid({x:40,y:140}, Dungeon);
+=======
+var grid = grid({x:35,y:40}, Dungeon);
+>>>>>>> 3c881013ca9f19a82f4ffbac735ed760157a6f6b
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
   document.getElementById("button").onclick = function(){
+    document.getElementById("blah").innerHTML = draw(grid);
+ console.log("Clicky");
     // this calls the update function
 }
