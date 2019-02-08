@@ -75,5 +75,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
   document.getElementById("button").onclick = function(){
+    document.getElementById("blah").innerHTML = draw(grid);
+ console.log("Clicky");
     // this calls the update function
 }
