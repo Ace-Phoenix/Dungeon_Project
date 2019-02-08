@@ -68,71 +68,19 @@ return text;
 
 }
 
-class space{
-  constructor(x, y, w, h){
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.center = {
-      x: math.floor(x + (w / 2)),
-      y: math.floor(y + (h / 2)),
-    }
-  }
-  drawpath(c, space){
-    const pattern = c.create pattern("reapeat");
-    c.beginpath()
-    c.lineWidth = TILE;
-    c.strokeStyle = pattern;
-    c.moveTo(this.center.x *TILE, this.center.y *TILE)
-    c.lineTo(space.center.x *TILE, space.center.y *TILE)
-    c.stroke()
-    }
-  }
-}
 
-class room extends space {
-  consturctor(space){
-    super()
-    this.x = space.x + random(1, math.floor(space.w/3))
-    this.y = space.y + random(1, math.floor(space.h/3))
-    this.w = space.w - (this.x - space.x)
-    this.h = space.h - (this.y - space.y)
-    this.w -= random(0, this.w/4)
-    this.h -= random(0, this.h/4)
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-var grid = grid({x:40,y:140}, Dungeon);
-=======
 var grid = grid({x:35,y:40}, Dungeon);
->>>>>>> 3c881013ca9f19a82f4ffbac735ed760157a6f6b
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
-  document.getElementById("button").onclick = function(){
-    document.getElementById("blah").innerHTML = draw(grid);
- console.log("Clicky");
-    // this calls the update function
+document.getElementById("button").onclick = function(){
+  document.getElementById("blah").innerHTML = draw(grid);
+console.log("Clicky");
+  // this calls the update function
+}
+document.getElementById("path").onclick = function(){
+  document.getElementById("blah").innerHTML = draw(grid);
+console.log("Clicky");
+  // this calls the update function
 }
