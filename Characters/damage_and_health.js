@@ -9,7 +9,7 @@ constructor(){
 }
 //this will be what gets increased
 //over how may kills the player gets
-healthPlus_P(){
+healthPlus_P(grid){
 if(enemy_killed == true){
   new_P_health += 75
 
@@ -18,7 +18,7 @@ var enemy_killed = false
 }
 //damage will increase with each kill
 //and stage / room compleate
-damagePlus_P(){
+damagePlus_P(grid){
   if(dungeon_room_cleared == true){
     new_P_damage += 5
 
@@ -27,7 +27,7 @@ damagePlus_P(){
 }
 //this will be what gets increased
 //over how may rooms the player completes
-healthPlus_E(){
+healthPlus_E(grid){
   if(enemy_killed == true){
     new_P_health += 100
 
@@ -36,7 +36,7 @@ healthPlus_E(){
 }
 //damage will increase with each
 // stage / room compleate
-damagePlus_E(){
+damagePlus_E(grid){
   if(dungeon_room_cleared == true){
     new_E_damage += 5
 
