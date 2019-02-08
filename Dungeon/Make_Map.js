@@ -68,6 +68,7 @@ return text;
 
 }
 
+<<<<<<< HEAD
 class space{
   constructor(x, y, w, h){
     this.x = x;
@@ -105,10 +106,26 @@ class room extends space {
 
 
 var grid = grid({x:40,y:140}, Dungeon);
+=======
+
+var grid = grid({x:35,y:40}, Dungeon);
+>>>>>>> b63a7f83ce7ae7607bff842c9028ffc7522c8811
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
+<<<<<<< HEAD
   document.getElementById("button").onclick = function(){
     // this calls the update function
+=======
+document.getElementById("button").onclick = function(){
+  document.getElementById("blah").innerHTML = draw(grid);
+console.log("Clicky");
+  // this calls the update function
+}
+document.getElementById("path").onclick = function(){
+  document.getElementById("blah").innerHTML = draw(grid);
+console.log("Clicky");
+  // this calls the update function
+>>>>>>> b63a7f83ce7ae7607bff842c9028ffc7522c8811
 }
