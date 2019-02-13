@@ -103,15 +103,22 @@ class Room extends Space {
     }
   }
 
-  function makeroom(space, grid){
+  function makeroom(grid){
+    var text = "";
+    var square = [];
     var room = new Room;
-    room.grid = Math.random(grid)
-    room.x = Math.random(space.x);
-    room.y = Math.random(space.y);
-    room.h = Math.random(space.h);
-    room.w = Math.random(space.w);
+    room.x = Math.random(room.x);
+    room.y = Math.random(room.y);
+    room.h = Math.random(room.h);
+    room.w = Math.random(room.w);
+    for (var i = 0; i < room.x; i++) {
+     text += grid;
+      for (var i = 0; i < room.y; i++) {
+        text += grid;
+      }
+    }
     console.log(room)
-    return makeroom(grid);
+    return grid += text;
   }
 
 var grid = grid({x:35,y:40}, Dungeon);
