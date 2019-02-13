@@ -69,15 +69,11 @@ return text;
 }
 
 class Space{
-  constructor(x, y, w, h){
+  constructor(x, y, w, h, grid){
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-    this.center = {
-      x:Math.floor(x + (w / 2)),
-      y:Math.floor(y + (h / 2)),
-    }
   }
   // drawpath(c, space, grid){
   //   //const pattern = c.create pattern('reapeat')
@@ -91,6 +87,7 @@ class Space{
   // }
 }
 
+
 class Room extends Space {
   consturctor(space){
     //super();
@@ -103,24 +100,23 @@ class Room extends Space {
     }
   }
 
-  function makeroom(grid){
-    var text = "";
-    var square = [];
-    var room = new Room;
-    room.x = Math.random(room.x);
-    room.y = Math.random(room.y);
-    room.h = Math.random(room.h);
-    room.w = Math.random(room.w);
-    for (var i = 0; i < room.x; i++) {
-     text += grid;
-      for (var i = 0; i < room.y; i++) {
-        text += grid;
+function makeroom(grid){
+  var text = "";
+  var square = [];
+  var room = new Room;
+  room.x = Math.random(room.x) * grid.x;
+  room.y = Math.random(room.y) * grid.y;
+  room.h = Math.random(room.h) * 10;
+  room.w = Math.random(room.w) * 10;
+    for (var i = 0; i < room.h; i++) {
+      square.push([])
+      for (var j = 0; j < room.w; j++) {
+      square[i].push(name, [i,j]);
       }
-    }
-    console.log(room)
-    return grid += text;
   }
-
+  console.log(room)
+  return draw(grid, square[i, j])
+}
 var grid = grid({x:35,y:40}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
