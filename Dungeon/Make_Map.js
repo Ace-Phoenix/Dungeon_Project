@@ -2,7 +2,7 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(size, element, name = "&#9926"){
+function grid(size, element, name = "x"){
   // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
@@ -68,60 +68,62 @@ return text;
 
 }
 
-class Space{
-  constructor(x, y, w, h){
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.center = {
-      x:Math.floor(x + (w / 2)),
-      y:Math.floor(y + (h / 2)),
-    }
-  }
-  // drawpath(c, space, grid){
-  //   //const pattern = c.create pattern('reapeat')
-  //   c.beginpath()
-  //   c.lineWidth = TILE;
-  //   c.strokeStyle = pattern;
-  //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
-  //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
-  //   c.stroke()
-  //   }
-  // }
-}
+// class Space{
+//   constructor(x, y, w, h){
+//     this.x = x;
+//     this.y = y;
+//     this.w = w;
+//     this.h = h;
+//     this.center = {
+//       x:Math.floor(x + (w / 2)),
+//       y:Math.floor(y + (h / 2)),
+//     }
+//   }
+//   // drawpath(c, space, grid){
+//   //   //const pattern = c.create pattern('reapeat')
+//   //   c.beginpath()
+//   //   c.lineWidth = TILE;
+//   //   c.strokeStyle = pattern;
+//   //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
+//   //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
+//   //   c.stroke()
+//   //   }
+//   // }
+// }
+//
+// class Room extends Space {
+//   consturctor(space, name = " "){
+//     //super();
+//     this.x = space.x + random(1, Math.floor(space.w/3))
+//     this.y = space.y + random(1, Math.floor(space.h/3))
+//     this.w = space.w - (this.x - space.x)
+//     this.h = space.h - (this.y - space.y)
+//     this.w -= random(0, this.w/4)
+//     this.h -= random(0, this.h/4)
+//     }
+//   }
 
-class Room extends Space {
-  consturctor(space){
-    //super();
-    this.x = space.x + random(1, Math.floor(space.w/3))
-    this.y = space.y + random(1, Math.floor(space.h/3))
-    this.w = space.w - (this.x - space.x)
-    this.h = space.h - (this.y - space.y)
-    this.w -= random(0, this.w/4)
-    this.h -= random(0, this.h/4)
-    }
-  }
-
-  function makeroom(grid, name = ""){
-    var txt = "";
+  function makeroom(grid, name = " "){
+    var txt = "l";
     var square = [];
     var room = new Room;
-    room.x = Math.random(room.x) * grid.x;
-    room.y = Math.random(room.y) * grid.y;
-    room.h = Math.random(room.h) * 10;
-    room.w = Math.random(room.w) * 10;
+    room.x = Math.random(room.x) * grid.length/2;
+    room.y = Math.random(room.y) * grid.length/2;
+    room.h = Math.random(room.h) * grid.length/2;
+    room.w = Math.random(room.w) * grid.length/2;
     for (var i = 0; i < room.h; i++) {
-      square.push([]);
+      console.log(txt)
+      txt += "";
       for (var j = 0; j < room.w; j++) {
-        square[i].push(name,grid[i,j]);
+        console.log(txt)
+        txt += "" + grid[i][j];
       }
     }
     console.log(room)
-    return square;
+    return grid;
   }
 
-var grid = grid({x:35,y:40}, Dungeon);
+var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
