@@ -100,42 +100,28 @@ class Room extends Space {
     }
   }
 
-<<<<<<< HEAD
-function makeroom(grid){
-  var text = "";
-  var square = [];
-  var room = new Room;
-  room.x = Math.random(room.x) * grid.x;
-  room.y = Math.random(room.y) * grid.y;
-  room.h = Math.random(room.h) * 10;
-  room.w = Math.random(room.w) * 10;
-    for (var i = 0; i < room.h; i++) {
-      square.push([])
-      for (var j = 0; j < room.w; j++) {
-      square[i].push(name, [i,j]);
-      }
-=======
   function makeroom(grid, name = ""){
-    var txt = "";
+    var txt = ""
     var square = [];
     var room = new Room;
-    room.x = Math.random(room.x) * grid.x;
-    room.y = Math.random(room.y) * grid.y;
+    room.x = Math.random(room.x) * grid.length;
+    room.y = Math.random(room.y) * grid.length;
     room.h = Math.random(room.h) * 10;
     room.w = Math.random(room.w) * 10;
     for (var i = 0; i < room.h; i++) {
-      square.push([]);
+      square[i] = []
       for (var j = 0; j < room.w; j++) {
-        square[i].push(name,grid[i,j]);
+        square[i][j] = grid[i][j];
       }
     }
+    grid.splice(grid[i,j])
+square.push(grid[0])
+    console.log(j);
+    console.log(i);
     console.log(room)
+    console.log(square + "i");
     return square;
->>>>>>> 4fb8b8fe8fc1445bb64ab7c0a90d55ec29ab2e37
   }
-  console.log(room)
-  return draw(grid, square[i, j])
-}
 var grid = grid({x:35,y:40}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
