@@ -108,13 +108,15 @@ class Room extends Space {
     var square = [];
     var room = new Room;
     room.x = Math.random(room.x) * grid.x;
+    console.log(room.x)
     room.y = Math.random(room.y) * grid.y;
+    console.log(room.y)
     room.h = Math.random(room.h) * 10;
     room.w = Math.random(room.w) * 10;
     for (var i = 0; i < room.h; i++) {
       square.push([]);
       for (var j = 0; j < room.w; j++) {
-        square[i].push(name,grid[i,j]);
+        square[i].push(name, grid[i][j]);
       }
     }
     console.log(room)
