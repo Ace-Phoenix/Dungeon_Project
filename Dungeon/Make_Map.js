@@ -14,12 +14,13 @@ function grid(size, element, name = "x"){
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
-    make[i].push(new element(name,[i,j]));
+    make[i].push(new element(name,[i],[j]));
 
     }
 
   }
 // this is going to be the grid[i][j
+console.log(make);
     return make;
   }
 // this is going to be the fucntion thats draws the grid
@@ -32,13 +33,13 @@ function draw(grid){
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
   var top = lengt *2;
-
   var fixtop = grid[0].length;
   // this is so text knows what to use for the grid
   text += design;
   // this makes the top border
   for (var i = 0; i < fixtop; i++) {
     top = text += design;
+
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
@@ -48,18 +49,23 @@ function draw(grid){
   for (var i = 0; i < lengt; i++) {
     text += background;
 
+
   for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];
 
   }
 text += background + "<BR>";
+
 }
 text += design;
 
 for (var i = 0; i < fixtop; i++) {
   top = text += design;
+
 }
 text += design;
+
+
 
 
 
