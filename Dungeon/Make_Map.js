@@ -16,11 +16,21 @@ function grid(size, element, name = "&#9926"){
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
+<<<<<<< HEAD
     // console.log(make)
     make[i].push(new element(name));
+=======
+    make[i].push(new element(name,[i],[j]));
+
+>>>>>>> cb558141862c7beb00ffd4d5c7f488fbecf9d5d7
     }
   }
+<<<<<<< HEAD
+// this is going to be the grid[i][j
+console.log(make);
+=======
 // this is going to be the grid[i][j]
+>>>>>>> 97f0abbbadcf5ec564d5dc3f251b203eac720b77
     return make;
   }
 // this is going to be the fucntion thats draws the grid
@@ -33,7 +43,6 @@ function draw(grid){
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
   var top = lengt *2;
-
   var fixtop = grid[0].length;
   // this is so text knows what to use for the grid
   text += design;
@@ -41,6 +50,7 @@ function draw(grid){
 
   for (var i = 0; i < fixtop; i++) {
     top = text += design;
+
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
@@ -52,19 +62,24 @@ function draw(grid){
   for (var i = 0; i < lengt; i++) {
     text += background;
 
+
   for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];
 
   }
 
 text += background + "<BR>";
+
 }
 text += design;
 
 for (var i = 0; i < fixtop; i++) {
   top = text += design;
+
 }
 text += design;
+
+
 
 
 
