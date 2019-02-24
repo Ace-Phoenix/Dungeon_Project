@@ -93,16 +93,7 @@ class Space{
     this.w = w;
     this.h = h;
   }
-  // drawpath(c, space, grid){
-  //   //const pattern = c.create pattern('reapeat')
-  //   c.beginpath()
-  //   c.lineWidth = TILE;
-  //   c.strokeStyle = pattern;
-  //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
-  //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
-  //   c.stroke()
-  //   }
-  // }
+
 }
 
 
@@ -117,19 +108,6 @@ class Room extends Space {
     this.h -= random(0, this.h/4)
     }
   }
-
-  // function makeroom(grid, name = ""){
-  //   var txt = ""
-  //   var square = [];
-  //   var room = new Room;
-  //   room.x = Math.random(room.x) * grid.length;
-  //   room.y = Math.random(room.y) * grid.length;
-  //   room.h = Math.random(room.h) * 10;
-  //   room.w = Math.random(room.w) * 10;
-  //   for (var i = 0; i < room.h; i++) {
-  //     square[i] = []
-  //     for (var j = 0; j < room.w; j++) {
-  //       square[i][j] = grid[i][j];
 
   function makeroom(grid, name = " "){
     var txt = "";
