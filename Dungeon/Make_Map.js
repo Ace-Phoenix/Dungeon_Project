@@ -8,17 +8,19 @@ function grid(size, element, name = "&#9926"){
     // this is the empty array that u push and pull from
     var make = [];
     // this is to push into the make array
+    console.log(make)
   for (var i = 0; i < size.x; i++) {
     // this is array.push
+    console.log(make)
     make.push([]);
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
     make.push(new element(name,[i,j]));
     }
-
   }
 // this is going to be the grid[i][j
+console.log(make);
     return make;
   }
 // this is going to be the fucntion thats draws the grid
@@ -26,7 +28,7 @@ function draw(grid){
   var design = "&#8943";
   var background = "&#8942";
   // this is going to be the text variable
-  var text = "";
+  var text = " ";
 // thSis the variable for the grid length so we can store it
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
@@ -37,16 +39,20 @@ function draw(grid){
   // this is so text knows what to use for the grid
   text += design;
   // this makes the top border
+
   for (var i = 0; i < fixtop; i++) {
     console.log(fixtop + " plz1");
 
     top = text += design;
+
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
+
   text += design + "<BR>";
 
 // this for satement is for the sides of the grid usaing pipes
+
   for (var i = 0; i < lengt; i++) {
     text += background;
 
@@ -54,7 +60,9 @@ function draw(grid){
     text += "" + grid[i,j];
 
   }
+
 text += background + "<BR>";
+
 }
 text += design + "<BR>";
 
@@ -68,6 +76,8 @@ console.log(background + "bg");
 console.log(design + "design");
 console.log(text + "text");
 console.log(text.length + "     _text");
+
+
 
 
 
@@ -158,6 +168,7 @@ console.log(grid + " _grid?");
     return grid
   }
 // this is what physiaclly draws the grid
+var room = makeroom
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
