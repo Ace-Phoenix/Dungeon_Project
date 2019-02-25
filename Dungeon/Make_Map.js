@@ -168,26 +168,33 @@ return draw(grid)
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-//
-//   function room(grid, element, name = " "){
-//     var box = [];
-//     box.x = Math.random(box.x) * grid.length/4;
-//     box.y = Math.random(box.y) * grid.length/4;
-//     // room.h = Math.random(room.h) * grid.length/2;
-//     // room.w = Math.random(room.w) * grid.length/2;
-//     for (var i = 0; i < box.x; i++) {
-//       box.push([]);
-//       for (var j = 0; j < box.y; j++) {
-//         box[i].push(new element(name,[i][j]));
-//       }
-//     }
-//     console.log(room)
-//     console.log(square + "i");
-//     return square;
-//   }
-//     return room;
-//   }
-// function drawroom(room, grid){
+
+  function makeroom(size, name = " ", grid){
+    var box = [];
+    console.log(box)
+    // room.h = Math.random(room.h) * grid.length/2;
+    // room.w = Math.random(room.w) * grid.length/2;
+    for (var i = 0; i < size.x; i++) {
+      box.push([]);
+      for (var j = 0; j < size.y; j++) {
+        box[i].push(name,[i][j]);
+      }
+    }
+    return box;
+  }
+
+  function room(makeroom){
+if(grid = makeroom){
+  console.log("cnruen")
+  if(grid >= makeroom && grid <= makeroom + makeroom.length){
+makeroom = " ";
+      }
+    }
+    return grid;
+  }
+
+
+// function drawroom(makeroom, grid){
 //   var txt = "";
 //   var leng = room.length;
 //   for (var i = 0; i < leng; i++) {
