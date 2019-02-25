@@ -169,28 +169,29 @@ return draw(grid)
 //     }
 //   }
 
-  function makeroom(size, name = " ", grid){
-    var box = [];
-    console.log(box)
-    // room.h = Math.random(room.h) * grid.length/2;
-    // room.w = Math.random(room.w) * grid.length/2;
-    for (var i = 0; i < size.x; i++) {
-      box.push([]);
-      for (var j = 0; j < size.y; j++) {
-        box[i].push(name,[i][j]);
-      }
-    }
-    return box;
-  }
+  // function makeroom(grid, size, name = " "){
+  //   var box = [];
+  //   console.log(box)
+  //   // room.h = Math.random(room.h) * grid.length/2;
+  //   // room.w = Math.random(room.w) * grid.length/2;
+  //   for (var i = 0; i < size.x; i++) {
+  //     box.push([]);
+  //     for (var j = 0; j < size.y; j++) {
+  //       box[i].push(name,[i][j]);
+  //     }
+  //   }
+  //   return box;
+  // }
 
-  function room(makeroom){
-if(grid = makeroom){
+  function room(grid){
+if(grid.x = " "){
   console.log("cnruen")
-  if(grid >= makeroom && grid <= makeroom + makeroom.length){
-makeroom = " ";
+  if(grid.x >= room.x && grid.x <= room.x + room.length){
+    console.log("cnruen")
+grid.x = " ";
       }
     }
-    return grid;
+    return grid.x;
   }
 
 
@@ -212,7 +213,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = makeroom(grid, name = "");
+  document.getElementById("blah").innerHTML = makeroom(grid, name = " ");
 console.log("Clicky");
   // this calls the update function
 }
