@@ -169,32 +169,17 @@ return draw(grid)
 //     }
 //   }
 
-  // function makeroom(grid, size, name = " "){
-  //   var box = [];
-  //   console.log(box)
-  //   // room.h = Math.random(room.h) * grid.length/2;
-  //   // room.w = Math.random(room.w) * grid.length/2;
-  //   for (var i = 0; i < size.x; i++) {
-  //     box.push([]);
-  //     for (var j = 0; j < size.y; j++) {
-  //       box[i].push(name,[i][j]);
-  //     }
-  //   }
-  //   return box;
-  // }
 
   function room(grid){
-if(grid.x = " "){
+if(grid.x = room.x){
   console.log("cnruen")
   if(grid.x >= room.x && grid.x <= room.x + room.length){
-    console.log("cnruen")
-grid.x = " ";
+    console.log("aidans a bully")
+     room = "";
       }
     }
     return grid.x;
   }
-
-
 // function drawroom(makeroom, grid){
 //   var txt = "";
 //   var leng = room.length;
@@ -213,7 +198,9 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = makeroom(grid, name = " ");
+
+document.getElementById("blah").innerHTML = makeroom;
+  document.getElementById("blah").innerHTML = makeroom(grid, name = "");
 console.log("Clicky");
   // this calls the update function
 }
