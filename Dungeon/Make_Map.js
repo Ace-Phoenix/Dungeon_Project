@@ -2,7 +2,7 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(size, element, name = "&#9926"){
+function grid(size, element, name = "x"){
   // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
@@ -129,26 +129,14 @@ class Space{
 
 
   function room(grid){
-    room.x = Math.random()*grid.x
-    room.y = Math.random()*grid.y
-    
-    room.length = Math.random()* grid.length
-if(grid.x = room.x){
-  console.log("cnruen")
-  if(grid.x >= room.x && grid.x <= room.x + room.length){
-    console.log("aidans a bully")
-     grid.x = " ";
-      }
-    }
-if(grid.y = room.y){
-    console.log("cnruen")
-    if(grid.y >= room.y && grid.y <= room.y + room.length){
-      console.log("aidans a bully")
-       grid.y = " ";
-        }
-      }
-      return grid
-    }
+     room.x = Math.random() *grid.length;
+     room.length = Math.random() *grid.length;
+     console.log(grid.length)
+     Math.floor(room.x);
+     Math.floor(room.length);
+     console.log(room.x)
+     console.log(room.length)
+  }
 // function drawroom(makeroom, grid){
 //   var txt = "";
 //   var leng = room.length;
@@ -160,16 +148,15 @@ if(grid.y = room.y){
 //   }
 //   return txt;
 // }
-// this is what physiaclly draws the grid
 var grid = grid({x:60,y:100}, Dungeon);
+
+// this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-
-document.getElementById("blah").innerHTML = room;
-  document.getElementById("blah").innerHTML = room(grid, name = "");
+  document.getElementById("blah").innerHTML = room();
 console.log("Clicky");
   // this calls the update function
 }
