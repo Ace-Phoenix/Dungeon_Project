@@ -106,28 +106,26 @@ return text;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-    console.log(roomx)
-    console.log(roomlength)
     if(grid.x >= roomx && grid.x <= roomx + roomlength){
             grid.x = " ";
 
     }
-    return grid.x;
+    return draw(grid);
   }
+
 
   function roomy(grid){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-    console.log(roomx)
-    console.log(roomlength)
     if(grid.y >= roomx && grid.y <= roomx + roomlength){
             grid.y = " ";
 
     }
-    return grid.y;
+    return draw(grid);
   }
+
 
   function room(roomx, roomy){
     roomy(grid);
