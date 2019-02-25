@@ -65,12 +65,6 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7a21d82814788cfdf4f73050942608650f41a635
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -106,27 +100,13 @@ return text;
 //     }
 //   }
 
-<<<<<<< HEAD
 
-  function rooom(draw, grid){
-    var room = Math.random() * grid.length;
-    var rooml = Math.random() * grid.length;
-=======
   function roomx(grid){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
->>>>>>> 7a21d82814788cfdf4f73050942608650f41a635
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
     if(grid.x >= roomx && grid.x <= roomx + roomlength){
-<<<<<<< HEAD
-            roomx = " ";
-            console.log(roomx + " 4");
-            grid("x").push(roomx)
-            console.log(roomx + " 4");
-    }
-    return draw(grid)-grid("x");
-=======
             grid.x = " ";
 
     }
@@ -150,7 +130,6 @@ return text;
   function room(roomx, roomy){
     roomy(grid);
     roomx(grid);
->>>>>>> 7a21d82814788cfdf4f73050942608650f41a635
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -171,11 +150,9 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-<<<<<<< HEAD
   document.getElementById("blah").innerHTML = rooom(draw, grid);
-=======
   document.getElementById("blah").innerHTML = room(roomx, roomy);
->>>>>>> 7a21d82814788cfdf4f73050942608650f41a635
+
 console.log("Clicky");
   // this calls the update function
 }
