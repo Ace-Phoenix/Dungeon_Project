@@ -116,12 +116,15 @@ return text;
     }
     return box;
   }
+
   function room(makeroom){
-if(grid.x = makeroom){
-  if(grid.x >= makeroom.x && grid.x <= makeroom.x + makeroom.length){
-grid[i][j] = "";
+if(grid = makeroom){
+  console.log("cnruen")
+  if(grid >= makeroom && grid <= makeroom + makeroom.length){
+makeroom = " ";
       }
     }
+    return grid;
   }
 
 
@@ -134,7 +137,6 @@ grid[i][j] = "";
 //       txt += room[i][j];
 //     }
 //   }
-//
 // }
 var grid = grid({x:60,y:100}, Dungeon);
 var makeroom = makeroom({x:30,y:40}, grid);
