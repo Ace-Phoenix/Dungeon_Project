@@ -2,7 +2,7 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(size, element, name = "&#9926"){
+function grid(size, element, name = "x"){
   // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
@@ -14,12 +14,7 @@ function grid(size, element, name = "&#9926"){
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
-<<<<<<< HEAD
     make[i].push(new element(name,[i,j]));
-=======
-    make[i].push(new element(name,[i],[j]));
-
->>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
     }
   }
 // this is going to be the grid[i][j
@@ -97,46 +92,6 @@ class Space{
 }
 
 
-class Room extends Space {
-  consturctor(space){
-    //super();
-    this.x = space.x + random(1, Math.floor(space.w/3))
-    this.y = space.y + random(1, Math.floor(space.h/3))
-    this.w = space.w - (this.x - space.x)
-    this.h = space.h - (this.y - space.y)
-    this.w -= random(0, this.w/4)
-    this.h -= random(0, this.h/4)
-    }
-  }
-
-  function makeroom(grid, name = ""){
-    var txt = ""
-    var square = [];
-    var room = new Room;
-    room.x = Math.random(room.x) * grid.length/2;
-    room.y = Math.random(room.y) * grid.length/2;
-    room.h = Math.random(room.h) * 10;
-    room.w = Math.random(room.w) * 10;
-    for (var i = 0; i < room.h; i++) {
-      square[i] = []
-      for (var j = 0; j < room.w; j++) {
-        console.log(name);
-        square[i,j] = " "
-        console.log(square[i,j]);
-
-        grid[i,j].push(square[i,j])
-}
-}
-console.log(square + "lol");
-// grid.splice(name, "undefined")
-console.log(name);
-console.log(square[i,j] + " [[[[[[]]]]]]");
-console.log(grid[i,j] + "dunnnn");
-grid[i, j].splice(square)
-return draw(grid)
-
-
-}
 
 // class Space{
 //   constructor(x, y, w, h){
@@ -175,14 +130,13 @@ return draw(grid)
 
 
   function room(grid){
-if(grid.x = room.x){
-  console.log("cnruen")
-  if(grid.x >= room.x && grid.x <= room.x + room.length){
-    console.log("aidans a bully")
-     room = "";
-      }
-    }
-    return grid;
+     room.x = Math.random() *grid.length;
+     room.length = Math.random() *grid.length;
+     console.log(grid.length)
+     Math.floor(room.x);
+     Math.floor(room.length);
+     console.log(room.x)
+     console.log(room.length)
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -195,23 +149,15 @@ if(grid.x = room.x){
 //   }
 //   return txt;
 // }
-<<<<<<< HEAD
 var grid = grid({x:60,y:100}, Dungeon);
-var makeroom = room({x:Math.random,y:Math.random}, grid)
-=======
->>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
+
 // this is what physiaclly draws the grid
-var grid = grid({x:60,y:100}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-<<<<<<< HEAD
-document.getElementById("blah").innerHTML = makeroom;
-=======
-  document.getElementById("blah").innerHTML = makeroom(grid, name = "");
->>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
+  document.getElementById("blah").innerHTML = room();
 console.log("Clicky");
   // this calls the update function
 }
