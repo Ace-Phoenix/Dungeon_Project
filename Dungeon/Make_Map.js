@@ -2,7 +2,7 @@
 // enemies
 // this si going to be the grid to put the dungeon on
 
-function grid(size, element, name = "x"){
+function grid(size, element, name = "&#9926"){
   // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
@@ -14,10 +14,16 @@ function grid(size, element, name = "x"){
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
+<<<<<<< HEAD
     make[i].push(new element(name,[i,j]));
+=======
+    make[i].push(new element(name,[i],[j]));
+
+>>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
     }
   }
 // this is going to be the grid[i][j
+console.log(make);
     return make;
   }
 // this is going to be the fucntion thats draws the grid
@@ -30,34 +36,39 @@ function draw(grid){
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
   var top = lengt *2;
-
   var fixtop = grid[0].length;
   // this is so text knows what to use for the grid
   text += design;
   // this makes the top border
   for (var i = 0; i < fixtop; i++) {
     top = text += design;
+
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
   text += design + "<BR>";
 
-// this for satement is for the grid background
+// this for satement is for the sides of the grid usaing pipes
   for (var i = 0; i < lengt; i++) {
     text += background;
+
 
   for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];
 
   }
 text += background + "<BR>";
+
 }
 text += design;
 
 for (var i = 0; i < fixtop; i++) {
   top = text += design;
+
 }
 text += design;
+
+
 
 
 
@@ -65,7 +76,68 @@ text += design;
 return text;
 
 }
-//
+
+class Space{
+  constructor(x, y, w, h, grid){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+  }
+  // drawpath(c, space, grid){
+  //   //const pattern = c.create pattern('reapeat')
+  //   c.beginpath()
+  //   c.lineWidth = TILE;
+  //   c.strokeStyle = pattern;
+  //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
+  //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
+  //   c.stroke()
+  //   }
+  // }
+}
+
+
+class Room extends Space {
+  consturctor(space){
+    //super();
+    this.x = space.x + random(1, Math.floor(space.w/3))
+    this.y = space.y + random(1, Math.floor(space.h/3))
+    this.w = space.w - (this.x - space.x)
+    this.h = space.h - (this.y - space.y)
+    this.w -= random(0, this.w/4)
+    this.h -= random(0, this.h/4)
+    }
+  }
+
+  function makeroom(grid, name = ""){
+    var txt = ""
+    var square = [];
+    var room = new Room;
+    room.x = Math.random(room.x) * grid.length/2;
+    room.y = Math.random(room.y) * grid.length/2;
+    room.h = Math.random(room.h) * 10;
+    room.w = Math.random(room.w) * 10;
+    for (var i = 0; i < room.h; i++) {
+      square[i] = []
+      for (var j = 0; j < room.w; j++) {
+        console.log(name);
+        square[i,j] = " "
+        console.log(square[i,j]);
+
+        grid[i,j].push(square[i,j])
+}
+}
+console.log(square + "lol");
+// grid.splice(name, "undefined")
+console.log(name);
+console.log(square[i,j] + " [[[[[[]]]]]]");
+console.log(grid[i,j] + "dunnnn");
+grid[i, j].splice(square)
+return draw(grid)
+
+
+}
+
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -118,19 +190,28 @@ if(grid.x = room.x){
 //   for (var i = 0; i < leng; i++) {
 //       txt += txt;
 //     for (var j = 0; j < leng; j++) {
-//       txt += room[i][j];
+//       txt += "" + room[i][j];
 //     }
 //   }
+//   return txt;
 // }
+<<<<<<< HEAD
 var grid = grid({x:60,y:100}, Dungeon);
 var makeroom = room({x:Math.random,y:Math.random}, grid)
+=======
+>>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
 // this is what physiaclly draws the grid
+var grid = grid({x:60,y:100}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = makeroom;
+=======
+  document.getElementById("blah").innerHTML = makeroom(grid, name = "");
+>>>>>>> f29a8f3eec2c1be08fa19d890e451ca2399a5c47
 console.log("Clicky");
   // this calls the update function
 }
