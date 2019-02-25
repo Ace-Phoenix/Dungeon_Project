@@ -130,13 +130,17 @@ class Space{
 
 
   function room(grid){
-     room.x = Math.random() *grid.length;
-     room.length = Math.random() *grid.length;
-     console.log(grid.length)
-     Math.floor(room.x);
-     Math.floor(room.length);
-     console.log(room.x)
-     console.log(room.length)
+    var room = Math.random() * grid.length;
+    var rooml = Math.random() * grid.length;
+    var roomx = Math.floor(room);
+    var roomlength = Math.floor(rooml);
+    console.log(roomx)
+    console.log(roomlength)
+    if(grid.x >= roomx && grid.x <= roomx + roomlength){
+            roomx = " ";
+            draw(grid) == roomx;
+    }
+    return draw(grid);
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -157,7 +161,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = room();
+  document.getElementById("blah").innerHTML = room(grid);
 console.log("Clicky");
   // this calls the update function
 }
