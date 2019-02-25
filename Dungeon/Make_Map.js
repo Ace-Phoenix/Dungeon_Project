@@ -92,48 +92,6 @@ class Space{
   // }
 }
 
-
-class Room extends Space {
-  consturctor(space){
-    //super();
-    this.x = space.x + random(1, Math.floor(space.w/3))
-    this.y = space.y + random(1, Math.floor(space.h/3))
-    this.w = space.w - (this.x - space.x)
-    this.h = space.h - (this.y - space.y)
-    this.w -= random(0, this.w/4)
-    this.h -= random(0, this.h/4)
-    }
-  }
-
-  function makeroom(grid, name = ""){
-    var txt = ""
-    var square = [];
-    var room = new Room;
-    room.x = Math.random(room.x) * grid.length/2;
-    room.y = Math.random(room.y) * grid.length/2;
-    room.h = Math.random(room.h) * 10;
-    room.w = Math.random(room.w) * 10;
-    for (var i = 0; i < room.h; i++) {
-      square[i] = []
-      for (var j = 0; j < room.w; j++) {
-        console.log(name);
-        square[i,j] = " "
-        console.log(square[i,j]);
-
-        grid[i,j].push(square[i,j])
-}
-}
-console.log(square + "lol");
-// grid.splice(name, "undefined")
-console.log(name);
-console.log(square[i,j] + " [[[[[[]]]]]]");
-console.log(grid[i,j] + "dunnnn");
-grid[i, j].splice(square)
-return draw(grid)
-
-
-}
-
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -171,15 +129,26 @@ return draw(grid)
 
 
   function room(grid){
+    room.x = Math.random()*grid.x
+    room.y = Math.random()*grid.y
+    
+    room.length = Math.random()* grid.length
 if(grid.x = room.x){
   console.log("cnruen")
   if(grid.x >= room.x && grid.x <= room.x + room.length){
     console.log("aidans a bully")
-     room = "";
+     grid.x = " ";
       }
     }
-    return grid.x;
-  }
+if(grid.y = room.y){
+    console.log("cnruen")
+    if(grid.y >= room.y && grid.y <= room.y + room.length){
+      console.log("aidans a bully")
+       grid.y = " ";
+        }
+      }
+      return grid
+    }
 // function drawroom(makeroom, grid){
 //   var txt = "";
 //   var leng = room.length;
@@ -199,8 +168,8 @@ document.getElementById("blah").innerHTML = draw(grid);
     // this calls the update function
 document.getElementById("button").onclick = function(){
 
-document.getElementById("blah").innerHTML = makeroom;
-  document.getElementById("blah").innerHTML = makeroom(grid, name = "");
+document.getElementById("blah").innerHTML = room;
+  document.getElementById("blah").innerHTML = room(grid, name = "");
 console.log("Clicky");
   // this calls the update function
 }
