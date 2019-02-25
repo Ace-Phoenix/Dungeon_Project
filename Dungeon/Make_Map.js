@@ -62,36 +62,9 @@ for (var i = 0; i < fixtop; i++) {
 
 }
 text += design;
-
-
-
-
-
 // return the text strings so its appears on the screen
 return text;
-
 }
-
-class Space{
-  constructor(x, y, w, h, grid){
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-  }
-  // drawpath(c, space, grid){
-  //   //const pattern = c.create pattern('reapeat')
-  //   c.beginpath()
-  //   c.lineWidth = TILE;
-  //   c.strokeStyle = pattern;
-  //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
-  //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
-  //   c.stroke()
-  //   }
-  // }
-}
-
-
 
 // class Space{
 //   constructor(x, y, w, h){
@@ -104,16 +77,16 @@ class Space{
 //       y:Math.floor(y + (h / 2)),
 //     }
 //   }
-// //   // drawpath(c, space, grid){
-// //   //   //const pattern = c.create pattern('reapeat')
-// //   //   c.beginpath()
-// //   //   c.lineWidth = TILE;
-// //   //   c.strokeStyle = pattern;
-// //   //   c.moveTo(this.center.x *TILE, this.center.y *TILE)
-// //   //   c.lineTo(space.center.x *TILE, space.center.y *TILE)
-// //   //   c.stroke()
-// //   //   }
-// //   // }
+//  drawpath(c, space, grid){
+// const pattern = c.create pattern('reapeat')
+// c.beginpath()
+// c.lineWidth = TILE;
+// c.strokeStyle = pattern;
+// c.moveTo(this.center.x *TILE, this.center.y *TILE)
+// c.lineTo(space.center.x *TILE, space.center.y *TILE)
+// c.stroke()
+//  }
+//  }
 // // }
 // //
 // class Room extends Space {
@@ -128,19 +101,37 @@ class Space{
 //     }
 //   }
 
-
-  function room(grid){
-    var room = Math.random() * grid.length;
-    var rooml = Math.random() * grid.length;
+  function roomx(grid){
+    var room = Math.random() * grid.length/4;
+    var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
     console.log(roomx)
     console.log(roomlength)
     if(grid.x >= roomx && grid.x <= roomx + roomlength){
-            roomx = " ";
-            draw(grid) == roomx;
+            grid.x = " ";
+
     }
-    return draw(grid);
+    return grid.x;
+  }
+
+  function roomy(grid){
+    var room = Math.random() * grid.length/4;
+    var rooml = Math.random() * grid.length/4;
+    var roomx = Math.floor(room);
+    var roomlength = Math.floor(rooml);
+    console.log(roomx)
+    console.log(roomlength)
+    if(grid.y >= roomx && grid.y <= roomx + roomlength){
+            grid.y = " ";
+
+    }
+    return grid.y;
+  }
+
+  function room(roomx, roomy){
+    roomy(grid);
+    roomx(grid);
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -161,7 +152,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = room(grid);
+  document.getElementById("blah").innerHTML = room(roomx, roomy);
 console.log("Clicky");
   // this calls the update function
 }
