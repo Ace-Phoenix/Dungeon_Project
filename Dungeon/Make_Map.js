@@ -72,45 +72,8 @@ return text;
 
 }
 
-class Space{
-  constructor(x, y, w, h, grid){
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-  }
-
-}
 
 
-
-<<<<<<< HEAD
-  function makeroom(grid, name = " "){
-    var txt = "";
-    var square = [];
-    var room = new Room;
-    room.x = Math.random(room.x) * grid.length/2;
-    room.y = Math.random(room.y) * grid.length/2;
-    room.h = Math.random(room.h) * grid.length/2;
-    room.w = Math.random(room.w) * grid.length/2;
-    for (var i = 0; i < room.h; i++) {
-      console.log(txt + " 1")
-      grid[i] = []
-      console.log(grid[i] + " _gri d?");
-
-      txt += "";
-      grid[i].push(txt)
-      console.log(grid[i] + " _ grid?");
-
-      for (var j = 0; j < room.w; j++) {
-        console.log(txt + " 2")
-        txt += "" + grid[i];
-        console.log(grid[i] + " _g rid?");
-
-        console.log(txt + " 3")
-
-      }
-=======
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -147,7 +110,7 @@ class Space{
 //   }
 
 
-  function room(grid){
+  function rooom(draw, grid){
     var room = Math.random() * grid.length;
     var rooml = Math.random() * grid.length;
     var roomx = Math.floor(room);
@@ -156,10 +119,11 @@ class Space{
     console.log(roomlength)
     if(grid.x >= roomx && grid.x <= roomx + roomlength){
             roomx = " ";
-            draw(grid) == roomx;
->>>>>>> 6d4f9a746403b833ff2d31e4785b3b54e6cf8a05
+            console.log(roomx + " 4");
+            grid("x").push(roomx)
+            console.log(roomx + " 4");
     }
-    return draw(grid);
+    return draw(grid)-grid("x");
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -180,7 +144,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = room(grid);
+  document.getElementById("blah").innerHTML = rooom(draw, grid);
 console.log("Clicky");
   // this calls the update function
 }
