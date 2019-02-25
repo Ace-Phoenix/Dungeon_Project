@@ -15,9 +15,7 @@ function grid(size, element, name = "x"){
     // this si to push the new element into the array so it has the name and
     // grid locations
     make[i].push(new element(name,[i,j]));
-
     }
-
   }
 // this is going to be the grid[i][j
     return make;
@@ -103,31 +101,17 @@ return text;
 //     }
 //   }
 
-  function makeroom(size, name = " ", grid){
-    var box = [];
-    console.log(box)
-    // room.h = Math.random(room.h) * grid.length/2;
-    // room.w = Math.random(room.w) * grid.length/2;
-    for (var i = 0; i < size.x; i++) {
-      box.push([]);
-      for (var j = 0; j < size.y; j++) {
-        box[i].push(name,[i][j]);
-      }
-    }
-    return box;
-  }
 
-  function room(makeroom){
-if(grid = makeroom){
+  function room(grid){
+if(grid.x = room.x){
   console.log("cnruen")
-  if(grid >= makeroom && grid <= makeroom + makeroom.length){
-makeroom = " ";
+  if(grid.x >= room.x && grid.x <= room.x + room.length){
+    console.log("aidans a bully")
+     room = "";
       }
     }
     return grid;
   }
-
-
 // function drawroom(makeroom, grid){
 //   var txt = "";
 //   var leng = room.length;
@@ -139,14 +123,14 @@ makeroom = " ";
 //   }
 // }
 var grid = grid({x:60,y:100}, Dungeon);
-var makeroom = makeroom({x:30,y:40}, grid);
+var makeroom = room({x:Math.random,y:Math.random}, grid)
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = room(makeroom);
+document.getElementById("blah").innerHTML = makeroom;
 console.log("Clicky");
   // this calls the update function
 }
