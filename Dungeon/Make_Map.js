@@ -110,18 +110,10 @@ for (var i = 0; i < size.x; i++) {
       }
     }
     drawroom(roomx, roomy);
+    console.log(ary);
     return ary;
   }
 
-<<<<<<< HEAD
-  function roomx(grid, room){
-    var room = Math.random() * grid.length/4;
-    var rooml = Math.random() * grid.length/4;
-    var roomx = Math.floor(room);
-    var roomlength = Math.floor(rooml);
-    if(room.x >= roomx && room.x <= roomx + roomlength){
-            grid[[roomx]] = " ";
-=======
   function roomx(room){
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
@@ -130,20 +122,9 @@ for (var i = 0; i < size.x; i++) {
     console.log(room[0].length)
     if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
             grid[0].length = " ";
->>>>>>> dac2f3d581a936fa54fe133f55441f2d1e7b5721
     }
-    return draw(grid);
   }
 
-<<<<<<< HEAD
-  function roomy(grid, room){
-    var room = Math.random() * grid.length/4;
-    var rooml = Math.random() * grid.length/4;
-    var roomy = Math.floor(room);
-    var roomlength = Math.floor(rooml);
-    if(room.y >= roomx && room.y <= roomx + roomlength){
-            grid[[roomy]] = " ";
-=======
   function roomy(room){
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
@@ -151,9 +132,7 @@ for (var i = 0; i < size.x; i++) {
     // var roomlength = Math.floor(rooml)
     if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
             grid[1].length = " ";
->>>>>>> dac2f3d581a936fa54fe133f55441f2d1e7b5721
     }
-    return grid;
   }
 
   function drawroom(roomx, roomy){
@@ -171,20 +150,15 @@ for (var i = 0; i < size.x; i++) {
 //   }
 //   return txt;
 // }
-<<<<<<< HEAD
-
-=======
 var grid = grid({x:60,y:100}, Dungeon);
 var room = room({x:20,y:20});
->>>>>>> dac2f3d581a936fa54fe133f55441f2d1e7b5721
 // this is what physiaclly draws the grid
-var grid = grid({x:60,y:100}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, room);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
 
 console.log("Clicky");
   // this calls the update function
