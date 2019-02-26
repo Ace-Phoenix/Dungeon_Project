@@ -65,9 +65,12 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -102,12 +105,24 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
+function room(grid, name = " "){
+var ary = [];
+for (var i = 0; i < ary; i++) {
+  ary.push([])
+  for (var i = 0; i < ary; i++) {
+     ary.push(new element(name,[i,j]))
+      }
+    }
+    drawroom(roomx, roomy);
+    return ary;
+  }
 
   function roomx(grid){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
+<<<<<<< HEAD
     console.log(roomx)
     console.log(roomlength)
     if(grid.x >= roomx && grid.x <= roomx + roomlength){
@@ -118,6 +133,13 @@ return text;
       console.log("yum");
     }
     grid.x
+=======
+    if(room.x >= roomx && room.x <= roomx + roomlength){
+            grid = " ";
+    }
+    console.log(grid.x + "grid")
+    return draw(grid);
+>>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
   }
 
   function roomy(grid){
@@ -125,6 +147,7 @@ return text;
     var rooml = Math.random() * grid.length/4;
     var roomy = Math.floor(room);
     var roomlength = Math.floor(rooml);
+<<<<<<< HEAD
     console.log(roomy)
     console.log(roomlength)
     if(grid.length >= roomy && grid.length <= roomy + roomlength){
@@ -142,6 +165,17 @@ return text;
     roomy(grid);
 
 
+=======
+    if(room.y >= roomx && room.y <= roomx + roomlength){
+            grid = " ";
+    }
+    return draw(grid);
+  }
+
+  function drawroom(roomx, roomy){
+    roomy(grid);
+    roomx(grid);
+>>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -163,6 +197,10 @@ document.getElementById("blah").innerHTML = draw(grid);
     // this calls the update function
 document.getElementById("button").onclick = function(){
   document.getElementById("blah").innerHTML = room(roomx, roomy);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
 console.log("Clicky");
   // this calls the update function
 }
