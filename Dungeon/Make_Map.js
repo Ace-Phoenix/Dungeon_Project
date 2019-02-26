@@ -18,7 +18,6 @@ function grid(size, element, name = "x"){
     }
   }
 // this is going to be the grid[i][j
-console.log(make);
     return make;
   }
 // this is going to be the fucntion thats draws the grid
@@ -116,10 +115,10 @@ for (var i = 0; i < size.x; i++) {
     // var rooml = Math.random() * grid.length/4;
     // var roomx = Math.floor(room);
     // var roomlength = Math.floor(rooml);
-    if(grid >= room.x && grid <= room.x + room.length){
-            grid = " ";
+    console.log(room[0].length)
+    if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
+            grid[0].length = " ";
     }
-    console.log(grid.x + "grid")
     return draw(grid);
   }
 
@@ -127,9 +126,9 @@ for (var i = 0; i < size.x; i++) {
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
     // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml);
-    if(grid >= room.y && grid <= room.y + room.length){
-            grid = " ";
+    // var roomlength = Math.floor(rooml)
+    if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
+            grid[1].length = " ";
     }
     return grid;
   }
@@ -157,7 +156,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, room);
 
 console.log("Clicky");
   // this calls the update function
