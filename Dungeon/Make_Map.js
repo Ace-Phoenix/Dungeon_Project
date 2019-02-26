@@ -48,13 +48,13 @@ function draw(grid){
 
 
   for (var j = 0; j < grid[0].length; j++) {
-    text += "" + grid[i][j];
+    text += "" + grid[i][j] ;
 
   }
 text += background + "<BR>";
 
 }
-text += design;
+text += design ;
 
 for (var i = 0; i < fixtop; i++) {
   top = text += design;
@@ -132,7 +132,9 @@ for (var i = 0; i < size.x; i++) {
   function drawroom(roomx, roomy){
     roomy(grid, room);
     roomx(grid, room);
-    return draw(grid)
+    console.log(draw(grid) + " undefined?");
+    return draw(grid) + "<br>"
+
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
