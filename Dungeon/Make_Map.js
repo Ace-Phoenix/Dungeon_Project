@@ -149,7 +149,6 @@ for (var i = 0; i < size.x; i++) {
 var grid = grid({x:60,y:100}, Dungeon);
 var room = room({x:20,y:20});
 // this is what physiaclly draws the grid
-var grid = grid({x:60,y:100}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
