@@ -106,10 +106,10 @@ return text;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-    if(grid.x >= roomx && grid.x <= roomx + roomlength){
-            grid.x = " ";
-
+    if(grid.length >= roomx && grid.length <= roomx + roomlength){
+            grid = " ";
     }
+    console.log(grid.x + "grid")
     return draw(grid);
   }
 
@@ -121,12 +121,10 @@ return text;
     var roomlength = Math.floor(rooml);
     if(grid.y >= roomx && grid.y <= roomx + roomlength){
             grid.y = " ";
-
+console.log("cnsjidulwq.eyglv");
     }
-    return draw(grid);
+    return grid.y;
   }
-
-
   function room(roomx, roomy){
     roomy(grid);
     roomx(grid);
@@ -150,7 +148,6 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = rooom(draw, grid);
   document.getElementById("blah").innerHTML = room(roomx, roomy);
 
 console.log("Clicky");
