@@ -133,17 +133,9 @@ for (var i = 0; i < size.x; i++) {
   }
 
   function drawroom(roomx, roomy){
-<<<<<<< HEAD
-    roomy(grid, room);
-    roomx(grid, room);
-    console.log(draw(grid) + " undefined?");
-    return draw(grid) + "<br>"
-
-=======
     roomy(room);
     roomx(room);
     return draw(grid);
->>>>>>> 276f217763d69b2236b788dc45fb7dad97d47f8c
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
