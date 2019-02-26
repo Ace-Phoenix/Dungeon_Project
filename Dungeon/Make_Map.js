@@ -99,33 +99,42 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-
+function room(grid, name = " "){
+var ary = [];
+for (var i = 0; i < ary; i++) {
+  ary.push([])
+  for (var i = 0; i < ary; i++) {
+     ary.push(new element(name,[i,j]))
+      }
+    }
+    drawroom(roomx, roomy);
+    return ary;
+  }
 
   function roomx(grid){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-    if(grid.length >= roomx && grid.length <= roomx + roomlength){
+    if(room.x >= roomx && room.x <= roomx + roomlength){
             grid = " ";
     }
     console.log(grid.x + "grid")
     return draw(grid);
   }
 
-
   function roomy(grid){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-    if(grid.y >= roomx && grid.y <= roomx + roomlength){
-            grid.y = " ";
-console.log("cnsjidulwq.eyglv");
+    if(room.y >= roomx && room.y <= roomx + roomlength){
+            grid = " ";
     }
-    return grid.y;
+    return draw(grid);
   }
-  function room(roomx, roomy){
+
+  function drawroom(roomx, roomy){
     roomy(grid);
     roomx(grid);
   }
