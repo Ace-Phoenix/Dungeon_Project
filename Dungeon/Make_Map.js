@@ -98,7 +98,7 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function room(size, grid, name = " "){
+function room(size, name = " "){
 var ary = [];
 for (var i = 0; i < size.x; i++) {
   ary.push([])
@@ -106,16 +106,15 @@ for (var i = 0; i < size.x; i++) {
      ary.push(name,[i,j]);
       }
     }
-    drawroom(roomx, roomy);
     return ary;
   }
 
   function roomx(room){
+    console.log(room[0].length)
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
     // var roomx = Math.floor(room);
     // var roomlength = Math.floor(rooml);
-    console.log(room[0].length)
     if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
             grid[0].length = " ";
     }
@@ -123,31 +122,17 @@ for (var i = 0; i < size.x; i++) {
   }
 
   function roomy(room){
-    // var room = Math.random() * grid.length/4;
-    // var rooml = Math.random() * grid.length/4;
-    // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml)
     if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
             grid[1].length = " ";
     }
-    return grid;
+    return draw(grid);
   }
 
   function drawroom(roomx, roomy){
     roomy(grid);
     roomx(grid);
   }
-// function drawroom(makeroom, grid){
-//   var txt = "";
-//   var leng = room.length;
-//   for (var i = 0; i < leng; i++) {
-//       txt += txt;
-//     for (var j = 0; j < leng; j++) {
-//       txt += "" + room[i][j];
-//     }
-//   }
-//   return txt;
-// }
+
 var grid = grid({x:60,y:100}, Dungeon);
 var room = room({x:20,y:20});
 // this is what physiaclly draws the grid
@@ -156,7 +141,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, room);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
 
 console.log("Clicky");
   // this calls the update function
