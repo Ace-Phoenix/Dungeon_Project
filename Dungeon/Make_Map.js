@@ -99,39 +99,39 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function room(grid, name = " "){
+function room(size, grid, name = " "){
 var ary = [];
-for (var i = 0; i < ary; i++) {
+for (var i = 0; i < size.x; i++) {
   ary.push([])
-  for (var i = 0; i < ary; i++) {
-     ary.push(new element(name,[i,j]))
+  for (var j = 0; j < size.y; j++) {
+     ary.push(name,[i,j]);
       }
     }
     drawroom(roomx, roomy);
     return ary;
   }
 
-  function roomx(grid){
-    var room = Math.random() * grid.length/4;
-    var rooml = Math.random() * grid.length/4;
-    var roomx = Math.floor(room);
-    var roomlength = Math.floor(rooml);
-    if(room.x >= roomx && room.x <= roomx + roomlength){
+  function roomx(room){
+    // var room = Math.random() * grid.length/4;
+    // var rooml = Math.random() * grid.length/4;
+    // var roomx = Math.floor(room);
+    // var roomlength = Math.floor(rooml);
+    if(grid >= room.x && grid <= room.x + room.length){
             grid = " ";
     }
     console.log(grid.x + "grid")
     return draw(grid);
   }
 
-  function roomy(grid){
-    var room = Math.random() * grid.length/4;
-    var rooml = Math.random() * grid.length/4;
-    var roomx = Math.floor(room);
-    var roomlength = Math.floor(rooml);
-    if(room.y >= roomx && room.y <= roomx + roomlength){
+  function roomy(room){
+    // var room = Math.random() * grid.length/4;
+    // var rooml = Math.random() * grid.length/4;
+    // var roomx = Math.floor(room);
+    // var roomlength = Math.floor(rooml);
+    if(grid >= room.y && grid <= room.y + room.length){
             grid = " ";
     }
-    return draw(grid);
+    return grid;
   }
 
   function drawroom(roomx, roomy){
@@ -150,14 +150,14 @@ for (var i = 0; i < ary; i++) {
 //   return txt;
 // }
 var grid = grid({x:60,y:100}, Dungeon);
-
+var room = room({x:20,y:20});
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = room(roomx, roomy);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
 
 console.log("Clicky");
   // this calls the update function
