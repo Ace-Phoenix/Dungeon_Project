@@ -107,6 +107,7 @@ for (var i = 0; i < size.x; i++) {
   ary.push([])
   for (var j = 0; j < size.y; j++) {
      ary.push(name,[i,j]);
+     console.log(size.x)
       }
     }
     return ary;
@@ -119,22 +120,30 @@ for (var i = 0; i < size.x; i++) {
     // var roomx = Math.floor(room);
     // var roomlength = Math.floor(rooml);
     if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
-            grid[0] = " ";
+            room[0].length = " ";
     }
+    return room[0].length;
   }
 
   function roomy(room){
     if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
-            grid[1] = " ";
+            room[1].length = " ";
     }
+    return room[1].length;
   }
 
   function drawroom(roomx, roomy){
+<<<<<<< HEAD
     roomy(grid, room);
     roomx(grid, room);
     console.log(draw(grid) + " undefined?");
     return draw(grid) + "<br>"
 
+=======
+    roomy(room);
+    roomx(room);
+    return draw(grid);
+>>>>>>> 276f217763d69b2236b788dc45fb7dad97d47f8c
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
