@@ -65,12 +65,9 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -117,65 +114,32 @@ for (var i = 0; i < ary; i++) {
     return ary;
   }
 
-  function roomx(grid){
+  function roomx(grid, room){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomx = Math.floor(room);
     var roomlength = Math.floor(rooml);
-<<<<<<< HEAD
-    console.log(roomx)
-    console.log(roomlength)
-    if(grid.x >= roomx && grid.x <= roomx + roomlength){
-            grid.x = " ";
-
-    }
-    else {
-      console.log("yum");
-    }
-    grid.x
-=======
     if(room.x >= roomx && room.x <= roomx + roomlength){
-            grid = " ";
+            grid[[roomx]] = " ";
     }
     console.log(grid.x + "grid")
     return draw(grid);
->>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
   }
 
-  function roomy(grid){
+  function roomy(grid, room){
     var room = Math.random() * grid.length/4;
     var rooml = Math.random() * grid.length/4;
     var roomy = Math.floor(room);
     var roomlength = Math.floor(rooml);
-<<<<<<< HEAD
-    console.log(roomy)
-    console.log(roomlength)
-    if(grid.length >= roomy && grid.length <= roomy + roomlength){
-      console.log(grid.y + "yyyyyyyyyyyyyyyyyyyyyyyyyyy");
-            grid.y = " 3c";
-    }
-    else{
-     console.log("fml");;
-    }
-    return grid.y
-  }
-
-  function room(roomx, roomy){
-    roomx(grid);
-    roomy(grid);
-
-
-=======
     if(room.y >= roomx && room.y <= roomx + roomlength){
-            grid = " ";
+            grid[[roomy]] = " ";
     }
     return draw(grid);
   }
 
   function drawroom(roomx, roomy){
-    roomy(grid);
-    roomx(grid);
->>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
+    roomy(grid, room);
+    roomx(grid, room);
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -188,19 +152,16 @@ for (var i = 0; i < ary; i++) {
 //   }
 //   return txt;
 // }
-var grid = grid({x:60,y:100}, Dungeon);
 
 // this is what physiaclly draws the grid
+var grid = grid({x:60,y:100}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
   document.getElementById("blah").innerHTML = room(roomx, roomy);
-<<<<<<< HEAD
-=======
 
->>>>>>> 0f6522caa99a93f994134c8c16b0425a7651636c
 console.log("Clicky");
   // this calls the update function
 }
