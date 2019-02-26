@@ -101,7 +101,7 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function room(size, grid, name = " "){
+function room(size, name = " "){
 var ary = [];
 for (var i = 0; i < size.x; i++) {
   ary.push([])
@@ -109,30 +109,33 @@ for (var i = 0; i < size.x; i++) {
      ary.push(name,[i,j]);
       }
     }
+<<<<<<< HEAD
     drawroom(roomx, roomy);
     console.log(ary);
+=======
+>>>>>>> dab80ed4e523e3be3df71a7fc86a8303a3a4fc7e
     return ary;
   }
 
   function roomx(room){
+    console.log(room[0].length)
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
     // var roomx = Math.floor(room);
     // var roomlength = Math.floor(rooml);
-    console.log(room[0].length)
     if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
             grid[0].length = " ";
     }
   }
 
   function roomy(room){
-    // var room = Math.random() * grid.length/4;
-    // var rooml = Math.random() * grid.length/4;
-    // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml)
     if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
             grid[1].length = " ";
     }
+<<<<<<< HEAD
+=======
+    return draw(grid);
+>>>>>>> dab80ed4e523e3be3df71a7fc86a8303a3a4fc7e
   }
 
   function drawroom(roomx, roomy){
