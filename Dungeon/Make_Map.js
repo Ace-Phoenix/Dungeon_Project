@@ -101,43 +101,34 @@ return text;
 //     }
 //   }
 
-
-  function roomx(grid, room, roomxfloor, roomyfloor){
-
-    // var room = Math.random() * grid.length/4;
-    // var rooml = Math.random() * grid.length/4;
-    // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml)
-
-
+  function roomx(grid, room, roomxfloor, roomyfloordrawroom){
+    console.log("this is my life coming to an end ")
     if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomyfloor){
             grid[roomxfloor] = " ";
             console.log(roomxfloor);
     }
-    console.log(roomxfloor);
-    console.log(grid);
-    console.log(grid[roomxfloor]);
-    return grid;
+    return grid[roomxfloor];
   }
 
-  function roomy(grid, room, roomxfloor, roomyfloor){
-
+  function roomy(grid, room, roomxfloor, roomyfloor, drawroom){
+    console.log("this is dumb ")
     if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomxfloor){
-      console.log(roomyfloor);
             grid[roomyfloor] = " ";
+            console.log(grid[roomyfloor] + " this is grid roomy floor")
     }
-    return grid;
+    return grid[roomyfloor];
   }
 
   function drawroom(roomx, roomy, grid){
       var room = {
         x : Math.random() *grid.length,
-        y : Math.random() *grid.length
+        y : Math.random() *grid.length,
       }
       var roomxfloor = Math.floor(room.x);
       var roomyfloor = Math.floor(room.y);
-    roomx(grid, room, roomxfloor, roomyfloor);
-    roomy(grid, room, roomxfloor, roomyfloor);
+      console.log(room.x)
+    roomx(grid, roomxfloor, roomyfloor);
+    roomy(grid, roomxfloor, roomyfloor);
     return draw(grid);
   }
 // function drawroom(makeroom, grid){
