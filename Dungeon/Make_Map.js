@@ -14,8 +14,7 @@ function grid(size, element, name = "x"){
   for (var j = 0; j < size.y; j++) {
     // this si to push the new element into the array so it has the name and
     // grid locations
-    make[i].push(new element(name,[i],[j]));
-
+    make[i].push(new element(name,[i,j]));
     }
   }
 // this is going to be the grid[i][j
@@ -66,6 +65,8 @@ text += design;
 return text;
 }
 
+
+
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -100,45 +101,33 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
+var room{
+  }
 
-
-  function roomx(grid, room, roomxfloor, roomyfloor){
-
+  function roomx(room){
+    console.log(room[0].length)
     // var room = Math.random() * grid.length/4;
     // var rooml = Math.random() * grid.length/4;
     // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml)
-
-
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomyfloor){
-            grid[roomxfloor] = " ";
-            console.log(roomxfloor);
+    // var roomlength = Math.floor(rooml);
+    if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
+            room[0] = " ";
     }
-    console.log(roomxfloor);
-    console.log(grid);
-    console.log(grid[roomxfloor]);
-    return grid;
+    return room[0];
   }
 
-  function roomy(grid, room, roomxfloor, roomyfloor){
-
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomxfloor){
-      console.log(roomyfloor);
-            grid[roomyfloor] = " ";
+  function roomy(room){
+    if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
+            room[1] = " ";
     }
-    return grid;
+    return room[1];
   }
 
-  function drawroom(roomx, roomy, grid){
-      var room = {
-        x : Math.random() *grid.length,
-        y : Math.random() *grid.length
-      }
-      var roomxfloor = Math.floor(room.x);
-      var roomyfloor = Math.floor(room.y);
-    roomx(grid, room, roomxfloor, roomyfloor);
-    roomy(grid, room, roomxfloor, roomyfloor);
-    return draw(grid);
+  function drawroom(roomx, roomy){
+    roomx(grid, room);
+    draw(grid);
+    roomy(grid);
+    return draw(grid, room);
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -158,7 +147,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, grid);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
 
 console.log("Clicky");
   // this calls the update function
