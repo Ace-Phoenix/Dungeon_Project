@@ -101,36 +101,19 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-var room{
-  }
+function funcRoom(grid){
+var room = {
+  x : Math.random() *grid.length,
+  y : Math.random() *grid.length,
+}
+return room
+}
+  function roomx(grid){
+    funcRoom(grid)
 
-<<<<<<< HEAD
-  function roomx(room){
-    console.log(room[0].length)
-    // var room = Math.random() * grid.length/4;
-    // var rooml = Math.random() * grid.length/4;
-    // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml);
-    if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
-            room[0] = " ";
-    }
-    return room[0];
-  }
+    var roomxfloor = Math.floor(room.x);
+    var roomyfloor = Math.floor(room.y);
 
-  function roomy(room){
-    if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
-            room[1] = " ";
-    }
-    return room[1];
-  }
-
-  function drawroom(roomx, roomy){
-    roomx(grid, room);
-    draw(grid);
-    roomy(grid);
-    return draw(grid, room);
-=======
-  function roomx(grid, room, roomxfloor, roomyfloordrawroom){
     console.log("this is my life coming to an end ")
     if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomyfloor){
             grid[roomxfloor] = " ";
@@ -139,7 +122,11 @@ var room{
     return grid[roomxfloor];
   }
 
-  function roomy(grid, room, roomxfloor, roomyfloor, drawroom){
+  function roomy(grid){
+    funcRoom(grid)
+    var roomxfloor = Math.floor(room.x);
+    var roomyfloor = Math.floor(room.y);
+
     console.log("this is dumb ")
     if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomxfloor){
             grid[roomyfloor] = " ";
@@ -148,18 +135,10 @@ var room{
     return grid[roomyfloor];
   }
 
-  function drawroom(roomx, roomy, grid){
-      var room = {
-        x : Math.random() *grid.length,
-        y : Math.random() *grid.length,
-      }
-      var roomxfloor = Math.floor(room.x);
-      var roomyfloor = Math.floor(room.y);
-      console.log(room.x)
-    roomx(grid, roomxfloor, roomyfloor);
-    roomy(grid, roomxfloor, roomyfloor);
+  function drawroom(roomx, roomy){
+    roomx(grid);
+    roomy(grid);
     return draw(grid);
->>>>>>> 46b833ec79b0623de65139ad13b5c5b8d0ea5d89
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
