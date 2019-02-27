@@ -48,13 +48,13 @@ function draw(grid){
 
 
   for (var j = 0; j < grid[0].length; j++) {
-    text += "" + grid[i][j];
+    text += "" + grid[i][j] ;
 
   }
 text += background + "<BR>";
 
 }
-text += design;
+text += design ;
 
 for (var i = 0; i < fixtop; i++) {
   top = text += design;
