@@ -101,41 +101,28 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function room(size, name = " "){
-var ary = [];
-for (var i = 0; i < size.x; i++) {
-  ary.push([])
-  for (var j = 0; j < size.y; j++) {
-     ary.push(name,[i,j]);
-     console.log(size.x)
-      }
+
+  function roomx(grid){
+    var room = {x:20, y:20}
+    if(grid[0] >= room.x && grid[0] <= room.x + room.y){
+            grid = " ";
+            console.log(room.x)
     }
-    return ary;
+    return grid;
   }
 
-  function roomx(room){
-    console.log(room[0].length)
-    // var room = Math.random() * grid.length/4;
-    // var rooml = Math.random() * grid.length/4;
-    // var roomx = Math.floor(room);
-    // var roomlength = Math.floor(rooml);
-    if(grid[0].length >= room[0].length && grid <= room[0].length + room.length){
-            room[0].length = " ";
+  function roomy(grid){
+    var room = {x:20, y:20}
+    if(grid[1] >= room.y && grid[1] <= room.y + room.x){
+            grid[1] = " ";
     }
-    return room[0].length;
+    return grid;
   }
 
-  function roomy(room){
-    if(grid[1].length >= room[1].length && grid[1].length <= room[1].length + room.length){
-            room[1].length = " ";
-    }
-    return room[1].length;
-  }
-
-  function drawroom(roomx, roomy){
-    roomy(room);
-    roomx(room);
-    return draw(grid);
+  function drawroom(roomx, roomy, draw){
+    roomy(grid);
+    roomx(grid);
+    return draw(grid)
   }
 // function drawroom(makeroom, grid){
 //   var txt = "";
@@ -149,14 +136,13 @@ for (var i = 0; i < size.x; i++) {
 //   return txt;
 // }
 var grid = grid({x:60,y:100}, Dungeon);
-var room = room({x:20,y:20});
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy);
+  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, draw);
 
 console.log("Clicky");
   // this calls the update function
