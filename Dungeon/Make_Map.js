@@ -101,17 +101,24 @@ return text;
 //     }
 //   }
 
-  function roomx(grid, room, roomxfloor, roomyfloordrawroom){
-    console.log("this is my life coming to an end ")
+  function roomx(grid, room, roomxfloor, roomyfloor, drawroom){
+    var room = {
+      x : Math.random() *grid.length,
+    }
+    var roomxfloor = Math.floor(room.x);
+    console.log(roomyfloor + "    blahka ")
     if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomyfloor){
             grid[roomxfloor] = " ";
-            console.log(roomxfloor);
+console.log(grid[roomxfloor] + " this is grid roomx floor")
     }
     return grid[roomxfloor];
   }
 
   function roomy(grid, room, roomxfloor, roomyfloor, drawroom){
-    console.log("this is dumb ")
+    var room = {
+      y : Math.random() *grid.length,
+    }
+    var roomyfloor = Math.floor(room.y);
     if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomxfloor){
             grid[roomyfloor] = " ";
             console.log(grid[roomyfloor] + " this is grid roomy floor")
@@ -126,22 +133,11 @@ return text;
       }
       var roomxfloor = Math.floor(room.x);
       var roomyfloor = Math.floor(room.y);
-      console.log(room.x)
     roomx(grid, roomxfloor, roomyfloor);
     roomy(grid, roomxfloor, roomyfloor);
     return draw(grid);
   }
-// function drawroom(makeroom, grid){
-//   var txt = "";
-//   var leng = room.length;
-//   for (var i = 0; i < leng; i++) {
-//       txt += txt;
-//     for (var j = 0; j < leng; j++) {
-//       txt += "" + room[i][j];
-//     }
-//   }
-//   return txt;
-// }
+
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
