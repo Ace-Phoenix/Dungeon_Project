@@ -109,14 +109,10 @@ return text;
     var roomxfloor = Math.floor(room.x);
     var roomxlength = Math.floor(room.length)
     if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
-            grid[roomxfloor].length = " ";
-            console.log(grid[roomxfloor] + " this is grid roomx floor")
+            grid[roomxfloor] = " ";
+            console.log(grid[+roomxfloor] + " this is grid roomx floor")
     }
-<<<<<<< HEAD
-    return draw(grid[roomxfloor]), draw(grid);
-=======
-    return grid[roomxfloor];
->>>>>>> 6a56b981b06ce09e0bc4edb058acfb1caab14fe3
+    return grid[roomxfloor] = " ";
   }
 
 
@@ -128,14 +124,10 @@ return text;
     var roomyfloor = Math.floor(room.y);
     var roomylength = Math.floor(room.length);
     if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
-            grid[roomyfloor].length = " ";
+            grid[roomyfloor] += " ";
             console.log(grid[roomyfloor] + " this is grid roomy floor")
     }
-<<<<<<< HEAD
-    return draw(grid[roomyfloor]), draw(grid);
-=======
-    return grid[roomyfloor];
->>>>>>> 6a56b981b06ce09e0bc4edb058acfb1caab14fe3
+    return grid[roomyfloor] = " ";
   }
 
   function drawroom(roomx, roomy, grid){
