@@ -100,38 +100,38 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-
+function numbers(grid, roomx, roomy){
+  var room = {
+    y : Math.random() *grid.length,
+    x : Math.random() *grid.length,
+    lengthy: Math.random() *grid.length,
+    lengthx: Math.random() *grid.length
+  }
+  room.y = Math.floor(room.y);
+  room.x = Math.floor(room.x);
+  room.lengthy = Math.floor(room.lengthy);
+  room.lengthx = Math.floor(room.lengthx);
+  return room;
+}
   function roomx(grid){
-    var room = {
-      x : Math.random() *grid.length,
-      length: Math.random() *grid.length,
+    numbers(grid, roomx, roomy);
+    if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
+            room.x = " ";
     }
-    var roomxfloor = Math.floor(room.x);
-    var roomxlength = Math.floor(room.length)
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
-            grid[roomxfloor].length = " ";
-            console.log(grid[roomxfloor] + " this is grid roomx floor")
-    }
-    return grid[roomxfloor];
+    return room.x;
   }
 
 
   function roomy(grid){
-    var room = {
-      y : Math.random() *grid.length,
-      length: Math.random() *grid.length,
+    numbers(grid, roomx, roomy)
+    if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+            room.y = " ";
     }
-    var roomyfloor = Math.floor(room.y);
-    var roomylength = Math.floor(room.length);
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
-            grid[roomyfloor].length = " ";
-            console.log(grid[roomyfloor] + " this is grid roomy floor")
-    }
-    return grid[roomyfloor];
+    return room.y;
   }
 
-  function drawroom(roomx, roomy, grid){
-    return roomx(grid), roomy(grid);
+  function drawroom(roomx, roomy, grid, numbers){
+    return ;
   }
 
 var grid = grid({x:60,y:100}, Dungeon);
