@@ -100,66 +100,30 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function numbers(grid){
+  function numbers(grid){
   var room = {
     y : Math.random() *grid.length,
     x : Math.random() *grid.length,
     lengthy: Math.random() *grid.length,
     lengthx: Math.random() *grid.length
   }
-  room.y = Math.floor(room.y);
-  room.x = Math.floor(room.x);
-  room.lengthy = Math.floor(room.lengthy);
-  room.lengthx = Math.floor(room.lengthx);
-  return room;
+    room.y = Math.floor(room.y);
+    room.x = Math.floor(room.x);
+    room.lengthy = Math.floor(room.lengthy);
+    room.lengthx = Math.floor(room.lengthx);
+    return room;
 }
-  function room(grid, numbers){
+
+  function rooms(numbers, grid){
     numbers(grid, room);
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
     }
-<<<<<<< HEAD
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
         }
-        return grid();
+        return room.y;
       }
-=======
-<<<<<<< HEAD
-    var roomxfloor = Math.floor(room.x);
-    var roomxlength = Math.floor(room.length)
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
-            grid[roomxfloor] = " ";
-            console.log(grid[+roomxfloor] + " this is grid roomx floor")
-    }
-    return grid[roomxfloor] = " ";
-=======
-    return room.x;
->>>>>>> bcb622afbafb0e1d022f6885d287edce9c510fa2
-  }
-
-  function roomy(grid){
-<<<<<<< HEAD
-    var room = {
-      y : Math.random() *grid.length,
-      length: Math.random() *grid.length,
-    }
-    var roomyfloor = Math.floor(room.y);
-    var roomylength = Math.floor(room.length);
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
-            grid[roomyfloor] += " ";
-            console.log(grid[roomyfloor] + " this is grid roomy floor")
-    }
-    return grid[roomyfloor] = " ";
-=======
-    numbers(grid, roomx, roomy)
-    if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-            room.y = " ";
-    }
-    return room.y;
->>>>>>> bcb622afbafb0e1d022f6885d287edce9c510fa2
-  }
->>>>>>> 5e4f4f717c90b89585e87cff02c174143d031d9b
 
 
 var grid = grid({x:60,y:100}, Dungeon);
@@ -168,15 +132,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
 document.getElementById("path").onclick = function(){
-document.getElementById("blah").innerHTML = draw(grid);
-
-console.log("Clicky");
-  // this calls the update function
-}
-
-    // this calls the update function
-document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = room(grid, numbers);
+document.getElementById("blah").innerHTML = rooms(grid, numbers);
 
 console.log("Clicky");
   // this calls the update function
