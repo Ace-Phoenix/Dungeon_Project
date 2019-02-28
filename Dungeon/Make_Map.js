@@ -104,26 +104,38 @@ return text;
   function roomx(grid){
     var room = {
       x : Math.random() *grid.length,
+      length: Math.random() *grid.length,
     }
     var roomxfloor = Math.floor(room.x);
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxfloor){
-            grid[roomxfloor] = " ";
+    var roomxlength = Math.floor(room.length)
+    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
+            grid[roomxfloor].length = " ";
             console.log(grid[roomxfloor] + " this is grid roomx floor")
     }
+<<<<<<< HEAD
     return draw(grid[roomxfloor]), draw(grid);
+=======
+    return grid[roomxfloor];
+>>>>>>> 6a56b981b06ce09e0bc4edb058acfb1caab14fe3
   }
 
 
   function roomy(grid){
     var room = {
       y : Math.random() *grid.length,
+      length: Math.random() *grid.length,
     }
     var roomyfloor = Math.floor(room.y);
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomyfloor){
-            grid[roomyfloor] = " ";
+    var roomylength = Math.floor(room.length);
+    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
+            grid[roomyfloor].length = " ";
             console.log(grid[roomyfloor] + " this is grid roomy floor")
     }
+<<<<<<< HEAD
     return draw(grid[roomyfloor]), draw(grid);
+=======
+    return grid[roomyfloor];
+>>>>>>> 6a56b981b06ce09e0bc4edb058acfb1caab14fe3
   }
 
   function drawroom(roomx, roomy, grid){
