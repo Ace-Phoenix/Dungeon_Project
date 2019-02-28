@@ -104,26 +104,30 @@ return text;
   function roomx(grid){
     var room = {
       x : Math.random() *grid.length,
+      length: Math.random() *grid.length,
     }
     var roomxfloor = Math.floor(room.x);
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxfloor){
-            grid[roomxfloor] = " ";
+    var roomxlength = Math.floor(room.length)
+    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
+            grid[roomxfloor].length = " ";
             console.log(grid[roomxfloor] + " this is grid roomx floor")
     }
-    return draw(grid[roomxfloor]);
+    return grid[roomxfloor];
   }
 
 
   function roomy(grid){
     var room = {
       y : Math.random() *grid.length,
+      length: Math.random() *grid.length,
     }
     var roomyfloor = Math.floor(room.y);
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomyfloor){
-            grid[roomyfloor] = " ";
+    var roomylength = Math.floor(room.length);
+    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
+            grid[roomyfloor].length = " ";
             console.log(grid[roomyfloor] + " this is grid roomy floor")
     }
-    return draw(grid[roomyfloor]);
+    return grid[roomyfloor];
   }
 
   function drawroom(roomx, roomy, grid){
