@@ -100,7 +100,7 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function numbers(grid, roomx, roomy){
+function numbers(grid, room){
   var room = {
     y : Math.random() *grid.length,
     x : Math.random() *grid.length,
@@ -113,25 +113,16 @@ function numbers(grid, roomx, roomy){
   room.lengthx = Math.floor(room.lengthx);
   return room;
 }
-  function roomx(grid){
-    numbers(grid, roomx, roomy);
+  function room(grid, numbers){
+    numbers(grid, room);
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
     }
-    return room.x;
-  }
-
-  function roomy(grid){
-    numbers(grid, roomx, roomy)
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
-    }
-    return room.y;
-  }
+        }
+      }
 
-  function drawroom(roomx, roomy, grid, numbers){
-    return ;
-  }
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
@@ -147,7 +138,7 @@ console.log("Clicky");
 
     // this calls the update function
 document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = drawroom(roomx, roomy, grid);
+document.getElementById("blah").innerHTML = room(grid, numbers);
 
 console.log("Clicky");
   // this calls the update function
