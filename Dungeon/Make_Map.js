@@ -108,12 +108,11 @@ return text;
     var roomxfloor = Math.floor(room.x);
     if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxfloor){
             grid[roomxfloor] = " ";
-            console.log(grid[roomxfloor] + " grid[roomxfoor]")
             console.log(grid[roomxfloor] + " this is grid roomx floor")
     }
-
-    return grid[roomxfloor];
+    return draw(grid[roomxfloor]);
   }
+
 
   function roomy(grid){
     var room = {
@@ -124,7 +123,7 @@ return text;
             grid[roomyfloor] = " ";
             console.log(grid[roomyfloor] + " this is grid roomy floor")
     }
-    return grid[roomyfloor];
+    return draw(grid[roomyfloor]);
   }
 
   function drawroom(roomx, roomy, grid){
@@ -138,7 +137,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is my automatic update variable
     // this calls the update function
 document.getElementById("button").onclick = function(){
-  document.getElementById("blah").innerHTML = drawroom(roomx, roomy, grid);
+document.getElementById("blah").innerHTML = drawroom(roomx, roomy, grid);
 
 console.log("Clicky");
   // this calls the update function
