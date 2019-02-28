@@ -21,6 +21,8 @@ function grid(size, element, name = "x"){
 // this is going to be the grid[i][j
     return make;
   }
+
+
 // this is going to be the fucntion thats draws the grid
 function draw(grid){
   var design = "&#8943";
@@ -65,6 +67,41 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
+function roomx(grid, draw){
+  var room = {
+    x : Math.random() *grid.length,
+  }
+  var roomxfloor = Math.floor(room.x);
+  if(grid.length >= roomxfloor && grid.length <= roomxfloor *2){
+    grid[roomxfloor]= " ";
+    console.log(grid[roomxfloor] + " this is grid roomx floor")
+  }
+  return grid[roomxfloor];
+}
+
+function roomy(grid, draw){
+  var room = {
+    y : Math.random() *grid.length,
+  }
+  var roomyfloor = Math.floor(room.y);
+  if(grid.length >= roomyfloor && grid.length <= roomyfloor *2){
+    grid[roomyfloor] === " ";
+    console.log(grid[roomyfloor] + " this is grid roomy floor")
+  }
+  return grid[roomyfloor];
+}
+function drawroom(roomx, roomy, grid){
+  var room = {
+    x : Math.random() *grid.length,
+    y : Math.random() *grid.length,
+  }
+  var roomxfloor = Math.floor(room.x);
+  var roomyfloor = Math.floor(room.y);
+  roomx(grid, draw);
+  roomy(grid, draw);
+  return draw(grid);
+}
+
 
 // class Space{
 //   constructor(x, y, w, h){
@@ -100,75 +137,7 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-<<<<<<< HEAD
-function funcRoom(grid){
-var room = {
-  x : Math.random() *grid.length,
-  y : Math.random() *grid.length,
-}
-return room
-}
-  function roomx(grid){
-    funcRoom(grid)
 
-    var roomxfloor = Math.floor(room.x);
-    var roomyfloor = Math.floor(room.y);
-
-    console.log("this is my life coming to an end ")
-=======
-
-  function roomx(grid, room, roomxfloor, roomyfloor, drawroom){
-    var room = {
-      x : Math.random() *grid.length,
-    }
-    var roomxfloor = Math.floor(room.x);
-    console.log(roomyfloor + "    blahka ")
->>>>>>> 0d75ed344034feace1df13a1730cc52e44a57fa1
-    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomyfloor){
-            grid[roomxfloor] = " ";
-console.log(grid[roomxfloor] + " this is grid roomx floor")
-    }
-    return grid[roomxfloor];
-  }
-
-<<<<<<< HEAD
-  function roomy(grid){
-    funcRoom(grid)
-    var roomxfloor = Math.floor(room.x);
-    var roomyfloor = Math.floor(room.y);
-
-    console.log("this is dumb ")
-=======
-  function roomy(grid, room, roomxfloor, roomyfloor, drawroom){
-    var room = {
-      y : Math.random() *grid.length,
-    }
-    var roomyfloor = Math.floor(room.y);
->>>>>>> 0d75ed344034feace1df13a1730cc52e44a57fa1
-    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomxfloor){
-            grid[roomyfloor] = " ";
-            console.log(grid[roomyfloor] + " this is grid roomy floor")
-    }
-    return grid[roomyfloor];
-  }
-
-<<<<<<< HEAD
-  function drawroom(roomx, roomy){
-    roomx(grid);
-    roomy(grid);
-=======
-  function drawroom(roomx, roomy, grid){
-      var room = {
-        x : Math.random() *grid.length,
-        y : Math.random() *grid.length,
-      }
-      var roomxfloor = Math.floor(room.x);
-      var roomyfloor = Math.floor(room.y);
-    roomx(grid, roomxfloor, roomyfloor);
-    roomy(grid, roomxfloor, roomyfloor);
->>>>>>> 0d75ed344034feace1df13a1730cc52e44a57fa1
-    return draw(grid);
-  }
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
