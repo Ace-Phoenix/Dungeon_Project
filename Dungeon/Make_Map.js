@@ -100,7 +100,11 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
+<<<<<<< HEAD
 function numbers(grid, rooms){
+=======
+function numbers(grid){
+>>>>>>> 040ca603f1028ea6d935de68d24f14de3924c39e
   var room = {
     y : Math.random() *grid.length,
     x : Math.random() *grid.length,
@@ -113,6 +117,33 @@ function numbers(grid, rooms){
   room.lengthx = Math.floor(room.lengthx);
   return room;
 }
+<<<<<<< HEAD
+=======
+  function room(grid, numbers){
+    numbers(grid, room);
+    if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
+            room.x = " ";
+    }
+<<<<<<< HEAD
+    if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+            room.y = " ";
+        }
+        return grid();
+      }
+=======
+<<<<<<< HEAD
+    var roomxfloor = Math.floor(room.x);
+    var roomxlength = Math.floor(room.length)
+    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
+            grid[roomxfloor] = " ";
+            console.log(grid[+roomxfloor] + " this is grid roomx floor")
+    }
+    return grid[roomxfloor] = " ";
+=======
+    return room.x;
+>>>>>>> bcb622afbafb0e1d022f6885d287edce9c510fa2
+  }
+>>>>>>> 040ca603f1028ea6d935de68d24f14de3924c39e
 
   function rooms(grid){
     numbers(grid, rooms)
@@ -124,11 +155,15 @@ function numbers(grid, rooms){
     }
     return room;
   }
+>>>>>>> 5e4f4f717c90b89585e87cff02c174143d031d9b
 
+<<<<<<< HEAD
   function drawroom(rooms, grid, numbers){
   rooms(grid) ;
 
   }
+=======
+>>>>>>> 040ca603f1028ea6d935de68d24f14de3924c39e
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
@@ -144,7 +179,11 @@ console.log("Clicky");
 
     // this calls the update function
 document.getElementById("button").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = drawroom(rooms, grid, numbers);
+=======
+document.getElementById("blah").innerHTML = room(grid, numbers);
+>>>>>>> 040ca603f1028ea6d935de68d24f14de3924c39e
 
 console.log("Clicky");
   // this calls the update function
