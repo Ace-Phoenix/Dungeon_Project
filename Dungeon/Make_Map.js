@@ -121,7 +121,6 @@ function numbers(grid, roomx, roomy){
     return room.x;
   }
 
-
   function roomy(grid){
     numbers(grid, roomx, roomy)
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
