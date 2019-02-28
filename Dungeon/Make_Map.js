@@ -138,6 +138,38 @@ function drawroom(roomx, roomy, grid){
 //     }
 //   }
 
+<<<<<<< HEAD
+=======
+  function roomx(grid){
+    var room = {
+      x : Math.random() *grid.length,
+    }
+    var roomxfloor = Math.floor(room.x);
+    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxfloor){
+            grid[roomxfloor] = " ";
+            console.log(grid[roomxfloor] + " grid[roomxfoor]")
+            console.log(grid[roomxfloor] + " this is grid roomx floor")
+    }
+
+    return grid[roomxfloor];
+  }
+
+  function roomy(grid){
+    var room = {
+      y : Math.random() *grid.length,
+    }
+    var roomyfloor = Math.floor(room.y);
+    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomyfloor){
+            grid[roomyfloor] = " ";
+            console.log(grid[roomyfloor] + " this is grid roomy floor")
+    }
+    return grid[roomyfloor];
+  }
+
+  function drawroom(roomx, roomy, grid){
+    return roomx(grid), roomy(grid);
+  }
+>>>>>>> e895b8cac0e17e36aa874c454218a6b82809e3e9
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
