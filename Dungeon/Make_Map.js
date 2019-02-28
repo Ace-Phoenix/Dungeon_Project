@@ -100,7 +100,7 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-function numbers(grid, room){
+function numbers(grid){
   var room = {
     y : Math.random() *grid.length,
     x : Math.random() *grid.length,
@@ -121,6 +121,7 @@ function numbers(grid, room){
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
         }
+        return grid();
       }
 
 
