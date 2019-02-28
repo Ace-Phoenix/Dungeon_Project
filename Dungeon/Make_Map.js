@@ -118,11 +118,48 @@ function numbers(grid){
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
     }
+<<<<<<< HEAD
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
         }
         return grid();
       }
+=======
+<<<<<<< HEAD
+    var roomxfloor = Math.floor(room.x);
+    var roomxlength = Math.floor(room.length)
+    if(grid.length >= roomxfloor && grid.length <= roomxfloor + roomxlength){
+            grid[roomxfloor] = " ";
+            console.log(grid[+roomxfloor] + " this is grid roomx floor")
+    }
+    return grid[roomxfloor] = " ";
+=======
+    return room.x;
+>>>>>>> bcb622afbafb0e1d022f6885d287edce9c510fa2
+  }
+
+  function roomy(grid){
+<<<<<<< HEAD
+    var room = {
+      y : Math.random() *grid.length,
+      length: Math.random() *grid.length,
+    }
+    var roomyfloor = Math.floor(room.y);
+    var roomylength = Math.floor(room.length);
+    if(grid.length >= roomyfloor && grid.length <= roomyfloor + roomylength){
+            grid[roomyfloor] += " ";
+            console.log(grid[roomyfloor] + " this is grid roomy floor")
+    }
+    return grid[roomyfloor] = " ";
+=======
+    numbers(grid, roomx, roomy)
+    if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+            room.y = " ";
+    }
+    return room.y;
+>>>>>>> bcb622afbafb0e1d022f6885d287edce9c510fa2
+  }
+>>>>>>> 5e4f4f717c90b89585e87cff02c174143d031d9b
 
 
 var grid = grid({x:60,y:100}, Dungeon);
