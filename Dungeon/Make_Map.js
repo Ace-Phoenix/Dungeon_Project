@@ -112,13 +112,30 @@ return text;
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+<<<<<<< HEAD
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
             console.log(room.x + "000000");
+=======
+    return room;
+}
+
+  function rooms(numbers, grid){
+    console.log(room.x);
+    for (var i = 0; i < room.lengthx; i++) {
+          grid.x  = " ";
+      for (var i = 0; i < room.lengthy; i++) {
+          grid.y = " ";
+      }
+>>>>>>> 469095027b355858e64d3b6c89c36265ae2ba629
     }
+    if(grid.length >= room.y && grid.length <= room.x + room.lengthx){
+            grid.x ;
+
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-            room.y = " ";
+
         }
+      }
         return room.y;
       }
 
@@ -129,6 +146,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
 document.getElementById("path").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = draw(grid);
 
 console.log("Clicky");
@@ -138,6 +156,9 @@ console.log("Clicky");
     // this calls the update function
 document.getElementById("button").onclick = function(){
 document.getElementById("blah").innerHTML = rooms(grid);
+=======
+document.getElementById("blah").innerHTML = rooms(numbers, grid);
+>>>>>>> 469095027b355858e64d3b6c89c36265ae2ba629
 
 console.log("Clicky");
   // this calls the update function
