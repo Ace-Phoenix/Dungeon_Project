@@ -112,26 +112,25 @@ return text;
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
     return room;
-}
+  }
 
-  function rooms(numbers, grid){
+  function rooms(grid){
+    var room = numbers(grid);
     console.log(room.x);
+    console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
-          grid.x  = " ";
-      for (var i = 0; i < room.lengthy; i++) {
-          grid.y = " ";
-      }
-    }
-    if(grid.length >= room.y && grid.length <= room.x + room.lengthx){
-            grid.x ;
-
-    if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-
+      if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
+        grid[room.lengthx] = " ";
+      for (var j = 0; j < room.lengthy; j++) {
+          if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+            grid[room.lengthy] = " ";
+          }
         }
       }
-        return room.y;
-      }
-
+    }
+    console.log(grid);
+        return draw(grid);
+    }
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
@@ -139,7 +138,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
 document.getElementById("path").onclick = function(){
-document.getElementById("blah").innerHTML = rooms(numbers, grid);
+document.getElementById("blah").innerHTML = rooms(grid);
 
 console.log("Clicky");
   // this calls the update function
