@@ -66,15 +66,6 @@ text += design;
 return text;
 }
 
-<<<<<<< HEAD
-  function rooms(grid){
-    var room = {
-      y : Math.random() *grid.length,
-      x : Math.random() *grid.length,
-      lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length
-    }
-=======
 // class Space{
 //   constructor(x, y, w, h){
 //     this.x = x;
@@ -109,31 +100,18 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
-  function numbers(grid){
-  var room = {
-    y : Math.random() *grid.length,
-    x : Math.random() *grid.length,
-    lengthy: Math.random() *grid.length,
-    lengthx: Math.random() *grid.length
-  }
->>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
+
+  function rooms(grid){
+    var room = {
+      y : Math.random() *grid.length,
+      x : Math.random() *grid.length,
+      lengthy: Math.random() *grid.length,
+      lengthx: Math.random() *grid.length
+    }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-<<<<<<< HEAD
-    console.log(room.x + " room.x?");
-    console.log(room.y + " room.y?");
-    console.log(room.lengthx + " room.lengthx?");
-    console.log(room.lengthy + " room.lengthy?");
-
-=======
-    return room;
-}
-
-  function rooms(numbers, grid){
-    numbers(grid, room);
->>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
             console.log(room.x + "000000");
@@ -141,14 +119,8 @@ return text;
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
         }
-<<<<<<< HEAD
-        return  ;
-      }
-
-=======
         return room.y;
       }
->>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
 
 
 var grid = grid({x:60,y:100}, Dungeon);
@@ -157,7 +129,6 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
 document.getElementById("path").onclick = function(){
-<<<<<<< HEAD
 document.getElementById("blah").innerHTML = draw(grid);
 
 console.log("Clicky");
@@ -167,9 +138,6 @@ console.log("Clicky");
     // this calls the update function
 document.getElementById("button").onclick = function(){
 document.getElementById("blah").innerHTML = rooms(grid);
-=======
-document.getElementById("blah").innerHTML = rooms(grid, numbers);
->>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
 
 console.log("Clicky");
   // this calls the update function
