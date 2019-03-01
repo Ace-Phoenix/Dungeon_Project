@@ -66,6 +66,7 @@ text += design;
 return text;
 }
 
+<<<<<<< HEAD
   function rooms(grid){
     var room = {
       y : Math.random() *grid.length,
@@ -73,15 +74,66 @@ return text;
       lengthy: Math.random() *grid.length,
       lengthx: Math.random() *grid.length
     }
+=======
+// class Space{
+//   constructor(x, y, w, h){
+//     this.x = x;
+//     this.y = y;
+//     this.w = w;
+//     this.h = h;
+//     this.center = {
+//       x:Math.floor(x + (w / 2)),
+//       y:Math.floor(y + (h / 2)),
+//     }
+//   }
+//  drawpath(c, space, grid){
+// const pattern = c.create pattern('reapeat')
+// c.beginpath()
+// c.lineWidth = TILE;
+// c.strokeStyle = pattern;
+// c.moveTo(this.center.x *TILE, this.center.y *TILE)
+// c.lineTo(space.center.x *TILE, space.center.y *TILE)
+// c.stroke()
+//  }
+//  }
+// // }
+// //
+// class Room extends Space {
+//   consturctor(space, name = " "){
+//     //super();
+//     this.x = space.x + random(1, Math.floor(space.w/3))
+//     this.y = space.y + random(1, Math.floor(space.h/3))
+//     this.w = space.w - (this.x - space.x)
+//     this.h = space.h - (this.y - space.y)
+//     this.w -= random(0, this.w/4)
+//     this.h -= random(0, this.h/4)
+//     }
+//   }
+  function numbers(grid){
+  var room = {
+    y : Math.random() *grid.length,
+    x : Math.random() *grid.length,
+    lengthy: Math.random() *grid.length,
+    lengthx: Math.random() *grid.length
+  }
+>>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+<<<<<<< HEAD
     console.log(room.x + " room.x?");
     console.log(room.y + " room.y?");
     console.log(room.lengthx + " room.lengthx?");
     console.log(room.lengthy + " room.lengthy?");
 
+=======
+    return room;
+}
+
+  function rooms(numbers, grid){
+    numbers(grid, room);
+>>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
             room.x = " ";
             console.log(room.x + "000000");
@@ -89,9 +141,14 @@ return text;
     if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
             room.y = " ";
         }
+<<<<<<< HEAD
         return  ;
       }
 
+=======
+        return room.y;
+      }
+>>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
 
 
 var grid = grid({x:60,y:100}, Dungeon);
@@ -100,6 +157,7 @@ document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
 // this is my automatic update variable
 document.getElementById("path").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = draw(grid);
 
 console.log("Clicky");
@@ -109,6 +167,9 @@ console.log("Clicky");
     // this calls the update function
 document.getElementById("button").onclick = function(){
 document.getElementById("blah").innerHTML = rooms(grid);
+=======
+document.getElementById("blah").innerHTML = rooms(grid, numbers);
+>>>>>>> 813cd95eb9ca8913facde489a5c08ff42d06366b
 
 console.log("Clicky");
   // this calls the update function
