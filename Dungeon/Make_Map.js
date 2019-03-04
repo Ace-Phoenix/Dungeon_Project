@@ -106,7 +106,7 @@ return text;
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
       lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length
+      lengthx: Math.random() *grid.length,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -121,14 +121,13 @@ return text;
     console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
       if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
-
-      }
       for (var j = 0; j < room.lengthy; j++) {
           if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-
+          grid[i][j] = " ";
           }
         }
       }
+    }
       console.log(grid);
       return draw(grid);
     }
@@ -139,7 +138,7 @@ document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = rooms(numbers, grid);
+document.getElementById("blah").innerHTML = room(grid);
 
 console.log("Clicky");
   // this calls the update function
