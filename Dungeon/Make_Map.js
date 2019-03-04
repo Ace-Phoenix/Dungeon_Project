@@ -100,44 +100,49 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
+var grid = grid({x:60,y:100}, Dungeon, name = "x");
 
   function numbers(grid){
     var room = {
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
-      lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length
-    }
+      lengthy: Math.random(1) *grid.length,
+      lengthx: Math.random(1) *grid.length
+    };
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+    console.log(room.x + " " + "room.x:"+ " " + room.y +  " room.y:" + " " + room.lengthy  + " room.lengthy:" + " " + room.lengthx + " room.lengthx.");
     return room;
 }
-function rooms(numbers, grid){
+function rooms(numbers, grid, name = "&#9744"){
   var room = numbers(grid, room)
+
   for (var i = 0; i < room.lengthx; i++) {
     if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
+      grid.x = "&#9744" ;
       console.log(room.x);
       console.log(room.lengthx);
       console.log(room.y);
       console.log(room.lengthy);
-      grid[room.x] = "&#9744" ;
-      grid[room.lengthx] = "&#9744"
-console.log(grid[room.x]);
-console.log(grid[room.lengthx]);
+      console.log(grid.length);
+      console.log(room);
 
-      for (var j = 0; j < room.lengthy; j++) {
+      for (var j = 0; j < grid.length; j++) {
         if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-          grid[room.y] = "&#9744" *room.lengthy + "<BR>"
-
-          console.log(grid[room.y]);
-          console.log(grid[room.lengthy]);
+          grid.y = "&#9744";
+          console.log(grid.length);
+          console.log(room);
 
         }
-        console.log(grid);
-        return draw(grid);
       }
+      var lel = " "
+      lel = grid.x
+      console.log(grid.x);
+      console.log(grid.y);
+      var lol = lel + grid.y
+      return lol
     }
   }
 
@@ -146,7 +151,6 @@ console.log(grid[room.lengthx]);
 }
 
 
-var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
 // this is is calling the grid to the html
@@ -160,7 +164,7 @@ console.log("Clicky");
 
     // this calls the update function
 document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = rooms(numbers, grid);
+document.getElementById("blah").innerHTML = rooms(numbers, grid, name = "&#9744");
 
 console.log("Clicky");
   // this calls the update function
