@@ -121,7 +121,7 @@ return text;
     console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
       if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
-         
+
       }
       for (var j = 0; j < room.lengthy; j++) {
           if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
@@ -131,15 +131,16 @@ return text;
       }
       console.log(grid);
       return draw(grid);
-}
+    }
 
 var grid = grid({x:100,y:90}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
-// this is is calling the grid to the html
-// this is my automatic update variable
-document.getElementById("path").onclick = function(){
-document.getElementById("blah").innerHTML = room(grid);
+  // this calls the update function
+  // this calls the update function
+document.getElementById("button").onclick = function(){
+document.getElementById("blah").innerHTML = rooms(numbers, grid);
+
 console.log("Clicky");
   // this calls the update function
 }
