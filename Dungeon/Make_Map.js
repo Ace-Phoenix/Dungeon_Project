@@ -117,20 +117,20 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
     return room;
 }
 
-  function room(grid){
+  function rooms(numbers, grid, name ="&#9744"){
     var room = numbers(grid);
     console.log(room.x);
     console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
       if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
-
-      }
       for (var j = 0; j < room.lengthy; j++) {
           if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-
+      grid[room.y] += " ";
+      grid[room.y] = "&#9744";
           }
         }
       }
+    }
       console.log(grid);
       return draw(grid);
     }
