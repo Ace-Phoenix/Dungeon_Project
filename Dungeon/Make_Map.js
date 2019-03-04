@@ -116,53 +116,30 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
     console.log(room.x + " " + "room.x:"+ " " + room.y +  " room.y:" + " " + room.lengthy  + " room.lengthy:" + " " + room.lengthx + " room.lengthx.");
     return room;
 }
-function rooms(numbers, grid, name = "&#9744"){
-  var room = numbers(grid, room)
 
-  for (var i = 0; i < room.lengthx; i++) {
-    if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
-      grid.x = "&#9744" ;
-      console.log(room.x);
-      console.log(room.lengthx);
-      console.log(room.y);
-      console.log(room.lengthy);
-      console.log(grid.length);
-      console.log(room);
+  function room(grid){
+    var room = numbers(grid);
+    console.log(room.x);
+    console.log(grid.length);
+    for (var i = 0; i < room.lengthx; i++) {
+      if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
 
-      for (var j = 0; j < grid.length; j++) {
-        if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
-          grid.y = "&#9744";
-          console.log(grid.length);
-          console.log(room);
+      }
+      for (var j = 0; j < room.lengthy; j++) {
+          if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
 
+          }
         }
       }
-      var lel = " "
-      lel = grid.x
-      console.log(grid.x);
-      console.log(grid.y);
-      var lol = lel + grid.y
-      return lol
+      console.log(grid);
+      return draw(grid);
     }
-  }
-
-
-  // console.log(room.x);
-}
 
 
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
-// this is is calling the grid to the html
-// this is my automatic update variable
-document.getElementById("path").onclick = function(){
-document.getElementById("blah").innerHTML = draw(grid);
-
-console.log("Clicky");
   // this calls the update function
-}
-
-    // this calls the update function
+  // this calls the update function
 document.getElementById("button").onclick = function(){
 document.getElementById("blah").innerHTML = rooms(numbers, grid, name = "&#9744");
 
