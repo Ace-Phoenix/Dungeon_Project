@@ -106,9 +106,15 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
     var room = {
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
+<<<<<<< HEAD
       lengthy: Math.random(1) *grid.length,
       lengthx: Math.random(1) *grid.length
     };
+=======
+      lengthy: Math.random() *grid.length,
+      lengthx: Math.random() *grid.length,
+    }
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
@@ -125,8 +131,12 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
       if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
       for (var j = 0; j < room.lengthy; j++) {
           if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+<<<<<<< HEAD
       grid[room.y] += " ";
       grid[room.y] = "&#9744";
+=======
+          grid[i][j] = " ";
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
           }
         }
       }
@@ -141,7 +151,11 @@ document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = rooms(numbers, grid, name = "&#9744");
+=======
+document.getElementById("blah").innerHTML = room(grid);
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
 
 console.log("Clicky");
   // this calls the update function
