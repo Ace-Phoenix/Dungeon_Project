@@ -100,30 +100,47 @@ return text;
 //     this.h -= random(0, this.h/4)
 //     }
 //   }
+var grid = grid({x:60,y:100}, Dungeon, name = "x");
 
   function numbers(grid){
     var room = {
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
+<<<<<<< HEAD
+      lengthy: Math.random(1) *grid.length,
+      lengthx: Math.random(1) *grid.length
+    };
+=======
       lengthy: Math.random() *grid.length,
       lengthx: Math.random() *grid.length,
     }
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+    console.log(room.x + " " + "room.x:"+ " " + room.y +  " room.y:" + " " + room.lengthy  + " room.lengthy:" + " " + room.lengthx + " room.lengthx.");
     return room;
 }
 
-  function room(grid){
+  function rooms(numbers, grid, name ="&#9744"){
     var room = numbers(grid);
     console.log(room.x);
     console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
       if(){
       for (var j = 0; j < room.lengthy; j++) {
+<<<<<<< HEAD
           if(){
+=======
+          if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+<<<<<<< HEAD
+      grid[room.y] += " ";
+      grid[room.y] = "&#9744";
+=======
+>>>>>>> 119a8eb44bb3ed258d5d3b96097985f6d6ffc52d
           grid[i][j] = " ";
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
           }
         }
       }
@@ -132,13 +149,17 @@ return text;
       return draw(grid);
     }
 
-var grid = grid({x:100,y:90}, Dungeon);
+
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
+<<<<<<< HEAD
+document.getElementById("blah").innerHTML = rooms(numbers, grid, name = "&#9744");
+=======
 document.getElementById("blah").innerHTML = room(grid);
+>>>>>>> debc275013a2c590b4692cd349dced0020a54fc9
 
 console.log("Clicky");
   // this calls the update function
