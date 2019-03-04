@@ -120,9 +120,9 @@ return text;
     console.log(room.x);
     console.log(grid.length);
     for (var i = 0; i < room.lengthx; i++) {
-      if(grid.length >= room.x && grid.length <= room.x + room.lengthx){
+      if(){
       for (var j = 0; j < room.lengthy; j++) {
-          if(grid.length >= room.y && grid.length <= room.y + room.lengthy){
+          if(){
           grid[i][j] = " ";
           }
         }
