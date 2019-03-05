@@ -67,63 +67,63 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
-function roomx(grid, draw){
-  var room = {
-    x : Math.random() *grid.length,
-  }
-  var roomxfloor = Math.floor(room.x);
-  if(grid.length >= roomxfloor && grid.length <= roomxfloor *2){
-    grid[roomxfloor]= " ";
-    console.log(grid[roomxfloor] + " this is grid roomx floor")
-  }
-  return grid[roomxfloor];
-}
-
-function roomy(grid, draw){
-  var room = {
-    y : Math.random() *grid.length,
-  }
-  var roomyfloor = Math.floor(room.y);
-  if(grid.length >= roomyfloor && grid.length <= roomyfloor *2){
-    grid[roomyfloor] === " ";
-    console.log(grid[roomyfloor] + " this is grid roomy floor")
-  }
-  return grid[roomyfloor];
-}
-function drawroom(roomx, roomy, grid){
-  var room = {
-    x : Math.random() *grid.length,
-    y : Math.random() *grid.length,
-  }
-  var roomxfloor = Math.floor(room.x);
-  var roomyfloor = Math.floor(room.y);
-  roomx(grid, draw);
-  roomy(grid, draw);
-  return draw(grid);
-}
-
-
-// class Space{
-//   constructor(x, y, w, h){
-//     this.x = x;
-//     this.y = y;
-//     this.w = w;
-//     this.h = h;
-//     this.center = {
-//       x:Math.floor(x + (w / 2)),
-//       y:Math.floor(y + (h / 2)),
-//     }
+// function roomx(grid, draw){
+//   var room = {
+//     x : Math.random() *grid.length,
 //   }
-//  drawpath(c, space, grid){
-// const pattern = c.create pattern('reapeat')
-// c.beginpath()
-// c.lineWidth = TILE;
-// c.strokeStyle = pattern;
-// c.moveTo(this.center.x *TILE, this.center.y *TILE)
-// c.lineTo(space.center.x *TILE, space.center.y *TILE)
-// c.stroke()
-//  }
-//  }
+//   var roomxfloor = Math.floor(room.x);
+//   if(grid.length >= roomxfloor && grid.length <= roomxfloor *2){
+//     grid[roomxfloor]= " ";
+//     console.log(grid[roomxfloor] + " this is grid roomx floor")
+//   }
+//   return grid[roomxfloor];
+// }
+//
+// function roomy(grid, draw){
+//   var room = {
+//     y : Math.random() *grid.length,
+//   }
+//   var roomyfloor = Math.floor(room.y);
+//   if(grid.length >= roomyfloor && grid.length <= roomyfloor *2){
+//     grid[roomyfloor] === " ";
+//     console.log(grid[roomyfloor] + " this is grid roomy floor")
+//   }
+//   return grid[roomyfloor];
+// }
+// function drawroom(roomx, roomy, grid){
+//   var room = {
+//     x : Math.random() *grid.length,
+//     y : Math.random() *grid.length,
+//   }
+//   var roomxfloor = Math.floor(room.x);
+//   var roomyfloor = Math.floor(room.y);
+//   roomx(grid, draw);
+//   roomy(grid, draw);
+//   return draw(grid);
+// }
+//
+//
+// // class Space{
+// //   constructor(x, y, w, h){
+// //     this.x = x;
+// //     this.y = y;
+// //     this.w = w;
+// //     this.h = h;
+// //     this.center = {
+// //       x:Math.floor(x + (w / 2)),
+// //       y:Math.floor(y + (h / 2)),
+// //     }
+// //   }
+// //  drawpath(c, space, grid){
+// // const pattern = c.create pattern('reapeat')
+// // c.beginpath()
+// // c.lineWidth = TILE;
+// // c.strokeStyle = pattern;
+// // c.moveTo(this.center.x *TILE, this.center.y *TILE)
+// // c.lineTo(space.center.x *TILE, space.center.y *TILE)
+// // c.stroke()
+// //  }
+// //  }
 // // }
 // //
 // class Room extends Space {
@@ -138,8 +138,6 @@ function drawroom(roomx, roomy, grid){
 //     }
 //   }
 
-<<<<<<< HEAD
-=======
   function roomx(grid){
     var room = {
       x : Math.random() *grid.length,
@@ -167,9 +165,8 @@ function drawroom(roomx, roomy, grid){
   }
 
   function drawroom(roomx, roomy, grid){
-    return roomx(grid), roomy(grid);
+    return roomx(grid), roomy(grid)
   }
->>>>>>> e895b8cac0e17e36aa874c454218a6b82809e3e9
 
 var grid = grid({x:60,y:100}, Dungeon);
 // this is what physiaclly draws the grid
