@@ -153,10 +153,6 @@ return text;
     return room;
 }
 
-<<<<<<< HEAD
-  function drawroom(roomx, roomy, grid){
-    return roomx(grid), roomy(grid)
-=======
   function rooms(numbers, grid, name){
     var room = numbers(grid);
     for (var i = 0; i < room.lengthx; i++) {
@@ -170,7 +166,6 @@ return text;
       }
     }
       return draw(grid);
->>>>>>> 8a6a0b90cfbdd94631dbe9cd4200d7818c37fbb2
   }
 var grid = grid({x:100,y:90}, Dungeon)
 // this is what physiaclly draws the grid
