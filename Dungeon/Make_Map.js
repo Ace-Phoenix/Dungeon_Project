@@ -105,8 +105,13 @@ return text;
     var room = {
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
+<<<<<<< HEAD
       lengthy: Math.random() *grid.length/4,
       lengthx: Math.random() *grid.length/4,
+=======
+      lengthy: Math.random() *grid.length,
+      lengthx: Math.random() *grid.length,
+>>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -115,6 +120,7 @@ return text;
     return room;
 }
 
+<<<<<<< HEAD
   function room(grid, numbers, name){
     var room = numbers(grid);
     console.log(room)
@@ -131,6 +137,20 @@ return text;
           }
         }
       }
+=======
+  function rooms(numbers, grid, name){
+    var room = numbers(grid);
+    for (var i = 0; i < room.lengthx; i++) {
+      for (var j = 0; j < room.lengthy; j++) {
+          if(i >= room.y && i <= (room.y + room.lengthy)){
+            if(j >= room.x && j <= (room.x + room.lengthx)){
+
+          grid[i][j] = " ";
+          }
+        }
+      }
+    }
+>>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
       return draw(grid);
     }
 
@@ -140,7 +160,11 @@ document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
+<<<<<<< HEAD
 document.getElementById("blah").innerHTML = room(grid, numbers, name);
+=======
+document.getElementById("blah").innerHTML = rooms(numbers, grid, name);
+>>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
 
 console.log("Clicky");
   // this calls the update function
