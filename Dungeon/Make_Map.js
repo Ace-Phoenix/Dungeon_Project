@@ -103,15 +103,10 @@ return text;
 
   function numbers(grid){
     var room = {
-      y : Math.random() *grid.length,
-      x : Math.random() *grid.length,
-<<<<<<< HEAD
-      lengthy: Math.random() *grid.length/4,
-      lengthx: Math.random() *grid.length/4,
-=======
       lengthy: Math.random() *grid.length,
       lengthx: Math.random() *grid.length,
->>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
+      y : Math.random() *grid.length,
+      x : Math.random() *grid.length,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -120,39 +115,31 @@ return text;
     return room;
 }
 
-<<<<<<< HEAD
-  function room(grid, numbers, name){
-    var room = numbers(grid);
-    console.log(room)
-    for (var i = 0; i < room.lengthy; i++) {
-      for (var j = 0; j < room.lengthx; j++) {
-          if(i >= room.y && i <= (room.y + room.lengthy)){
-            console.log(j + "j")
-            console.log(room.x + "room.x")
-            console.log(room.x + room.lengthy + "room.x + roomlengthy")
-            if(j >= room.x && j <= (room.x + room.lengthx)){
-              console.log("dh1weui")
-          grid[i][j] = " ";
+  function room(numbers, grid, name){
+     var room = numbers(grid);
+     for (var i = 0; i < grid.length; i++) {
+       if(i >= room.y && i <= (room.y + room.lengthy)){
+         for (var j = 0; j < grid[0].length; j++) {
+             if(j >= room.x && j <= (room.x + room.lengthx)){
+               console.log("second if statement")
+               return draw(grid);
+             }
            }
-          }
-        }
-      }
-=======
-  function rooms(numbers, grid, name){
-    var room = numbers(grid);
-    for (var i = 0; i < room.lengthx; i++) {
-      for (var j = 0; j < room.lengthy; j++) {
-          if(i >= room.y && i <= (room.y + room.lengthy)){
+         }
+       }
+    console.log(room)
+    for (var i = 0; i < grid.length; i++) {
+      if(i >= room.y && i <= (room.y + room.lengthy)){
+        for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
-
-          grid[i][j] = " ";
+              console.log("second if statement")
+              grid[i][j] = " ";
+            }
           }
         }
       }
-    }
->>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
-      return draw(grid);
-    }
+    return draw(grid);
+  }
 
 var grid = grid({x:100,y:200}, Dungeon);
 // this is what physiaclly draws the grid
@@ -160,11 +147,7 @@ document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
-<<<<<<< HEAD
-document.getElementById("blah").innerHTML = room(grid, numbers, name);
-=======
-document.getElementById("blah").innerHTML = rooms(numbers, grid, name);
->>>>>>> 4b2a513b265670bc035d34b9239c6412b151309b
+document.getElementById("blah").innerHTML = room(numbers, grid, name);
 
 console.log("Clicky");
   // this calls the update function
