@@ -106,8 +106,8 @@ return text;
     var room = {
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
-      lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length,
+      lengthy: Math.random() *grid.length/4,
+      lengthx: Math.random() *grid.length/4
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -121,8 +121,9 @@ return text;
     for (var i = 0; i < room.lengthx; i++) {
       for (var j = 0; j < room.lengthy; j++) {
           if(i >= room.y && i <= (room.y + room.lengthy)){
+            console.log(" this is inside the first if statement")
             if(j >= room.x && j <= (room.x + room.lengthx)){
-
+              console.log(" this is the second if statement")
           grid[i][j] = " ";
           }
         }
@@ -130,7 +131,8 @@ return text;
     }
       return draw(grid);
   }
-var grid = grid({x:100,y:90}, Dungeon)
+
+var grid = grid({x:90,y: 150}, Dungeon)
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
