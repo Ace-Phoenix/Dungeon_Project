@@ -116,29 +116,39 @@ return text;
     return room;
 }
 
-  function rooms(numbers, grid, name){
-    var room = numbers(grid);
-    for (var i = 0; i < room.lengthx; i++) {
-      for (var j = 0; j < room.lengthy; j++) {
-          if(i >= room.y && i <= (room.y + room.lengthy)){
-            console.log(" this is inside the first if statement")
+  function room(numbers, grid, name){
+     var room = numbers(grid);
+     for (var i = 0; i < grid.length; i++) {
+       if(i >= room.y && i <= (room.y + room.lengthy)){
+         for (var j = 0; j < grid[0].length; j++) {
+             if(j >= room.x && j <= (room.x + room.lengthx)){
+               console.log("second if statement")
+               return draw(grid);
+             }
+           }
+         }
+       }
+    console.log(room)
+    for (var i = 0; i < grid.length; i++) {
+      if(i >= room.y && i <= (room.y + room.lengthy)){
+        for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
-              console.log(" this is the second if statement")
-          grid[i][j] = " ";
+              console.log("second if statement")
+              grid[i][j] = " ";
+            }
           }
         }
       }
-    }
-      return draw(grid);
+    return draw(grid);
   }
 
-var grid = grid({x:90,y: 150}, Dungeon)
+var grid = grid({x:100,y:200}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
 document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = rooms(numbers, grid, name);
+document.getElementById("blah").innerHTML = room(numbers, grid, name);
 
 console.log("Clicky");
   // this calls the update function
