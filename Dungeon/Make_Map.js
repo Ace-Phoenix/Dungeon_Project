@@ -104,10 +104,10 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
 
   function numbers(grid){
     var room = {
-      y : Math.random() *grid.length,
-      x : Math.random() *grid.length,
-      lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length,
+      y : Math.random() *100,
+      x : Math.random() *60,
+      lengthy: Math.random() *100,
+      lengthx: Math.random() *60,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -119,11 +119,23 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
   function rooms(numbers, grid, name){
     var room = numbers(grid);
     for (var i = 0; i < room.lengthx; i++) {
+      if(i >= room.y && i <= (room.y + room.lengthy)){
+        if (i == 0) {
+          (i += 1)
+        }
+        if (i == 60) {
+          (i -= 1)
+        }
       for (var j = 0; j < room.lengthy; j++) {
-          if(i >= room.y && i <= (room.y + room.lengthy)){
             if(j >= room.x && j <= (room.x + room.lengthx)){
-
+              if (j == 99) {
+               (j -= 1)
+              }
+              if (j == 0) {
+               (j += 1)
+              }
           grid[i][j] = " ";
+          console.log("Room" + "..." + "POW!" + "(Room Created)");
           }
         }
       }
@@ -136,7 +148,7 @@ var grid = grid({x:60,y:100}, Dungeon, name = "x");
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
-document.getElementById("button").onclick = function(){
+document.getElementById("Rooms").onclick = function(){
 document.getElementById("blah").innerHTML = rooms(numbers, grid, name);
 
 console.log("Clicky");
