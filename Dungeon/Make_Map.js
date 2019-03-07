@@ -21,6 +21,8 @@ function grid(size, element, name = "x"){
 // this is going to be the grid[i][j
     return make;
   }
+
+
 // this is going to be the fucntion thats draws the grid
 function draw(grid){
   var design = "&#8943";
@@ -65,28 +67,63 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
-
-// class Space{
-//   constructor(x, y, w, h){
-//     this.x = x;
-//     this.y = y;
-//     this.w = w;
-//     this.h = h;
-//     this.center = {
-//       x:Math.floor(x + (w / 2)),
-//       y:Math.floor(y + (h / 2)),
-//     }
+// function roomx(grid, draw){
+//   var room = {
+//     x : Math.random() *grid.length,
 //   }
-//  drawpath(c, space, grid){
-// const pattern = c.create pattern('reapeat')
-// c.beginpath()
-// c.lineWidth = TILE;
-// c.strokeStyle = pattern;
-// c.moveTo(this.center.x *TILE, this.center.y *TILE)
-// c.lineTo(space.center.x *TILE, space.center.y *TILE)
-// c.stroke()
-//  }
-//  }
+//   var roomxfloor = Math.floor(room.x);
+//   if(grid.length >= roomxfloor && grid.length <= roomxfloor *2){
+//     grid[roomxfloor]= " ";
+//     console.log(grid[roomxfloor] + " this is grid roomx floor")
+//   }
+//   return grid[roomxfloor];
+// }
+//
+// function roomy(grid, draw){
+//   var room = {
+//     y : Math.random() *grid.length,
+//   }
+//   var roomyfloor = Math.floor(room.y);
+//   if(grid.length >= roomyfloor && grid.length <= roomyfloor *2){
+//     grid[roomyfloor] === " ";
+//     console.log(grid[roomyfloor] + " this is grid roomy floor")
+//   }
+//   return grid[roomyfloor];
+// }
+// function drawroom(roomx, roomy, grid){
+//   var room = {
+//     x : Math.random() *grid.length,
+//     y : Math.random() *grid.length,
+//   }
+//   var roomxfloor = Math.floor(room.x);
+//   var roomyfloor = Math.floor(room.y);
+//   roomx(grid, draw);
+//   roomy(grid, draw);
+//   return draw(grid);
+// }
+//
+//
+// // class Space{
+// //   constructor(x, y, w, h){
+// //     this.x = x;
+// //     this.y = y;
+// //     this.w = w;
+// //     this.h = h;
+// //     this.center = {
+// //       x:Math.floor(x + (w / 2)),
+// //       y:Math.floor(y + (h / 2)),
+// //     }
+// //   }
+// //  drawpath(c, space, grid){
+// // const pattern = c.create pattern('reapeat')
+// // c.beginpath()
+// // c.lineWidth = TILE;
+// // c.strokeStyle = pattern;
+// // c.moveTo(this.center.x *TILE, this.center.y *TILE)
+// // c.lineTo(space.center.x *TILE, space.center.y *TILE)
+// // c.stroke()
+// //  }
+// //  }
 // // }
 // //
 // class Room extends Space {
@@ -104,54 +141,50 @@ return text;
 
   function numbers(grid){
     var room = {
-      y : Math.random() *grid.length,
-      x : Math.random() *grid.length,
-      lengthy: Math.random() *grid.length/4,
-      lengthx: Math.random() *grid.length/4,
+      lengthy: Math.random() *grid.length/4 +4,
+      lengthx: Math.random() *grid.length/4 +4
     }
-    room.y = Math.floor(room.y);
-    room.x = Math.floor(room.x);
+    room.y = Math.random() *(grid[1].length - room.lengthy),
+    room.x = Math.random() *(grid[1].length - room.lengthx),
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+    room.y = Math.floor(room.y);
+    room.x = Math.floor(room.x);
+    console.log(room)
     return room;
 }
 
-  function room(numbers, grid, name){
+  function room(numbers, grid){
      var room = numbers(grid);
      for (var i = 0; i < grid.length; i++) {
        if(i >= room.y && i <= (room.y + room.lengthy)){
          for (var j = 0; j < grid[0].length; j++) {
              if(j >= room.x && j <= (room.x + room.lengthx)){
-               if(room.lengthx = room.lengthx){
-                 if(room.lengthy = room.lengthy){
-               return draw(grid);
+                 if(grid[i][j] == " "){
+                    return draw(grid);
+                   }
                  }
                }
              }
            }
-         }
-       }
-    console.log(room)
     for (var i = 0; i < grid.length; i++) {
       if(i >= room.y && i <= (room.y + room.lengthy)){
         for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
-              console.log("second if statement")
               grid[i][j] = " ";
             }
           }
         }
       }
-    return draw(grid);
-  }
-
+return draw(grid);
+    }
 var grid = grid({x:100,y:200}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
-document.getElementById("button").onclick = function(){
-document.getElementById("blah").innerHTML = room(numbers, grid, name);
+document.getElementById("Rooms").onclick = function(){
+document.getElementById("blah").innerHTML = room(numbers, grid);
 
 console.log("Clicky");
   // this calls the update function
