@@ -139,47 +139,59 @@ return text;
 //   }
 
 
+var grid = grid({x:100,y:90}, Dungeon)
   function numbers(grid){
     var room = {
-      y : Math.random() *100,
-      x : Math.random() *60,
-      lengthy: Math.random() *100,
-      lengthx: Math.random() *60,
+      y : Math.random() *45,
+      x : Math.random() *50,
+      lengthy: Math.random() *45,
+      lengthx: Math.random() *50,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
+    console.log(room.lengthy);
+    console.log(room.lengthx);
     return room;
 }
 
   function rooms(numbers, grid, name){
     var room = numbers(grid);
-    for (var i = 0; i < room.lengthx; i++) {
+    for (var i = 0; i < grid.lengthx; i++) {
       if(i >= room.y && i <= (room.y + room.lengthy)){
+      for (var j = 0; j < grid.lengthy; j++) {
+            if(j >= room.x && j <= (room.x + room.lengthx)){
+return draw(grid);
+        }
+      }
+    }
+    }
+    for (var i = 0; i < room.lengthy; i++) {
+      if(i >= room.y && i <= (room.y + room.lengthy)){
+        if (i == 99) {
+          (i -= 1)
+        }
         if (i == 0) {
           (i += 1)
         }
-        if (i == 60) {
-          (i -= 1)
-        }
-      for (var j = 0; j < room.lengthy; j++) {
-            if(j >= room.x && j <= (room.x + room.lengthx)){
-              if (j == 99) {
-               (j -= 1)
-              }
-              if (j == 0) {
-               (j += 1)
-              }
+        for (var j = 0; j < room.lengthx; j++) {
+        if(j >= room.x && j <= (room.x + room.lengthx)){
+          if (j == 0) {
+            (j += 1)
+          }
+          if (j == 60) {
+            (j -= 1)
+          }
           grid[i][j] = " ";
-          console.log("Room" + "..." + "POW!" + "(Room Created)");
           }
         }
       }
     }
       return draw(grid);
   }
-var grid = grid({x:100,y:90}, Dungeon)
+
+
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
