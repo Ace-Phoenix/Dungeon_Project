@@ -192,6 +192,7 @@ return draw(grid);
   }
 
 
+var grid = grid({x:100,y:200}, Dungeon);
 // this is what physiaclly draws the grid
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
