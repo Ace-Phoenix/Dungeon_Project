@@ -23,11 +23,11 @@ class Dungeon {
 
 get name(){
 return this._name;
-}
+  }
 set name(name){
   this._name = name;
-}
+  }
 toString(){
   return this._name + "";
-}
-}
+  }
+ }

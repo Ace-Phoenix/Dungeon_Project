@@ -103,10 +103,10 @@ return text;
 
   function numbers(grid){
     var room = {
-      lengthy: Math.random() *grid.length,
-      lengthx: Math.random() *grid.length,
-      y : Math.random() *grid.length,
-      x : Math.random() *grid.length,
+      lengthy: Math.random() *grid.length/4 +4,
+      lengthx: Math.random() *grid.length/4 +4,
+      y : Math.random() *grid[1].length,
+      x : Math.random() *grid[1].length,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -115,24 +115,24 @@ return text;
     return room;
 }
 
-  function room(numbers, grid, name){
+  function room(numbers, grid, name = " ", element){
      var room = numbers(grid);
      for (var i = 0; i < grid.length; i++) {
        if(i >= room.y && i <= (room.y + room.lengthy)){
          for (var j = 0; j < grid[0].length; j++) {
              if(j >= room.x && j <= (room.x + room.lengthx)){
-               console.log("second if statement")
-               return draw(grid);
+                 if(grid[i][j] == " "){
+                    return draw(grid);
+                   }
+                 }
+               }
              }
            }
-         }
-       }
     console.log(room)
     for (var i = 0; i < grid.length; i++) {
       if(i >= room.y && i <= (room.y + room.lengthy)){
         for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
-              console.log("second if statement")
               grid[i][j] = " ";
             }
           }
