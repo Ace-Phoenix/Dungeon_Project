@@ -139,32 +139,22 @@ return text;
 //   }
 
 
-var grid = grid({x:100,y:90}, Dungeon)
   function numbers(grid){
     var room = {
-<<<<<<< HEAD
       lengthy: Math.random() *grid.length/4 +4,
-      lengthx: Math.random() *grid.length/4 +4,
-      y : Math.random() *grid[1].length,
-      x : Math.random() *grid[1].length,
-=======
-      y : Math.random() *45,
-      x : Math.random() *50,
-      lengthy: Math.random() *45,
-      lengthx: Math.random() *50,
->>>>>>> 2e1ba7aedf0772308da89e3260618c011c759226
+      lengthx: Math.random() *grid.length/4 +4
     }
-    room.y = Math.floor(room.y);
-    room.x = Math.floor(room.x);
+    room.y = Math.random() *(grid[1].length - room.lengthy),
+    room.x = Math.random() *(grid[1].length - room.lengthx),
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-    console.log(room.lengthy);
-    console.log(room.lengthx);
+    room.y = Math.floor(room.y);
+    room.x = Math.floor(room.x);
+    console.log(room)
     return room;
 }
 
-<<<<<<< HEAD
-  function room(numbers, grid, name = " ", element){
+  function room(numbers, grid){
      var room = numbers(grid);
      for (var i = 0; i < grid.length; i++) {
        if(i >= room.y && i <= (room.y + room.lengthy)){
@@ -177,48 +167,16 @@ var grid = grid({x:100,y:90}, Dungeon)
                }
              }
            }
-    console.log(room)
     for (var i = 0; i < grid.length; i++) {
-=======
-  function rooms(numbers, grid, name){
-    var room = numbers(grid);
-    for (var i = 0; i < grid.lengthx; i++) {
->>>>>>> 2e1ba7aedf0772308da89e3260618c011c759226
       if(i >= room.y && i <= (room.y + room.lengthy)){
-      for (var j = 0; j < grid.lengthy; j++) {
+        for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
-<<<<<<< HEAD
               grid[i][j] = " ";
-            }
-=======
-return draw(grid);
-        }
-      }
-    }
-    }
-    for (var i = 0; i < room.lengthy; i++) {
-      if(i >= room.y && i <= (room.y + room.lengthy)){
-        if (i == 99) {
-          (i -= 1)
-        }
-        if (i == 0) {
-          (i += 1)
-        }
-        for (var j = 0; j < room.lengthx; j++) {
-        if(j >= room.x && j <= (room.x + room.lengthx)){
-          if (j == 0) {
-            (j += 1)
-          }
-          if (j == 60) {
-            (j -= 1)
-          }
-          grid[i][j] = " ";
->>>>>>> 2e1ba7aedf0772308da89e3260618c011c759226
           }
         }
       }
     }
-      return draw(grid);
+    return draw(grid);
   }
 
 
@@ -227,8 +185,8 @@ var grid = grid({x:100,y:200}, Dungeon);
 document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
-document.getElementById("Rooms").onclick = function(){
-document.getElementById("blah").innerHTML = rooms(numbers, grid, name);
+document.getElementById("button").onclick = function(){
+document.getElementById("blah").innerHTML = room(numbers, grid);
 
 console.log("Clicky");
   // this calls the update function
