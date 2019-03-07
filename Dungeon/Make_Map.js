@@ -107,7 +107,7 @@ return text;
       y : Math.random() *grid.length,
       x : Math.random() *grid.length,
       lengthy: Math.random() *grid.length/4,
-      lengthx: Math.random() *grid.length/4
+      lengthx: Math.random() *grid.length/4,
     }
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
@@ -122,8 +122,11 @@ return text;
        if(i >= room.y && i <= (room.y + room.lengthy)){
          for (var j = 0; j < grid[0].length; j++) {
              if(j >= room.x && j <= (room.x + room.lengthx)){
-               console.log("second if statement")
+               if(room.lengthx = room.lengthx){
+                 if(room.lengthy = room.lengthy){
                return draw(grid);
+                 }
+               }
              }
            }
          }
