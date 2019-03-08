@@ -171,12 +171,12 @@ function draw(grid){
         for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
               grid[i][j] = " ";
+            }
           }
         }
       }
+      return draw(grid);
     }
-    return draw(grid);
-  }
 
 
   var grid = grid({x:100,y:200}, Dungeon);
