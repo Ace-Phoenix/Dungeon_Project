@@ -31,8 +31,8 @@ function draw(grid){
 // thSis the variable for the grid length so we can store it
   var lengt = grid.length;
   // this is going to be the legth of the gird times 2
-  var top = lengt *2;
-  var fixtop = grid[0].length;
+  var top = lengt;
+  var fixtop = grid[0].length/1.6;
   // this is so text knows what to use for the grid
   text += design;
   // this makes the top border
@@ -90,7 +90,6 @@ return text;
     room.y = Math.floor(room.y);
     //x floor
     room.x = Math.floor(room.x);
-    console.log(room)
     return room;
 }
   // the function that draws the rooms randomly
@@ -124,7 +123,7 @@ return text;
     }
 
 
-  var grid = grid({x:100,y:200}, Dungeon);
+  var grid = grid({x:50,y:200}, Dungeon);
 // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
 // this calls the update function
@@ -132,12 +131,12 @@ return text;
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 300; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid);
-  console.log("Clicky");
+  console.log("Rooms Created");
   // this calls the update function
     }
   }
   document.getElementById("Make_Grid").onclick = function(){
-  document.getElementById("blah").innerHTML = room(numbers, grid);
-  console.log("Clicky");
+  document.getElementById("blah").innerHTML = draw(grid)
+  console.log("Reset");
   // this calls the update function
     }
