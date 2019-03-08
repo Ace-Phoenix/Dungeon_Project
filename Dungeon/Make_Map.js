@@ -67,95 +67,38 @@ text += design;
 // return the text strings so its appears on the screen
 return text;
 }
-// function roomx(grid, draw){
-//   var room = {
-//     x : Math.random() *grid.length,
-//   }
-//   var roomxfloor = Math.floor(room.x);
-//   if(grid.length >= roomxfloor && grid.length <= roomxfloor *2){
-//     grid[roomxfloor]= " ";
-//     console.log(grid[roomxfloor] + " this is grid roomx floor")
-//   }
-//   return grid[roomxfloor];
-// }
-//
-// function roomy(grid, draw){
-//   var room = {
-//     y : Math.random() *grid.length,
-//   }
-//   var roomyfloor = Math.floor(room.y);
-//   if(grid.length >= roomyfloor && grid.length <= roomyfloor *2){
-//     grid[roomyfloor] === " ";
-//     console.log(grid[roomyfloor] + " this is grid roomy floor")
-//   }
-//   return grid[roomyfloor];
-// }
-// function drawroom(roomx, roomy, grid){
-//   var room = {
-//     x : Math.random() *grid.length,
-//     y : Math.random() *grid.length,
-//   }
-//   var roomxfloor = Math.floor(room.x);
-//   var roomyfloor = Math.floor(room.y);
-//   roomx(grid, draw);
-//   roomy(grid, draw);
-//   return draw(grid);
-// }
-//
-//
-// // class Space{
-// //   constructor(x, y, w, h){
-// //     this.x = x;
-// //     this.y = y;
-// //     this.w = w;
-// //     this.h = h;
-// //     this.center = {
-// //       x:Math.floor(x + (w / 2)),
-// //       y:Math.floor(y + (h / 2)),
-// //     }
-// //   }
-// //  drawpath(c, space, grid){
-// // const pattern = c.create pattern('reapeat')
-// // c.beginpath()
-// // c.lineWidth = TILE;
-// // c.strokeStyle = pattern;
-// // c.moveTo(this.center.x *TILE, this.center.y *TILE)
-// // c.lineTo(space.center.x *TILE, space.center.y *TILE)
-// // c.stroke()
-// //  }
-// //  }
-// // }
-// //
-// class Room extends Space {
-//   consturctor(space, name = " "){
-//     //super();
-//     this.x = space.x + random(1, Math.floor(space.w/3))
-//     this.y = space.y + random(1, Math.floor(space.h/3))
-//     this.w = space.w - (this.x - space.x)
-//     this.h = space.h - (this.y - space.y)
-//     this.w -= random(0, this.w/4)
-//     this.h -= random(0, this.h/4)
-//     }
-//   }
-
-
+//Numbers makes the random numbers for the rooms to be
+//able to draw it in random lengths and random places
   function numbers(grid){
     var room = {
+      //the random lengths of the rooms
+      //Length y
       lengthy: Math.random() *grid.length/4 +4,
+      //Length x
       lengthx: Math.random() *grid.length/4 +4
     }
+    //these are the random locations
+    //y
     room.y = Math.random() *(grid[1].length - room.lengthy),
+    //x
     room.x = Math.random() *(grid[1].length - room.lengthx),
+    //these are the floors so it rounds down so we get whole numbers
+    //Length y floor
     room.lengthy = Math.floor(room.lengthy);
+    //Length x floor
     room.lengthx = Math.floor(room.lengthx);
+    //y floor
     room.y = Math.floor(room.y);
+    //x floor
     room.x = Math.floor(room.x);
     console.log(room)
     return room;
 }
-
+  // the function that draws the rooms randomly
   function room(numbers, grid){
+    //this gives room from function numbers to function room
      var room = numbers(grid);
+     //this is what makes it so that they do not overlap
      for (var i = 0; i < grid.length; i++) {
        if(i >= room.y && i <= (room.y + room.lengthy)){
          for (var j = 0; j < grid[0].length; j++) {
@@ -167,25 +110,32 @@ return text;
                }
              }
            }
+    //this draws the room after finding a location that makes it so they do not overlap
     for (var i = 0; i < grid.length; i++) {
       if(i >= room.y && i <= (room.y + room.lengthy)){
         for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
+              //sets the spots to spaces to that it makes a room
               grid[i][j] = " ";
             }
           }
         }
       }
-return draw(grid);
+      //draws the grid so that the rooms are there
+      return draw(grid);
     }
-var grid = grid({x:100,y:200}, Dungeon);
-// this is what physiaclly draws the grid
-document.getElementById("blah").innerHTML = draw(grid);
-  // this calls the update function
-  // this calls the update function
-document.getElementById("Rooms").onclick = function(){
-document.getElementById("blah").innerHTML = room(numbers, grid);
-
-console.log("Clicky");
+    var grid = grid({x:100,y:200}, Dungeon, name = "x");
+    // this is what physiaclly draws the grid
+    document.getElementById("blah").innerHTML = draw(grid);
+    // this calls the update function
+    // this calls the update function
+    document.getElementById("Rooms").onclick = function(){
+      document.getElementById("blah").innerHTML = room(numbers, grid);
+    console.log("Clicky");
+    // this calls the update function
+    }
+    document.getElementById("Make_Grid").onclick = function(){
+      document.getElementById("blah").innerHTML = 
+    console.log("Clicky");
   // this calls the update function
 }
