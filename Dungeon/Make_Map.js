@@ -66,6 +66,7 @@ return text;
 }
 //Numbers makes the random numbers for the rooms to be
 //able to draw it in random lengths and random places
+
   function numbers(grid){
     var room = {
       //the random lengths of the rooms
@@ -97,10 +98,15 @@ return text;
      var room = numbers(grid);
      //this is what makes it so that they do not overlap
      for (var i = 0; i < grid.length; i++) {
+       // this outer for statement is to check the grid.x for room locations
        if(i >= room.y && i <= (room.y + room.lengthy)){
+         // this if statement is if there is any rom locations
          for (var j = 0; j < grid[0].length; j++) {
+           // this it to check the grid.y for anything
              if(j >= room.x && j <= (room.x + room.lengthx)){
+               //this if satement is what check room locations on the grid
                  if(grid[i][j] == " "){
+                   // this is to check overlap
                     return draw(grid);
                    }
                  }
@@ -109,14 +115,18 @@ return text;
            }
     //this draws the room after finding a location that makes it so they do not overlap
     for (var i = 0; i < grid.length; i++) {
+      // this for statement is what chscks the grid length
       if(i >= room.y && i <= (room.y + room.lengthy)){
+        //this if statement checks foe the room .length to generate the room
         for (var j = 0; j < grid[0].length; j++) {
             if(j >= room.x && j <= (room.x + room.lengthx)){
+              // this check the length of the room and spwans the rooms
                 grid[i][j] = new element(name);
             }
           }
         }
       }
+      // this returns the updated grid... yay 
       return draw(grid);
     }
 
@@ -127,6 +137,7 @@ return text;
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 900; i++) {
+  document.getElementById("blah").innerHTML = draw(grid);
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
   console.log("Clicky");
   // this calls the update function
