@@ -1,13 +1,10 @@
-// this is going to be the functions and variables that will be used
-// everything if it can be (anyhintg that reapets and can be put into a function)
-
+//Class Dungeon is going obe the universal variables and getters and setters like name.
 class Dungeon {
   constructor(name) {
     this._name = name;
 
   }
-  //kill counter for players total kills
-
+//kill counter for players total kills
 // kills(grid){
 //
 // }
