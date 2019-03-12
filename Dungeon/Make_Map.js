@@ -48,7 +48,7 @@
     text += background;
 
   for (var j = 0; j < grid[0].length; j++) {
-    text += "" + grid[i][j] ;
+    text += "" + grid[i][j];
 
   }
   text += background + "<BR>";
@@ -67,22 +67,13 @@ return text;
 //Numbers makes the random numbers for the rooms to be
 //able to draw it in random lengths and random places
 
-// this function wiil need to be passed grid nd numbers and room
-// this is going to act like the draw room fucntion where it adds a borer
-// aroung the grid or in this instense around the room
   function numbers(grid){
     var room = {
       //the random lengths of the rooms
       //Length y
-<<<<<<< HEAD
       lengthy: Math.random() *grid.length/10 +4,
       //Length x
       lengthx: Math.random() *grid.length/10 +4
-=======
-      lengthy: Math.random() *grid.length/15 +1,
-      //Length x
-      lengthx: Math.random() *grid.length/15 +1
->>>>>>> 02ee9481531f7a2f82224d6b9b428130e93e67d3
     }
     //these are the random locations
     //y
@@ -139,59 +130,16 @@ return text;
       return draw(grid);
     }
 
-    function drawborder(room, numbers, grid){
-      var room = numbers(grid);
-      var background = " ";
-      var design = ".";
-      var text = "";
-      var lengthx = room.lengthx;
-      var lengthy = room.lengthy;
-      var top = lengthx;
-      for (var i = 0; i < array.length; i++) {
-        top = text += design;
-      }
-
-      text += design + "<BR>";
-
-      for (var i = 0; i < lengthx; i++) {
-        text += background;
-        for (var i = 0; i < lengthy; i++) {
-          text += "" + room[i][j]
-        }
-        text += background + "<BR>";
-      }
-      text += design;
-      for (var i = 0; i < lengthy; i++) {
-        top = text += design;
-      }
-      text += design
-      console.log(room)
-      return text;
-    }
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
-<<<<<<< HEAD
     for (var i = 0; i < 400; i++) {
-=======
-<<<<<<< HEAD
-    for (var i = 0; i < 50; i++) {
-=======
-    for (var i = 0; i < 900; i++) {
->>>>>>> 02ee9481531f7a2f82224d6b9b428130e93e67d3
   document.getElementById("blah").innerHTML = draw(grid);
->>>>>>> 5adabf6ad12b6c4523d9dd705634fff59d657803
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
-  console.log("Rooms Made");
+  console.log("Clicky");
   // this calls the update function
     }
   }
-  document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = draw(grid)
-  console.log("Reset");
-  console.log("still need to work on it");
-  // this calls the update function
-    }
