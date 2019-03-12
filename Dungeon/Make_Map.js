@@ -1,19 +1,17 @@
-  // this is going to be the dungeon and is going to be passed to the person and
-  // enemies
-  // this si going to be the grid to put the dungeon on
-
+//Function grid takes name from element Dungeon from Master.js
+//This will be an object and it has size to change the
+//hight and width of the grid
   function grid(size, element, name = "x"){
     // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
   var make = [];
-    // this is to push into the make array
+    // this is to push into the make, array
   for (var i = 0; i < size.x; i++) {
-    // this is array.push
     make.push([]);
   for (var j = 0; j < size.y; j++) {
-// this is to push the new element into the array so it has the name and
-// grid locations
+   //this is to push the new element into the
+   //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
     }
   }
@@ -21,7 +19,7 @@
  return make;
 }
 
-// This is the Function that draws grid and its boarder
+//Function draw uses grid to make a border and draw the grid itself
 function draw(grid){
   var design = "&#8943";
   var background = "&#8942";
@@ -37,12 +35,10 @@ function draw(grid){
     // this makes the top border
     for (var i = 0; i < fixtop; i++) {
   top = text += design;
-
   }
   // this is so the grid is square for now
   // thats why theres a brake <BR>
   text += design + "<BR>";
-
   // this for satement is for the sides of the grid usaing pipes
   for (var i = 0; i < lengt; i++) {
     text += background;
@@ -52,7 +48,6 @@ function draw(grid){
     text += background + "<BR>";
   }
   text += design;
-
   for (var i = 0; i < fixtop; i++) {
     top = text += design;
   }
@@ -60,7 +55,7 @@ function draw(grid){
  // return the text strings so its appears on the screen
  return text;
 }
-  //Numbers makes the random numbers for the rooms to be
+  //Function numbers makes the random numbers for the rooms to be
   //able to draw it in random lengths and random places
   function numbers(grid){
     //the random lengths of the rooms
@@ -87,9 +82,7 @@ function draw(grid){
     return room;
 }
 
-  //This Funstion draws the rooms randomly
-  //using Function nunmbers, grid, and the thing
-  //in grid as well as element Dungeon
+  //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
     //this gives room from function numbers to function room
     var room = numbers(grid);
@@ -126,7 +119,8 @@ function draw(grid){
       // this returns the updated grid
       return draw(grid);
     }
-
+//Function drawborder is going to make the rooms
+//have a boarder using room, numbers and grid
     function drawborder(room, numbers, grid){
       var room = numbers(grid);
       var background = " ";
@@ -135,7 +129,11 @@ function draw(grid){
       var lengthx = room.lengthx;
       var lengthy = room.lengthy;
       var top = lengthx;
-      for (var i = 0; i < array.length; i++) {
+      console.log(lengthx + "1.)");
+      console.log(lengthy + "2.)");
+      console.log(room + "3.)");
+
+      for (var i = 0; i < grid.length; i++) {
         top = text += design;
       }
 
@@ -143,8 +141,8 @@ function draw(grid){
 
       for (var i = 0; i < lengthx; i++) {
         text += background;
-        for (var i = 0; i < lengthy; i++) {
-          text += "" + room[i][j]
+        for (var j = 0; j < room[0]; j++) {
+          text += room[i][j]
         }
         text += background + "<BR>";
       }
@@ -153,7 +151,6 @@ function draw(grid){
         top = text += design;
       }
       text += design
-      console.log(room)
       return text;
     }
   var grid = grid({x:100,y:200}, Dungeon);
@@ -162,8 +159,10 @@ function draw(grid){
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 50; i++) {
-  document.getElementById("blah").innerHTML = draw(grid);
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
+  document.getElementById("blah").innerHTML = drawborder(room, numbers, grid);
+  document.getElementById("blah").innerHTML = draw(grid);
+
   console.log("Rooms Made");
   // this calls the update function
     }
