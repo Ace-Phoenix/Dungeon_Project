@@ -74,9 +74,15 @@ return text;
     var room = {
       //the random lengths of the rooms
       //Length y
+<<<<<<< HEAD
       lengthy: Math.random() *grid.length/10 +4,
       //Length x
       lengthx: Math.random() *grid.length/10 +4
+=======
+      lengthy: Math.random() *grid.length/15 +1,
+      //Length x
+      lengthx: Math.random() *grid.length/15 +1
+>>>>>>> 02ee9481531f7a2f82224d6b9b428130e93e67d3
     }
     //these are the random locations
     //y
@@ -168,10 +174,24 @@ return text;
   // this calls the update function
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
+<<<<<<< HEAD
     for (var i = 0; i < 400; i++) {
+=======
+<<<<<<< HEAD
+    for (var i = 0; i < 50; i++) {
+=======
+    for (var i = 0; i < 900; i++) {
+>>>>>>> 02ee9481531f7a2f82224d6b9b428130e93e67d3
   document.getElementById("blah").innerHTML = draw(grid);
+>>>>>>> 5adabf6ad12b6c4523d9dd705634fff59d657803
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
-  console.log("Clicky");
+  console.log("Rooms Made");
   // this calls the update function
     }
   }
+  document.getElementById("Reset").onclick = function(){
+  document.getElementById("blah").innerHTML = draw(grid)
+  console.log("Reset");
+  console.log("still need to work on it");
+  // this calls the update function
+    }
