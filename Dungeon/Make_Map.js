@@ -54,7 +54,7 @@
   text += background + "<BR>";
 
   }
-  text += design ;
+  text += design;
 
   for (var i = 0; i < fixtop; i++) {
   top = text += design;
@@ -67,13 +67,16 @@ return text;
 //Numbers makes the random numbers for the rooms to be
 //able to draw it in random lengths and random places
 
+// this function wiil need to be passed grid nd numbers and room
+// this is going to act like the draw room fucntion where it adds a borer
+// aroung the grid or in this instense around the room
   function numbers(grid){
     var room = {
       //the random lengths of the rooms
       //Length y
-      lengthy: Math.random() *grid.length/4 +4,
+      lengthy: Math.random() *grid.length/10 +4,
       //Length x
-      lengthx: Math.random() *grid.length/4 +4
+      lengthx: Math.random() *grid.length/10 +4
     }
     //these are the random locations
     //y
@@ -126,17 +129,46 @@ return text;
           }
         }
       }
-      // this returns the updated grid... yay 
+      // this returns the updated grid... yay
       return draw(grid);
     }
 
+    function drawborder(room, numbers, grid){
+      var room = numbers(grid);
+      var background = " ";
+      var design = ".";
+      var text = "";
+      var lengthx = room.lengthx;
+      var lengthy = room.lengthy;
+      var top = lengthx;
+      for (var i = 0; i < array.length; i++) {
+        top = text += design;
+      }
+
+      text += design + "<BR>";
+
+      for (var i = 0; i < lengthx; i++) {
+        text += background;
+        for (var i = 0; i < lengthy; i++) {
+          text += "" + room[i][j]
+        }
+        text += background + "<BR>";
+      }
+      text += design;
+      for (var i = 0; i < lengthy; i++) {
+        top = text += design;
+      }
+      text += design
+      console.log(room)
+      return text;
+    }
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 900; i++) {
+    for (var i = 0; i < 400; i++) {
   document.getElementById("blah").innerHTML = draw(grid);
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
   console.log("Clicky");
