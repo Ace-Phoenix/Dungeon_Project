@@ -58,7 +58,6 @@ function draw(grid){
 }
 //Numbers makes the random numbers for the rooms to be
 //able to draw it in random lengths and random places
-
   function numbers(grid){
     //the random lengths of the rooms
     var room = {
@@ -97,7 +96,7 @@ function draw(grid){
           if(j >= room.x && j <= (room.x + room.lengthx)){
           //this if satement is what check room locations on the grid
           if(grid[i][j] == " "){
-       // this is to check overlap
+       //returns draw to draw the grids state with out the overlaping room in it
        return draw(grid);
        }
       }
@@ -112,26 +111,25 @@ function draw(grid){
         for (var j = 0; j < grid[0].length; j++) {
           if(j >= room.x && j <= (room.x + room.lengthx)){
             //This uses the lengths off the room and make it part of the grid
+
             grid[i][j] = new element(name);
             }
           }
+          console.log("made");
         }
       }
-      // this returns the updated grid
+      //returns the updated grid that has the rooms that dont overlap
       return draw(grid);
-    }
-//Function hallways draw
-    function hallways(){
-
     }
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 1; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
+    console.log("clicked " + i + " times");
     console.log("Rooms Made");
   }
   document.getElementById("Reset").onclick = function(){
