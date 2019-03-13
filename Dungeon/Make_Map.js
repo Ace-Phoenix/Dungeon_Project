@@ -43,7 +43,8 @@ function draw(grid){
   for (var i = 0; i < lengt; i++) {
     text += background;
   for (var j = 0; j < grid[0].length; j++) {
-    text += "" + grid[i][j] ;
+    text += "" + grid[i][j];
+
   }
     text += background + "<BR>";
   }
@@ -55,8 +56,9 @@ function draw(grid){
  // return the text strings so its appears on the screen
  return text;
 }
-  //Function numbers makes the random numbers for the rooms to be
-  //able to draw it in random lengths and random places
+//Numbers makes the random numbers for the rooms to be
+//able to draw it in random lengths and random places
+
   function numbers(grid){
     //the random lengths of the rooms
     var room = {
