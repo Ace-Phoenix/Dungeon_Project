@@ -52,16 +52,16 @@ function draw(grid){
     top = text += design;
   }
   text += design;
- // return the text strings so its appears on the screen
- return text;
+    // return the text strings so its appears on the screen
+  return text;
 }
-//Numbers makes the random numbers for the rooms to be
-//able to draw it in random lengths and random places
+  //Numbers makes the random numbers for the rooms to be
+  //able to draw it in random lengths and random places
 
   //Function numbers makes the random numbers for the rooms to be
   //able to draw it in random lengths and random places
   function numbers(grid){
-    // the random lengths of the rooms
+      // the random lengths of the rooms
     var room = {
       // Length y
       lengthy: Math.random() *grid.length/10 +4,
@@ -83,7 +83,7 @@ function draw(grid){
     lengthxx = room.lengthx %2;
     // this is to return alos a 1 or a 0 to check if its even or not
     lengthyy = room.lengthy %2;
-    // this coment isnt needed but it looks bad without it 
+    // this coment isnt needed but it looks bad without it
     room.y = Math.floor(room.y);
     // x floor to get a whole number
     room.x = Math.floor(room.x);
@@ -100,7 +100,6 @@ function draw(grid){
     console.log(center)
     return room;
 }
-
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
     if(lengthxx == 1){
