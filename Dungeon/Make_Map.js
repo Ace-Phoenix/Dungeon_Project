@@ -81,7 +81,6 @@ function draw(grid){
     room.x = Math.floor(room.x);
     return room;
 }
-
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
     //this gives room from function numbers to function room
@@ -119,39 +118,9 @@ function draw(grid){
       // this returns the updated grid
       return draw(grid);
     }
-//Function drawborder is going to make the rooms
-//have a boarder using room, numbers and grid
-    function drawborder(room, numbers, grid){
-      var room = numbers(grid);
-      var background = " ";
-      var design = ".";
-      var text = "";
-      var lengthx = room.lengthx;
-      var lengthy = room.lengthy;
-      var top = lengthx;
-      console.log(lengthx + "1.)");
-      console.log(lengthy + "2.)");
-      console.log(room + "3.)");
+//Function hallways draw
+    function hallways(){
 
-      for (var i = 0; i < grid.length; i++) {
-        top = text += design;
-      }
-
-      text += design + "<BR>";
-
-      for (var i = 0; i < lengthx; i++) {
-        text += background;
-        for (var j = 0; j < room[0]; j++) {
-          text += room[i][j]
-        }
-        text += background + "<BR>";
-      }
-      text += design;
-      for (var i = 0; i < lengthy; i++) {
-        top = text += design;
-      }
-      text += design
-      return text;
     }
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
@@ -160,12 +129,8 @@ function draw(grid){
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 50; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
-  document.getElementById("blah").innerHTML = drawborder(room, numbers, grid);
-  document.getElementById("blah").innerHTML = draw(grid);
-
-  console.log("Rooms Made");
-  // this calls the update function
     }
+    console.log("Rooms Made");
   }
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = draw(grid);
