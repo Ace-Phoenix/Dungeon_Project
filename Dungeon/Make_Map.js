@@ -80,32 +80,33 @@ function draw(grid){
     room.lengthx = Math.floor(room.lengthx);
     // y floor
     // this is so i can get a 1 or a 0 to check if there even or not
-    lengthxx = room.lengthx %2;
+    room.lengthxx = room.lengthx %2;
     // this is to return alos a 1 or a 0 to check if its even or not
-    lengthyy = room.lengthy %2;
+    room.lengthyy = room.lengthy %2;
     // this coment isnt needed but it looks bad without it
     room.y = Math.floor(room.y);
     // x floor to get a whole number
     room.x = Math.floor(room.x);
     // this is going to be the centerx for the x lentgth
-    centerx = room.x + (room.lengthx + 1)/2;
+    room.centerx = room.x + (room.lengthx + 1)/2;
     // this is going to be the centery for the y length
-    centery = room.y + (room.lengthy + 1)/2;
+    room.centery = room.y + (room.lengthy + 1)/2;
     // this is a empty array so i can get a locations so an array
-    center = [];
+    room.centerr = [];
     // this is to push both locations into the empty array to get one location
     // and not just one number
-    center.push([centerx, centery]);
+    room.center = centerr.push([centerx, centery]);
     // this is the finale location
     console.log(center)
     return room;
 }
+
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
-    if(lengthxx == 1){
-      if(lengthyy == 1){
-    //this gives room from function numbers to function room
     var room = numbers(grid);
+    if(room.lengthxx == 1){
+      if(room.lengthyy == 1){
+    //this gives room from function numbers to function room
     //this is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
       // this outer for statement is to check the grid.x for room locations
