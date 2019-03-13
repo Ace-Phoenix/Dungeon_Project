@@ -13,11 +13,11 @@
    //this is to push the new element into the
    //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
+      }
     }
-  }
  // this is going to be the grid[i][j]
  return make;
-}
+  }
 
 //Function draw uses grid to make a border and draw the grid itself
 function draw(grid){
@@ -44,7 +44,6 @@ function draw(grid){
     text += background;
   for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];
-
   }
     text += background + "<BR>";
   }
@@ -53,37 +52,55 @@ function draw(grid){
     top = text += design;
   }
   text += design;
- // return the text strings so its appears on the screen
- return text;
+    // return the text strings so its appears on the screen
+  return text;
 }
 //Numbers makes the random numbers for the rooms to be
 //able to draw it in random lengths and random places
   function numbers(grid){
-    //the random lengths of the rooms
+      // the random lengths of the rooms
     var room = {
-      //Length y
+      // Length y
       lengthy: Math.random() *grid.length/10 +4,
-      //Length x
+      // Length x
       lengthx: Math.random() *grid.length/10 +4
     }
-    //these are the random locations
-    //y
+    // these are the random locations
+    // y
     room.y = Math.random() *(grid[1].length - room.lengthy),
-    //x
+    // x
     room.x = Math.random() *(grid[1].length - room.lengthx),
-    //these are the floors so it rounds down so we get whole numbers
-    //Length y floor
+    // these are the floors so it rounds down so we get whole numbers
+    // Length y floor
     room.lengthy = Math.floor(room.lengthy);
-    //Length x floor
+    // Length x floor
     room.lengthx = Math.floor(room.lengthx);
-    //y floor
+    // y floor
+    // this is so i can get a 1 or a 0 to check if there even or not
+    lengthxx = room.lengthx %2;
+    // this is to return alos a 1 or a 0 to check if its even or not
+    lengthyy = room.lengthy %2;
+    // this coment isnt needed but it looks bad without it
     room.y = Math.floor(room.y);
-    //x floor
+    // x floor to get a whole number
     room.x = Math.floor(room.x);
+    // this is going to be the centerx for the x lentgth
+    centerx = room.x + (room.lengthx + 1)/2;
+    // this is going to be the centery for the y length
+    centery = room.y + (room.lengthy + 1)/2;
+    // this is a empty array so i can get a locations so an array
+    center = [];
+    // this is to push both locations into the empty array to get one location
+    // and not just one number
+    center.push([centerx, centery]);
+    // this is the finale location
+    console.log(center)
     return room;
 }
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
+    if(lengthxx == 1){
+      if(lengthyy == 1){
     //this gives room from function numbers to function room
     var room = numbers(grid);
     //this is what makes it so that they do not overlap
@@ -98,8 +115,8 @@ function draw(grid){
           if(grid[i][j] == " "){
        //returns draw to draw the grids state with out the overlaping room in it
        return draw(grid);
+        }
        }
-      }
       }
      }
     }
@@ -107,8 +124,11 @@ function draw(grid){
     //these for statement is what checks the grid length
     //these if statement checks for the room.length to generate the room
     for (var i = 0; i < grid.length; i++) {
+      // the first for sataement foto make the room.x on the grid
       if(i >= room.y && i <= (room.y + room.lengthy)){
+       // the if statment to check if the room is on the grid
         for (var j = 0; j < grid[0].length; j++) {
+
           if(j >= room.x && j <= (room.x + room.lengthx)){
             //This uses the lengths off the room and make it part of the grid
 
@@ -128,6 +148,8 @@ function draw(grid){
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 1; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
+  console.log("Clicky");
+  // this calls the update function
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
@@ -138,3 +160,4 @@ function draw(grid){
   console.log("still need to work on it");
   // this calls the update function
     }
+  }
