@@ -126,7 +126,7 @@ return text;
           }
         }
       }
-      // this returns the updated grid... yay 
+      // this returns the updated grid... yay
       return draw(grid);
     }
 
@@ -136,20 +136,10 @@ return text;
   // this calls the update function
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
-<<<<<<< HEAD
-    for (var i = 0; i < 50; i++) {
-=======
     for (var i = 0; i < 900; i++) {
   document.getElementById("blah").innerHTML = draw(grid);
->>>>>>> 5adabf6ad12b6c4523d9dd705634fff59d657803
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
   console.log("Rooms Made");
   // this calls the update function
     }
   }
-  document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = draw(grid)
-  console.log("Reset");
-  console.log("still need to work on it");
-  // this calls the update function
-    }
