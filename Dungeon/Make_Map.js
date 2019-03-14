@@ -104,11 +104,6 @@ function draw(grid){
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
     var room = numbers(grid);
-    console.log(room.lengthyy)
-    if(room.lengthxx = 1){
-      if(room.lengthyy = 1){
-        if(room.locox = 1){
-          if(room.locoy = 1){
     //this gives room from function numbers to function room
     //this is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -147,37 +142,34 @@ function draw(grid){
       }
       //returns the updated grid that has the rooms that dont overlap
       return draw(grid);
-<<<<<<< HEAD
        }
+    //Function reset, resets the grid back to its original state/stage
+    function reset(grid, element, name = "x"){
+      for (var i = 0; i < grid.length; i++) {
+        for (var j = 0; j < grid[i].length; j++) {
+          grid[i][j] = new element(name);
+        }
       }
-     }
-   }
- }
-
+     return draw(grid);
+    }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
     function drawborder(room, numbers, grid){
 
-=======
->>>>>>> 210f34afe18d6502c169a75e5ed40d38edae69ed
     }
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
-  // this calls the update function
+  //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < 100; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
-  console.log("Clicky");
-  // this calls the update function
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
   }
+  //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = draw(grid);
+  document.getElementById("blah").innerHTML = reset(grid, Dungeon)
   console.log("Reset");
-  console.log("still need to work on it");
-  // this calls the update function
     }
-  }
