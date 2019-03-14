@@ -104,7 +104,6 @@ function draw(grid){
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
     var room = numbers(grid);
-    console.log(room.lengthyy)
     //this gives room from function numbers to function room
     //this is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -143,27 +142,32 @@ function draw(grid){
       }
       //returns the updated grid that has the rooms that dont overlap
       return draw(grid);
+       }
+    //Function reset, resets the grid back to its original state/stage
+    function reset(grid, element, name = "x"){
+      for (var i = 0; i < grid.length; i++) {
+        for (var j = 0; j < grid[i].length; j++) {
+          grid[i][j] = new element(name);
+        }
+      }
+     return draw(grid);
     }
-
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
 
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
-  // this calls the update function
+  //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 200; i++) {
-  document.getElementById("blah").innerHTML = drawrooms(rooom);
-  console.log("Clicky");
-  // this calls the update function
+    for (var i = 0; i < 100; i++) {
+  document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
   }
+  //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = room(grid);
+  document.getElementById("blah").innerHTML = reset(grid, Dungeon)
   console.log("Reset");
-  console.log("still need to work on it");
-  // this calls the update function
     }
