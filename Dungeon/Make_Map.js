@@ -152,6 +152,24 @@ function draw(grid){
       }
      return draw(grid);
     }
+
+    function oddnums(numbers){
+      var room = numbers(grid);
+      while (room.lengthyy = 1) {
+
+      }
+      while (room.lengthxx = 1) {
+
+      }
+      while (room.locox = 1) {
+
+      }
+      while (room.locoy = 1) {
+
+      }
+
+
+    }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
 
