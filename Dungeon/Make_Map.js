@@ -55,11 +55,8 @@ function draw(grid){
     // return the text strings so its appears on the screen
   return text;
 }
-  //Numbers makes the random numbers for the rooms to be
-  //able to draw it in random lengths and random places
-
-  //Function numbers makes the random numbers for the rooms to be
-  //able to draw it in random lengths and random places
+//Numbers makes the random numbers for the rooms to be
+//able to draw it in random lengths and random places
   function numbers(grid){
       // the random lengths of the rooms
     var room = {
@@ -123,7 +120,7 @@ function draw(grid){
           if(j >= room.x && j <= (room.x + room.lengthx)){
           //this if satement is what check room locations on the grid
           if(grid[i][j] == " "){
-       // this is to check overlap
+       //returns draw to draw the grids state with out the overlaping room in it
        return draw(grid);
         }
        }
@@ -141,13 +138,16 @@ function draw(grid){
 
           if(j >= room.x && j <= (room.x + room.lengthx)){
             //This uses the lengths off the room and make it part of the grid
+
             grid[i][j] = new element(name);
             }
           }
+          console.log("made");
         }
       }
-      // this returns the updated grid
+      //returns the updated grid that has the rooms that dont overlap
       return draw(grid);
+<<<<<<< HEAD
        }
       }
      }
@@ -158,20 +158,22 @@ function draw(grid){
 //have a boarder using room, numbers and grid
     function drawborder(room, numbers, grid){
 
+=======
+>>>>>>> 210f34afe18d6502c169a75e5ed40d38edae69ed
     }
-
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   // this calls the update function
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 400; i++) {
-  document.getElementById("blah").innerHTML = draw(grid);
+    for (var i = 0; i < 1; i++) {
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
   console.log("Clicky");
   // this calls the update function
     }
-  // this calls the update function
+    console.log("clicked " + i + " times");
+    console.log("Rooms Made");
+  }
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = draw(grid);
   console.log("Reset");
