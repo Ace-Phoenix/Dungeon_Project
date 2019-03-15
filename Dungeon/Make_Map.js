@@ -155,18 +155,9 @@ function draw(grid){
 
     function oddnums(numbers){
       var room = numbers(grid);
-      while (room.lengthyy = 1) {
+      while () {
 
-      }
-      while (room.lengthxx = 1) {
-
-      }
-      while (room.locox = 1) {
-
-      }
-      while (room.locoy = 1) {
-
-      }
+    }
 
 
     }
