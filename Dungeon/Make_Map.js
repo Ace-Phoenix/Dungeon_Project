@@ -54,56 +54,56 @@ function draw(grid){
   text += design;
     // return the text strings so its appears on the screen
   return text;
-}
+  }
+
+  function randomnumbers(number){
+    var random = Math.random() *number;
+    var num = Math.floor(random);
+    return num;
+  }
+
+  function oddnums(number){
+    var num = randomnumbers(number);
+    while (num %2 == 0) {
+        num = randomnumbers(number);
+        }
+      return num;
+  }
+
   //Numbers makes the random numbers for the rooms to be
   //able to draw it in random lengths and random places
-  function numbers(grid){
+  function numbers(grid, number){
   //room has random numbers
+  var oddnum = oddnums(number);
     var room = {
-      lengthy: Math.random() *grid.length/10 +4,// Length y
-      lengthx: Math.random() *grid.length/10 +4 // Length x
+      lengthy: oddnum/10 +4,// Length y
+      lengthx: oddnum/10 +4 // Length x
     }
     // these are the random locations
-    room.y = Math.random() *(grid[1].length - room.lengthy);// y
-    room.x = Math.random() *(grid[1].length - room.lengthx);// x
-
+    room.y = oddnum *(grid[1].length - room.lengthy);// y
+    room.x = oddnum *(grid[1].length - room.lengthx);// x
     // these are the floors so it rounds down so we get whole numbers
     // Length y floor and the Length x floor
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-
     // y floor & x floor for whole numbers
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
-
-    // this is the centerx for the x length and the centery for the y length
-    room.lengthxx = room.lengthx %2;
-    room.lengthyy = room.lengthy %2;
-
-    // this is so it can get a 1 or a 0 to check if there even or not
-    // this is to % the room.x & y to see if i get 1
-    room.locox = room.x %2;
-    room.locoy = room.y %2;
-
     // these are going to be the centery & centerx for the y & x length
     room.centerx = room.x + (room.lengthx + 1)/2;
     room.centery = room.y + (room.lengthy + 1)/2;
-
     // this is a empty array so i can get locations in an array
     centerr = [];
-
     // this is to push both locations into the empty array to get one location
     // and not just one number
     // this is the finale location
     room.center = centerr.push([room.centerx, room.centery]);
-
-    console.log(room)
     return room;
 }
 
   //Function room uses numbers, grid, element and name to make rooms randomly
   function room(numbers, grid, element , name = " "){
-    var room = numbers(grid);
+    var room = numbers(grid, number = 100);
     //this gives room from function numbers to function room
     //this is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -137,7 +137,6 @@ function draw(grid){
             grid[i][j] = new element(name);
             }
           }
-          console.log("made");
         }
       }
       //returns the updated grid that has the rooms that dont overlap
@@ -153,24 +152,17 @@ function draw(grid){
      return draw(grid);
     }
 
-    function oddnums(numbers){
-      var room = numbers(grid);
-      while () {
-
-    }
-
-
-    }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
 
   var grid = grid({x:100,y:200}, Dungeon);
+  var num = numbers(grid, 100)
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-  document.getElementById("blah").innerHTML = draw(grid);
     for (var i = 0; i < 100; i++) {
+      document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
