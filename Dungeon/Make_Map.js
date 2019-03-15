@@ -140,7 +140,11 @@ function draw(grid){
           console.log("made");
         }
       }
+<<<<<<< HEAD
+      // this returns the updated grid... yay
+=======
       //returns the updated grid that has the rooms that dont overlap
+>>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
       return draw(grid);
        }
     //Function reset, resets the grid back to its original state/stage
@@ -152,6 +156,24 @@ function draw(grid){
       }
      return draw(grid);
     }
+
+    function oddnums(numbers){
+      var room = numbers(grid);
+      while (room.lengthyy = 1) {
+
+      }
+      while (room.lengthxx = 1) {
+
+      }
+      while (room.locox = 1) {
+
+      }
+      while (room.locoy = 1) {
+
+      }
+
+
+    }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
 
@@ -160,14 +182,22 @@ function draw(grid){
   document.getElementById("blah").innerHTML = draw(grid);
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
+<<<<<<< HEAD
+    for (var i = 0; i < 900; i++) {
+  document.getElementById("blah").innerHTML = draw(grid);
+=======
     for (var i = 0; i < 100; i++) {
+>>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
   document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
   }
+<<<<<<< HEAD
+=======
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = reset(grid, Dungeon)
   console.log("Reset");
     }
+>>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
