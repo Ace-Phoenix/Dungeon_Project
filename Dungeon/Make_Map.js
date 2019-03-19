@@ -50,7 +50,7 @@ function draw(grid){
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//makeing the text to the walls text
   for (var j = 0; j < grid[0].length; j++) {
-    text += " " + grid[i][j];//setting the grid text in the middle with no space
+    text += "" + grid[i][j];//setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//setting wall text again
   }
