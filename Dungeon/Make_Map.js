@@ -91,6 +91,8 @@ function draw(grid){
     room.centerx = room.x + (room.lengthx + 1)/2;
     // this is going to be the centery for the y length
     room.centery = room.y + (room.lengthy + 1)/2;
+    odd = [];
+    odd = odd[room.lengthyy, room.lengthx, room.locox, room.locoy]
     // this is a empty array so i can get a locations so an array
     centerr = [];
     // this is to push both locations into the empty array to get one location
@@ -102,7 +104,7 @@ function draw(grid){
 }
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-  function room(numbers, grid, element , name = " "){
+  function rooom(numbers, grid, element , name = " "){
     var room = numbers(grid);
     //this gives room from function numbers to function room
     //this is what makes it so that they do not overlap
@@ -140,11 +142,7 @@ function draw(grid){
           console.log("made");
         }
       }
-<<<<<<< HEAD
       // this returns the updated grid... yay
-=======
-      //returns the updated grid that has the rooms that dont overlap
->>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
       return draw(grid);
        }
     //Function reset, resets the grid back to its original state/stage
@@ -157,47 +155,30 @@ function draw(grid){
      return draw(grid);
     }
 
-    function oddnums(numbers){
+    function oddnums(room){
       var room = numbers(grid);
-      while (room.lengthyy = 1) {
-
-      }
-      while (room.lengthxx = 1) {
-
-      }
-      while (room.locox = 1) {
-
-      }
-      while (room.locoy = 1) {
-
-      }
-
-
+      while (room.odd = 1) {
+        rooom(numbers, grid, element = Dungeon, name = " ")
+       return draw(grid);
+     }
     }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
 
   var grid = grid({x:100,y:200}, Dungeon);
+  var room = rooom(numbers, grid, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-<<<<<<< HEAD
-    for (var i = 0; i < 900; i++) {
-  document.getElementById("blah").innerHTML = draw(grid);
-=======
-    for (var i = 0; i < 100; i++) {
->>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
-  document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
+    for (var i = 0; i < 1; i++) {
+  document.getElementById("blah").innerHTML = oddnums(room);
     }
     console.log("clicked " + i + " times");
     console.log("Rooms Made");
   }
-<<<<<<< HEAD
-=======
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = reset(grid, Dungeon)
   console.log("Reset");
     }
->>>>>>> 80864e14a1dbad6dfbf4f62582ca27b8cad5d5ae
