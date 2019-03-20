@@ -1,11 +1,11 @@
 
-//[:ToDo:]//In Make_Map at least.
-//Make hallways.// game machanic
-//Make grid a object.//for easier use of the grid
+/*[:ToDo:]//In Make_Map at least.
+ -Make hallways.// game machanic.
+ -Make grid a object.//for easier use of the grid.
 
-//Function grid takes name from class Dungeon from Master.js
-//This will be an object and it has size to change the
-//hight and width of the grid
+ -Function grid takes name from class Dungeon from Master.js
+ -This will be an object and it has size to change the
+  hight and width of the grid.*/
   function grid(size, element, name = "x"){
   //Creating an empty array to make the grid made of array
   //[:Posible future:][:Fix:] Make grid an object to make it easier for use
@@ -88,12 +88,12 @@ function draw(grid){
       return num;//returning the number so that it can be used in other places
   }
 
-  //Numbers makes the random numbers for the rooms to be
-  //able to draw it in random lengths and random places
+/*-Numbers makes the random numbers for the rooms to be
+   able to draw it in random lengths and random places. */
   function numbers(grid, number = 200){
   //These variables are tomake it so that the rooms get random numbers.
   var oddnum = oddnums(number);//first random number for y.
-  var oddnumx = oddnums(number);//sencond for x.
+  var oddnumx = oddnums(number);//second for x.
 
     //room is an object so that we can use the lengths in different places.
     var room = {
@@ -110,17 +110,6 @@ function draw(grid){
     room.lengthy = Math.floor(room.lengthy);//y.
     room.lengthx = Math.floor(room.lengthx);//x.
 
-    //These if statement make it so that the number will...
-    //always be negative so that we can get the absolute center a...
-    //whole number.
-    if(room.lengthy %2 == 0){//y if statement.
-      room.lengthy++;//y.
-    }
-    if(room.lengthx %2 == 0){//x if statment.
-      room.lengthx++;//x.
-    }
-    console.log(room.lengthy + " lengthy");
-    console.log(room.lengthx + " lengthx");
 
     // y floor & x floor for whole numbers.
     room.x = Math.floor(room.x);//x.
@@ -130,33 +119,21 @@ function draw(grid){
     room.centerx = room.x + (room.lengthx/2);//x.
     room.centery = room.y + (room.lengthy/2);//y.
 
+    /*-These if statement make it so that the number will...
+      always be negative so that we can get the absolute center a...
+      whole number.*/
+    if(room.lengthy %2 == 0){//y if statement.
+      room.lengthy++;//y.
+    }
+    if(room.lengthx %2 == 0){//x if statment.
+      room.lengthx++;//x.
+    }
     //Center y and x to whole numbers rounding up.
     room.centerx = Math.ceil(room.centerx/2);//x.
     room.centery = Math.ceil(room.centery/2);//y.
 
-    console.log(room.centery + " centery");
-    console.log(room.centerx + " centerx");
-
     //Makeing an array so that we can get the exact...
     //location of the center and not just the number.
-<<<<<<< HEAD
-=======
-    // these are going to be the centery & centerx for the y & x length
-    if(room.lengthy %2 == 0){
-      room.lengthy ++;
-    }
-    if(room.lengthx %2 == 0){
-      room.lengthx ++;
-    }
-    room.centerx = Math.ceil(room.lengthx/2);
-    room.centery = Math.ceil(room.lengthy/2);
-    // this is a empty array so i can get locations in an array
-    console.log(room.y + " room.y")
-    console.log(room.x + " room.x")
-    console.log(room.lengthy + " room.lengthy")
-    console.log(room.lengthx + " room.lengthx")
-    console.log(room.centerx + " room.centerx")
-    console.log(room.centery + " room.centery")
     centerr = [];
 
     //Pushing the room center to the empty array...
@@ -188,13 +165,14 @@ function draw(grid){
        }
       }
      }
-    //These next for statements will !only! happen if the first two statement
-    //are true and they will not overlap.
 
-    //These two for statements are for drawing the the rooms.
+  /*-These next for statements will !only! happen if the first two statement
+    are true and they will not overlap.
 
-    //These if statement checks for the room.length to generate the room.
-    //The outer for statement is to check for the y value of grid.
+    -These two for statements are for drawing the the rooms.
+
+    -These if statement checks for the room.length to generate the room.
+    -The outer for statement is to check for the y value of grid.            */
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
@@ -206,7 +184,7 @@ function draw(grid){
             grid[i][j] = new element(name);
             }
           }
-        console.log("made");//this is just to tell us if a room has actually been made
+        console.log("made");//This is just to tell us if a room has actually been made
         }
       }
       //Returns the updated grid that has the rooms that dont overlap.
@@ -239,7 +217,7 @@ function draw(grid){
   document.getElementById("Rooms").onclick = function(){
     //for statement to make it so that it goes through more than one time
     for (var i = 0; i < 100; i++) {
-      //calling room to draw the rooms
+      //Calling room to draw the rooms
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     //Just telling total clicks so that we will know it is useing the right
