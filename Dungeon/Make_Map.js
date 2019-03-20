@@ -172,10 +172,10 @@ function draw(grid){
     //The outer for statement is to check for the y value of grid.
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-      if(i >= room.y && i <= (room.y + room.lengthy)){//y
+      if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x
+          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name);
@@ -210,7 +210,7 @@ function draw(grid){
   document.getElementById("blah").innerHTML = draw(grid);
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 400; i++) {
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     console.log("clicked " + i + " times");
