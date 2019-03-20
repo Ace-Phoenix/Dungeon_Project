@@ -102,18 +102,15 @@ function draw(grid){
     // Length y floor and the Length x floor
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-    if(room.lengthy %2 == 0){
-      room.lengthy++;
-    }
-    if(room.lengthx %2 == 0){
-      room.lengthx++;
-    }
     console.log(room.lengthy + " lengthy");
     console.log(room.lengthx + " lengthx");
 
     // y floor & x floor for whole numbers
+<<<<<<< HEAD
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
+=======
+>>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
     // these are going to be the centery & centerx for the y & x length
     if(room.lengthy %2 == 0){
       room.lengthy ++;
@@ -124,18 +121,38 @@ function draw(grid){
     room.centerx = Math.ceil(room.lengthx/2);
     room.centery = Math.ceil(room.lengthy/2);
     // this is a empty array so i can get locations in an array
+<<<<<<< HEAD
     console.log(room.y + " room.y")
     console.log(room.x + " room.x")
     console.log(room.lengthy + " room.lengthy")
     console.log(room.lengthx + " room.lengthx")
     console.log(room.centerx + " room.centerx")
     console.log(room.centery + " room.centery")
+=======
+    room.x = Math.floor(room.x);//x
+    room.y = Math.floor(room.y);//y
+    // console.log(room.y);
+    // console.log(room.x);
+
+    // this is the center length x and y or (cenlengthx and cenlengthy)
+    room.centerx = (room.lengthx/2);
+    room.centery = (room.lengthy/2);
+    // this is a empty array so i can get locations in an array
+    room.centerx = Math.ceil(room.centerx);
+    room.centery = Math.ceil(room.centery);
+>>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
     centerr = [];
     // this is to push both locations into the empty array to get one location
     // and not just one number
     // this is the finale location
-
-    room.center = centerr.push([room.centerx, room.centery]);
+    console.log(room.y + " room.y")
+    console.log(room.x + " room.x")
+    console.log(room.lengthy + " room.lengthy")
+    console.log(room.lengthx + " room.lengthx")
+    console.log(room.centerx + " room.centerx")
+    console.log(room.centery + " room.centery")
+// this is going to be the center that we use for the hallways later
+    room.center = centerr.push([room.centerx,room.centery]);
     return room;
 }
 
@@ -154,14 +171,14 @@ function draw(grid){
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
-          if(grid[i][j] == " "){
+          if(grid[i][j] == name){
        //Returns draw so nothhing happens because is is an overlap
        return draw(grid);
        //If its not an overlap it will go threw the next set of for statements.
+          }
         }
-       }
       }
-     }
+    }
     //These for statements will only happen if the first two statement
     //are true and they will not overlap.
     //These two for statements are for drawing the the rooms.
@@ -181,10 +198,11 @@ function draw(grid){
         console.log("made");
         }
       }
-      //Returns the updated grid that has the rooms that dont overlap.
+      // this returns the updated grid... yay
       return draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
+
     function reset(grid, element, name = "x"){
       //These for statementjust make it so it gose over the entire grid.
       for (var i = 0; i < grid.length; i++) {
@@ -199,7 +217,10 @@ function draw(grid){
      return draw(grid);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
   var grid = grid({x:100,y:200}, Dungeon);
