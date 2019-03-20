@@ -139,6 +139,24 @@ function draw(grid){
 
     //Makeing an array so that we can get the exact...
     //location of the center and not just the number.
+<<<<<<< HEAD
+=======
+    // these are going to be the centery & centerx for the y & x length
+    if(room.lengthy %2 == 0){
+      room.lengthy ++;
+    }
+    if(room.lengthx %2 == 0){
+      room.lengthx ++;
+    }
+    room.centerx = Math.ceil(room.lengthx/2);
+    room.centery = Math.ceil(room.lengthy/2);
+    // this is a empty array so i can get locations in an array
+    console.log(room.y + " room.y")
+    console.log(room.x + " room.x")
+    console.log(room.lengthy + " room.lengthy")
+    console.log(room.lengthx + " room.lengthx")
+    console.log(room.centerx + " room.centerx")
+    console.log(room.centery + " room.centery")
     centerr = [];
 
     //Pushing the room center to the empty array...
@@ -179,10 +197,10 @@ function draw(grid){
     //The outer for statement is to check for the y value of grid.
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-      if(i >= room.y && i <= (room.y + room.lengthy)){//y
+      if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x
+          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name);
@@ -209,11 +227,11 @@ function draw(grid){
      return draw(grid);
     }
 
-  //These variables are to set the numbers and sizes for the grid and num
-  var grid = grid({x:100,y:200}, Dungeon);//grid will be used for adjusting grid
 
-  var num = numbers(grid, 150);//num this will be used for random numbers
-
+//Function drawborder is going to make the rooms
+//have a boarder using room, numbers and grid
+  var grid = grid({x:100,y:200}, Dungeon);
+  var num = numbers(grid, 150)
   // This is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
 
