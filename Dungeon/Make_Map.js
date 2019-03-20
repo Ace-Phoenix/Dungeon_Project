@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 /*[:ToDo:]//In Make_Map at least.
  -Make hallways.// game machanic.
@@ -7,11 +6,6 @@
  -Function grid takes name from class Dungeon from Master.js
  -This will be an object and it has size to change the
   hight and width of the grid.*/
-=======
-//Function grid takes name from element Dungeon from Master.js
-//This will be an object and it has size to change the
-//hight and width of the grid
->>>>>>> 7c3733ea9b34a414b80b8ce6ff930e27a195ac22
   function grid(size, element, name = "x"){
     // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -206,9 +200,6 @@ function draw(grid){
      return draw(grid);
     }
 
-<<<<<<< HEAD
-
-=======
 /*
 this function is going to make verticalhalls than get connected to the
 horizontal halls
@@ -224,7 +215,6 @@ connect to the vertical lines by useing the center array
     function horizhalls(grid, room){
 
     }
->>>>>>> 7c3733ea9b34a414b80b8ce6ff930e27a195ac22
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
   var grid = grid({x:100,y:200}, Dungeon);
@@ -233,13 +223,7 @@ connect to the vertical lines by useing the center array
 
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-<<<<<<< HEAD
     for (var i = 0; i < 400; i++) {
-=======
-    //for statement to make it so that it goes through more than one time
-    for (var i = 0; i < 100; i++) {
-      //Calling room to draw the rooms
->>>>>>> fae635c645db88a4c192256fe28244043a23e956
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     //Just telling total clicks so that we will know it is useing the right
