@@ -94,23 +94,17 @@ function draw(grid){
       lengthx: oddnumlengthx/15 +4, // Length x
       lengthy: oddnumlengthy/15 +4,// Length y
     }
-
     // these are the random locations
-    room.y = oddnumy// y
+    room.y = oddnumy // y
     room.x = oddnumx// x
     // these are the floors so it rounds down so we get whole numbers
     // Length y floor and the Length x floor
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-    console.log(room.lengthy + " lengthy");
-    console.log(room.lengthx + " lengthx");
 
     // y floor & x floor for whole numbers
-<<<<<<< HEAD
     room.y = Math.floor(room.y);
     room.x = Math.floor(room.x);
-=======
->>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
     // these are going to be the centery & centerx for the y & x length
     if(room.lengthy %2 == 0){
       room.lengthy ++;
@@ -118,29 +112,12 @@ function draw(grid){
     if(room.lengthx %2 == 0){
       room.lengthx ++;
     }
-    room.centerx = Math.ceil(room.lengthx/2);
-    room.centery = Math.ceil(room.lengthy/2);
-    // this is a empty array so i can get locations in an array
-<<<<<<< HEAD
-    console.log(room.y + " room.y")
-    console.log(room.x + " room.x")
-    console.log(room.lengthy + " room.lengthy")
-    console.log(room.lengthx + " room.lengthx")
-    console.log(room.centerx + " room.centerx")
-    console.log(room.centery + " room.centery")
-=======
-    room.x = Math.floor(room.x);//x
-    room.y = Math.floor(room.y);//y
-    // console.log(room.y);
-    // console.log(room.x);
-
     // this is the center length x and y or (cenlengthx and cenlengthy)
     room.centerx = (room.lengthx/2);
     room.centery = (room.lengthy/2);
     // this is a empty array so i can get locations in an array
     room.centerx = Math.ceil(room.centerx);
     room.centery = Math.ceil(room.centery);
->>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
     centerr = [];
     // this is to push both locations into the empty array to get one location
     // and not just one number
@@ -186,10 +163,10 @@ function draw(grid){
     //The outer for statement is to check for the y value of grid.
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-      if(i >= room.y && i <= (room.y + room.lengthy)){//y
+      if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x
+          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name);
@@ -217,10 +194,7 @@ function draw(grid){
      return draw(grid);
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c1c3bf326dedac1182ea9cee2b32c84211c22a62
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
   var grid = grid({x:100,y:200}, Dungeon);
