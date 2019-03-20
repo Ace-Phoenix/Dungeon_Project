@@ -1,6 +1,17 @@
+<<<<<<< HEAD
+
+/*[:ToDo:]//In Make_Map at least.
+ -Make hallways.// game machanic.
+ -Make grid a object.//for easier use of the grid.
+
+ -Function grid takes name from class Dungeon from Master.js
+ -This will be an object and it has size to change the
+  hight and width of the grid.*/
+=======
 //Function grid takes name from element Dungeon from Master.js
 //This will be an object and it has size to change the
 //hight and width of the grid
+>>>>>>> 7c3733ea9b34a414b80b8ce6ff930e27a195ac22
   function grid(size, element, name = "x"){
     // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -96,16 +107,16 @@ function draw(grid){
     }
 
     // these are the random locations
-    room.y = oddnumy// y
+    room.y = oddnumy // y
     room.x = oddnumx// x
     // these are the floors so it rounds down so we get whole numbers
     // Length y floor and the Length x floor
     room.lengthy = Math.floor(room.lengthy);
     room.lengthx = Math.floor(room.lengthx);
-    console.log(room.lengthy + " lengthy");
-    console.log(room.lengthx + " lengthx");
 
     // y floor & x floor for whole numbers
+    room.y = Math.floor(room.y);
+    room.x = Math.floor(room.x);
     // these are going to be the centery & centerx for the y & x length
     if(room.lengthy %2 == 0){
       room.lengthy ++;
@@ -113,14 +124,6 @@ function draw(grid){
     if(room.lengthx %2 == 0){
       room.lengthx ++;
     }
-    room.centerx = Math.ceil(room.lengthx/2);
-    room.centery = Math.ceil(room.lengthy/2);
-    // this is a empty array so i can get locations in an array
-    room.x = Math.floor(room.x);//x
-    room.y = Math.floor(room.y);//y
-    // console.log(room.y);
-    // console.log(room.x);
-
     // this is the center length x and y or (cenlengthx and cenlengthy)
     room.centerx = (room.lengthx/2);
     room.centery = (room.lengthy/2);
@@ -203,17 +206,46 @@ function draw(grid){
      return draw(grid);
     }
 
+<<<<<<< HEAD
+
+=======
+/*
+this function is going to make verticalhalls than get connected to the
+horizontal halls
+*/
+    function verthalls(grid, room){
+
+    }
+
+/*
+this function is going to make horizontal lines that
+connect to the vertical lines by useing the center array
+*/
+    function horizhalls(grid, room){
+
+    }
+>>>>>>> 7c3733ea9b34a414b80b8ce6ff930e27a195ac22
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
+
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
+<<<<<<< HEAD
     for (var i = 0; i < 400; i++) {
+=======
+    //for statement to make it so that it goes through more than one time
+    for (var i = 0; i < 100; i++) {
+      //Calling room to draw the rooms
+>>>>>>> fae635c645db88a4c192256fe28244043a23e956
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
+    //Just telling total clicks so that we will know it is useing the right
+    //number for the ammount of clicks and even if it does.
     console.log("clicked " + i + " times");
+    //End of the rooms beeing made so we know its done clicking
     console.log("Rooms Made");
   }
   //Reset button resets the grid back to normal state
