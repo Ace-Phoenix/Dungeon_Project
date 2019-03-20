@@ -131,30 +131,14 @@ function draw(grid){
     room.centery = room.y + (room.lengthy/2);//y.
 
     //Center y and x to whole numbers rounding up.
-    room.centerx = Math.ceil(room.centerx);//x.
-    room.centery = Math.ceil(room.centery);//y.
+    room.centerx = Math.ceil(room.centerx/2);//x.
+    room.centery = Math.ceil(room.centery/2);//y.
 
     console.log(room.centery + " centery");
     console.log(room.centerx + " centerx");
 
     //Makeing an array so that we can get the exact...
     //location of the center and not just the number.
-    // these are going to be the centery & centerx for the y & x length
-    if(room.lengthy %2 == 0){
-      room.lengthy ++;
-    }
-    if(room.lengthx %2 == 0){
-      room.lengthx ++;
-    }
-    room.centerx = Math.ceil(room.lengthx/2);
-    room.centery = Math.ceil(room.lengthy/2);
-    // this is a empty array so i can get locations in an array
-    console.log(room.y + " room.y")
-    console.log(room.x + " room.x")
-    console.log(room.lengthy + " room.lengthy")
-    console.log(room.lengthx + " room.lengthx")
-    console.log(room.centerx + " room.centerx")
-    console.log(room.centery + " room.centery")
     centerr = [];
 
     //Pushing the room center to the empty array...
@@ -226,18 +210,24 @@ function draw(grid){
     }
 
   //These variables are to set the numbers and sizes for the grid and num
-//Function drawborder is going to make the rooms
-//have a boarder using room, numbers and grid
-  var grid = grid({x:100,y:200}, Dungeon);
-  var num = numbers(grid, 150)
+  var grid = grid({x:100,y:200}, Dungeon);//grid will be used for adjusting grid
+
+  var num = numbers(grid, 150);//num this will be used for random numbers
+
   // This is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
+
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
+    //for statement to make it so that it goes through more than one time
     for (var i = 0; i < 100; i++) {
+      //calling room to draw the rooms
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
+    //Just telling total clicks so that we will know it is useing the right
+    //number for the ammount of clicks and even if it does.
     console.log("clicked " + i + " times");
+    //End of the rooms beeing made so we know its done clicking
     console.log("Rooms Made");
   }
   //Reset button resets the grid back to normal state
