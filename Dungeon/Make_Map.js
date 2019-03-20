@@ -139,6 +139,22 @@ function draw(grid){
 
     //Makeing an array so that we can get the exact...
     //location of the center and not just the number.
+    // these are going to be the centery & centerx for the y & x length
+    if(room.lengthy %2 == 0){
+      room.lengthy ++;
+    }
+    if(room.lengthx %2 == 0){
+      room.lengthx ++;
+    }
+    room.centerx = Math.ceil(room.lengthx/2);
+    room.centery = Math.ceil(room.lengthy/2);
+    // this is a empty array so i can get locations in an array
+    console.log(room.y + " room.y")
+    console.log(room.x + " room.x")
+    console.log(room.lengthy + " room.lengthy")
+    console.log(room.lengthx + " room.lengthx")
+    console.log(room.centerx + " room.centerx")
+    console.log(room.centery + " room.centery")
     centerr = [];
 
     //Pushing the room center to the empty array...
@@ -209,7 +225,9 @@ function draw(grid){
      return draw(grid);
     }
 
-  //These variables are to set the numbers and sizes for the grid and num  
+  //These variables are to set the numbers and sizes for the grid and num
+//Function drawborder is going to make the rooms
+//have a boarder using room, numbers and grid
   var grid = grid({x:100,y:200}, Dungeon);
   var num = numbers(grid, 150)
   // This is what physiaclly draws the grid
