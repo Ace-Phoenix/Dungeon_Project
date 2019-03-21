@@ -7,6 +7,11 @@
  -This will be an object and it has size to change the
   hight and width of the grid.*/
   function grid(size, element, name = "x"){
+  /*  grid = {
+      size : 100,
+      element : Dungeon,
+      name : "x"
+    }*/
     // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // this is the empty array that u push and pull from
