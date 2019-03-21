@@ -217,7 +217,7 @@ connect to the vertical lines by useing the center array
   document.getElementById("blah").innerHTML = draw(grid);
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 400; i++) {
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     console.log("clicked " + i + " times");
