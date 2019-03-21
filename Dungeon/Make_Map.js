@@ -1,6 +1,11 @@
-//Function grid takes name from element Dungeon from Master.js
-//This will be an object and it has size to change the
-//hight and width of the grid
+
+/*[:ToDo:]//In Make_Map at least.
+ -Make hallways.// game machanic.
+ -Make grid a object.//for easier use of the grid.
+
+ -Function grid takes name from class Dungeon from Master.js
+ -This will be an object and it has size to change the
+  hight and width of the grid.*/
   function grid(size, element, name = "x"){
     // this is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -215,12 +220,16 @@ connect to the vertical lines by useing the center array
   var grid = grid({x:100,y:200}, Dungeon);
   // this is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
+
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 400; i++) {
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
+    //Just telling total clicks so that we will know it is useing the right
+    //number for the ammount of clicks and even if it does.
     console.log("clicked " + i + " times");
+    //End of the rooms beeing made so we know its done clicking
     console.log("Rooms Made");
   }
   //Reset button resets the grid back to normal state
