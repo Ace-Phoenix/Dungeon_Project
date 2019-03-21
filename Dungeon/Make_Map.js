@@ -208,9 +208,10 @@ This function is going to make verticalhalls than get connected to the
 horizontal halls
 */
     function verthalls(grid, numbers, element, name = " "){
-      var num = numbers(grid, number = 200);
-        for (var i = 0; i < num.centerr; i++) {
-        if (grid[i] == " ") {
+      var room = numbers(grid, number = 200);
+      var oldroom = room.x;
+        for (var i = 0; i < room.y - oldroom; i++) {
+        if (grid[i] == "x") {
           grid[i] = new element(name);
         }
       }
@@ -222,9 +223,10 @@ This function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
 */
     function horizhalls(grid, numbers, element, name = " "){
-      var num = numbers(grid, number = 200);
-        for (var j = 0; j < num.centerr; j++) {
-          if (grid[j] == " ") {
+      var room = numbers(grid, number = 200);
+      var oldroom = room.y;
+        for (var j = 0; j < room.x - oldroom; j++) {
+          if (grid[j] == "x") {
             grid[j] = new element(name);
           }
       }
