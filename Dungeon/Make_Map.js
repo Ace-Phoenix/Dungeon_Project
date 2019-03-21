@@ -266,7 +266,6 @@ connect to the vertical lines by useing the center array
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = reset(grid, Dungeon)
-  console.log("Reset");
     }
     document.getElementById("hallways").onclick = function(){
         document.getElementById("blah").innerHTML = horizhalls(grid, numbers, Dungeon);
