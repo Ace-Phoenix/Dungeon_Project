@@ -99,6 +99,11 @@ function draw(grid){
       lengthx: oddnumlengthx/15 +4, // Length x
       lengthy: oddnumlengthy/15 +4,// Length y
     }
+<<<<<<< HEAD
+=======
+
+    // these are the random locations
+>>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
     room.y = oddnumy // y
     room.x = oddnumx// x
     // these are the floors so it rounds down so we get whole numbers
@@ -159,6 +164,7 @@ function draw(grid){
           }
         }
       }
+<<<<<<< HEAD
      }
 
   /*-These next for statements will !only! happen if the first two statement
@@ -169,6 +175,14 @@ function draw(grid){
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
 
+=======
+    }
+    //These for statements will only happen if the first two statement
+    //are true and they will not overlap.
+    //These two for statements are for drawing the the rooms.
+    //These if statement checks for the room.length to generate the room.
+    //The outer for statement is to check for the y value of grid.
+>>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
@@ -180,7 +194,11 @@ function draw(grid){
             grid[i][j] = new element(name);
             }
           }
+<<<<<<< HEAD
         console.log("made");//This is just to tell us if a room has actually been made
+=======
+        console.log("made");
+>>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
         }
       }
       // this returns the updated grid... yay
@@ -225,9 +243,7 @@ connect to the vertical lines by useing the center array
 
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    //for statement to make it so that it goes through more than one time
-    for (var i = 0; i < 100; i++) {
-      //Calling room to draw the rooms
+    for (var i = 0; i < 400; i++) {
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     //Just telling total clicks so that we will know it is useing the right
