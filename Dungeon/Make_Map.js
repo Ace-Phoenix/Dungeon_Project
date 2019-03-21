@@ -105,11 +105,7 @@ function draw(grid){
       lengthy: oddnumlengthy/15 +4,// Length y
     }
 
-<<<<<<< HEAD
     // these are the random locations
-=======
-    // These are the random locations
->>>>>>> 8ab9dcaa9afe823e2f4ebf16c046c1573e543465
     room.y = oddnumy // y
     room.x = oddnumx// x
 
@@ -185,14 +181,11 @@ function draw(grid){
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
 
-<<<<<<< HEAD
     //These for statements will only happen if the first two statement
     //are true and they will not overlap.
     //These two for statements are for drawing the the rooms.
     //These if statement checks for the room.length to generate the room.
     //The outer for statement is to check for the y value of grid.
-=======
->>>>>>> 8ab9dcaa9afe823e2f4ebf16c046c1573e543465
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
@@ -204,10 +197,6 @@ function draw(grid){
             grid[i][j] = new element(name);
             }
           }
-<<<<<<< HEAD
-=======
-        console.log("made");//This is just to tell us if a room has actually been made
->>>>>>> 8ab9dcaa9afe823e2f4ebf16c046c1573e543465
         }
       }
       // This returns the updated grid... yay
@@ -229,21 +218,20 @@ function draw(grid){
      return draw(grid);
     }
 
-<<<<<<< HEAD
 /*numbers grid
 this function is going to make verticalhalls than get connected to the
-=======
-/*
-This function is going to make verticalhalls than get connected to the
->>>>>>> 8ab9dcaa9afe823e2f4ebf16c046c1573e543465
 horizontal halls
 */
-    function verthalls(grid, numbers{
+    function verthalls(grid, numbers){
       var num = numbers(grid, number = 200);
-        for (var i = 0; i < num.centerr[0]; i++) {
+        for (var i = 0; i < num.center[0]; i++) {
           // get rid of the text and replace it with " "
-         grid[i]
+         grid[i] = " ";
+         grid[i] = new Dungeon;
+         room(grid[x][y]);
+         grid[0][1].room(x, y);
       }
+      return draw(grid)
     }
 
 /*
@@ -252,10 +240,20 @@ connect to the vertical lines by useing the center array
 */
     function horizhalls(grid, numbers){
       var num = numbers(grid, number = 200);
-        for (var i = 0; i < num.centerr[1]; i++) {
-
+        for (var i = 0; i < num.center[1]; i++) {
+          grid[i] = " ";
+          grid[i] = new Dungeon;
+          room(grid[x][y]);
+          grid[0][1].room(x,y);
 
       }
+      return draw(grid);
+    }
+
+
+    function hallways(){
+      verthalls(grid, numbers);
+      horizhalls(grid, numbers);
     }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
@@ -277,5 +275,8 @@ connect to the vertical lines by useing the center array
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML = reset(grid, Dungeon)
-  console.log("Reset");
     }
+
+  document.getElementById("hall").onclick = function(){
+  document.getElementById("hall").innerHTML = hallways();
+      }
