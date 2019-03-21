@@ -217,6 +217,7 @@ horizontal halls
 this function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
 */
+//wouldnt it be easier to put them together in to for thatments or whatever we decide to use?
     function horizhalls(grid, room){
 
     }
