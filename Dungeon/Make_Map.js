@@ -139,12 +139,9 @@ function draw(grid){
 
     centerr = [];//Making an array to push the centers into.
 
-    console.log(room.y + " room.y")
-    console.log(room.x + " room.x")
-    console.log(room.lengthy + " room.lengthy")
-    console.log(room.lengthx + " room.lengthx")
-    console.log(room.centerx + " room.centerx")
-    console.log(room.centery + " room.centery")
+    console.log(room.y + " room.y" + " . " + room.x + " room.x");
+    console.log(room.lengthy + " room.lengthy" + " . " + room.lengthy + " room.lengthx");
+    console.log(room.centerx + " room.centerx" + " . " + room.centery + " room.cenetry");
 
     //Making center the absolute ceneter of the room
     room.center = centerr.push([room.centerx,room.centery]);
@@ -240,7 +237,7 @@ connect to the vertical lines by useing the center array
 
   //Rooms button make sthe rooms
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 400; i++) {
+    for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = room(numbers, grid, Dungeon);
     }
     //Just telling total clicks so that we will know it is useing the right
