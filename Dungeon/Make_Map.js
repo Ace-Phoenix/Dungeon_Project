@@ -99,11 +99,8 @@ function draw(grid){
       lengthx: oddnumlengthx/15 +4, // Length x
       lengthy: oddnumlengthy/15 +4,// Length y
     }
-<<<<<<< HEAD
-=======
 
     // these are the random locations
->>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
     room.y = oddnumy // y
     room.x = oddnumx// x
     // these are the floors so it rounds down so we get whole numbers
@@ -164,7 +161,6 @@ function draw(grid){
           }
         }
       }
-<<<<<<< HEAD
      }
 
   /*-These next for statements will !only! happen if the first two statement
@@ -175,14 +171,11 @@ function draw(grid){
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
 
-=======
-    }
     //These for statements will only happen if the first two statement
     //are true and they will not overlap.
     //These two for statements are for drawing the the rooms.
     //These if statement checks for the room.length to generate the room.
     //The outer for statement is to check for the y value of grid.
->>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
@@ -194,11 +187,6 @@ function draw(grid){
             grid[i][j] = new element(name);
             }
           }
-<<<<<<< HEAD
-        console.log("made");//This is just to tell us if a room has actually been made
-=======
-        console.log("made");
->>>>>>> f3c690e4a76ec031dc4bccd15cdc91fd06c592bb
         }
       }
       // this returns the updated grid... yay
@@ -220,20 +208,28 @@ function draw(grid){
      return draw(grid);
     }
 
-/*
+/*numbers grid
 this function is going to make verticalhalls than get connected to the
 horizontal halls
 */
-    function verthalls(grid, room){
-
+    function verthalls(grid, numbers{
+      var num = numbers(grid, number = 200);
+        for (var i = 0; i < num.centerr[0]; i++) {
+          // get rid of the text and replace it with " "
+         grid[i]
+      }
     }
 
 /*
 this function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
 */
-    function horizhalls(grid, room){
+    function horizhalls(grid, numbers){
+      var num = numbers(grid, number = 200);
+        for (var i = 0; i < num.centerr[1]; i++) {
 
+
+      }
     }
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
