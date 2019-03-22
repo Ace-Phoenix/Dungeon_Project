@@ -6,13 +6,19 @@
  -Function grid takes name from class Dungeon from Master.js
  -This will be an object and it has size to change the
   hight and width of the grid.*/
-  function grid(size, element, name = "x"){
+  class grid {
+    constructor (size, element, name){
+      this.size = {x:100,y:200};
+      this.element = Dungeon;
+      this.name = "x";
+    }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
-  var make = [];
     // This is to push into the make, array
-  for (var i = 0; i < size.x; i++) {
+  function (){
+  var make = [];
+   for (var i = 0; i < size.x; i++) {
     make.push([]);
   for (var j = 0; j < size.y; j++) {
    //This is to push the new element into the
@@ -23,6 +29,7 @@
  // This is going to be the grid[i][j]
  return make;
   }
+}
 
 
 //Function draw uses grid to make a border and draw the grid itself
@@ -34,14 +41,14 @@ function draw(grid){
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid.length;
+  var boarderlength = grid.x;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid[0].length/1.58;
+  var fixes = grid.x/1.58;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -55,7 +62,7 @@ function draw(grid){
   // This for satement is for the sides of the grid useing pipes
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < grid[0].length; j++) {
+  for (var j = 0; j < grid.x; j++) {
     text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
@@ -160,11 +167,11 @@ function draw(grid){
     var room = numbers(grid, number = 200);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
-    for (var i = 0; i < grid.length; i++) {
+    for (var i = 0; i < grid.x; i++) {
       // These if statement are to check if there is/are a(ny) room(s) in the location(s),
       if(i >= room.y && i <= (room.y + room.lengthy))//y if statement.
         //This inner for statement checks for grid.x for room locations.
-        for (var j = 0; j < grid[0].length; j++) {
+        for (var j = 0; j < grid.y; j++) {
           //This if satement is what check room locations on the grid.
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
@@ -176,7 +183,7 @@ function draw(grid){
           }
         }
       }
-     }
+    }
 
   /*-These next for statements will !only! happen if the first two statement
     are true and they will not overlap.
@@ -185,11 +192,11 @@ function draw(grid){
 
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
-    for (var i = 0; i < grid.length; i++) {
+    for (var i = 0; i < grid.x; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
-        for (var j = 0; j < grid[0].length; j++) {
+        for (var j = 0; j < grid.y; j++) {
           if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
@@ -223,7 +230,7 @@ connect to the vertical lines by useing the center array
 */
     function horizhalls(grid, numbers, element, name = " "){
       var num = numbers(grid, number = 200);
-        for (var j = 0; j < num.centerr; j++) {
+        for (var j = 0; j < room.x - room.x; j++) {
           if (grid[j] == " ") {
             grid[j] = new element(name);
           }
@@ -233,8 +240,8 @@ connect to the vertical lines by useing the center array
 
     function reset(grid, element, name = "x"){
       //These for statementjust make it so it gose over the entire grid.
-      for (var i = 0; i < grid.length; i++) {
-        for (var j = 0; j < grid[i].length; j++) {
+      for (var i = 0; i < grid.x; i++) {
+        for (var j = 0; j < grid.y; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
           grid[i][j] = new element(name);
@@ -247,7 +254,6 @@ connect to the vertical lines by useing the center array
 
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
-  var grid = grid({x:100,y:200}, Dungeon);
   // This is what physiaclly draws the grid
   document.getElementById("blah").innerHTML = draw(grid);
 
