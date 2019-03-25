@@ -52,6 +52,7 @@ function draw(grid){
 
   text += top_type;//Text is used to determin the text type for border
 
+
     // This makes the top border
     for (var i = 0; i < fixes; i++) {
   top_text = text += top_type;
