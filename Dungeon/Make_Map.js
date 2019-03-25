@@ -10,6 +10,7 @@
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
+
   var make = [];
     // This is to push into the make, array
   for (var i = 0; i < size.x; i++) {
@@ -82,7 +83,7 @@ function draw(grid){
     while (num % 2 == 0) {
         num = randomnumbers(number);
         }
-        console.log(num);
+        // console.log(num);
       return num;
   }
 
@@ -140,16 +141,16 @@ function draw(grid){
 
     centerr = [];//Making an array to push the centers into.
 
-    console.log(room.y + " room.y" + " . " + room.x + " room.x");
-    console.log(room.lengthy + " room.lengthy" + " . " + room.lengthy + " room.lengthx");
-    console.log(room.centerx + " room.centerx" + " . " + room.centery + " room.cenetry");
+    // console.log(room.y + " room.y" + " . " + room.x + " room.x");
+    // console.log(room.lengthy + " room.lengthy" + " . " + room.lengthy + " room.lengthx");
+    // console.log(room.centerx + " room.centerx" + " . " + room.centery + " room.cenetry");
 
     //Making center the absolute ceneter of the room
-    room.center = centerr.push([room.centerx,room.centery]);
-    console.log(room.center + " center");
-    console.log(room.centerr + " centerr");
-    console.log(room.centery + " centery");
-    console.log(room.centerx + " centerx");
+    room.centerr = centerr.push([room.centerx,room.centery]);
+    // console.log(room.center + " center");
+    // console.log(room.centerr + " centerr");
+    // console.log(room.centery + " centery");
+    // console.log(room.centerx + " centerx");
 
     return room;//Returning room so that we can use it in other functionss
 }
@@ -214,6 +215,7 @@ horizontal halls
           grid[i] = new element(name);
         }
       }
+      console.log(i + " i");
       return draw(grid);
     }
 
@@ -224,10 +226,11 @@ connect to the vertical lines by useing the center array
     function horizhalls(grid, numbers, element, name = " "){
       var num = numbers(grid, number = 200);
         for (var j = 0; j < num.centerr; j++) {
-          if (grid[j] == " ") {
+          if (grid[j] == "x") {
             grid[j] = new element(name);
           }
       }
+      console.log(j + " j");
       return draw(grid)
     }
 
@@ -268,7 +271,7 @@ connect to the vertical lines by useing the center array
   document.getElementById("blah").innerHTML = reset(grid, Dungeon)
     }
     document.getElementById("hallways").onclick = function(){
-        document.getElementById("blah").innerHTML = horizhalls(grid, numbers, Dungeon);
         document.getElementById("blah").innerHTML = verthalls(grid, numbers, Dungeon);
+        document.getElementById("blah").innerHTML = horizhalls(grid, numbers, Dungeon);
 
 }
