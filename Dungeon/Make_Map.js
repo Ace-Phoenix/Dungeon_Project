@@ -8,6 +8,7 @@
   hight and width of the grid.*/
   //?trying to get it to work with it being an entire class dose not work so far
   //try something else ? big ? though?
+  // need tp spawn grid becuase its getting an error so ill console log everything
   class ClassGrid {
     constructor (size, sizex, sizey){
        this.sizey = 200;
@@ -48,13 +49,14 @@
     make[i].push(new element(name,[i],[j]));
       }
     }
+    console.log(make);
  // This is going to be the grid[i][j]
  return make;
   }
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(size, sizex, sizey){
+  draw(grid){
 
    // grid.size = 300
    // grid.sizex = 100
@@ -240,18 +242,11 @@
 This function is going to make verticalhalls than get connected to the
 horizontal halls
 */
-<<<<<<< HEAD
-    function verthalls(grid, numbers, element, name = " "){
+     verthalls(grid, numbers, element, name = " "){
       var room = numbers(grid, number = 200);
       var oldroom = room.x;
         for (var i = 0; i < room.y - oldroom; i++) {
         if (grid[i] == "x") {
-=======
-      verthalls(grid, numbers, element, name = " "){
-      var num =  numbers(grid, number = 200);
-        for (var i = 0; i < num.centerr; i++) {
-        if (grid[i] == " ") {
->>>>>>> d327721640c8fe47f4a7dddac685b212da87897a
           grid[i] = new element(name);
         }
       }
@@ -263,16 +258,10 @@ horizontal halls
 This function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
 */
-<<<<<<< HEAD
-    function horizhalls(grid, numbers, element, name = " "){
+    horizhalls(grid, numbers, element, name = " "){
       var room = numbers(grid, number = 200);
       var oldroom = room.y;
         for (var j = 0; j < room.x - oldroom; j++) {
-=======
-      horizhalls(grid, numbers, element, name = " "){
-      var num =  numbers(grid, number = 200);
-        for (var j = 0; j < num.centerr; j++) {
->>>>>>> d327721640c8fe47f4a7dddac685b212da87897a
           if (grid[j] == "x") {
             grid[j] = new element(name);
           }
@@ -299,8 +288,13 @@ connect to the vertical lines by useing the center array
 //have a boarder using room, numbers and grid
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
-};
-  var draw = document.getElementById("draw")
+}
+var grid = grid(sizex, sizey, size, Dungeon);
+  document.getElementById("grid").onclick = function(){
+    document.getElementById("grid").innerHTML = draw(grid)
+  }
+
+  var draw = document.getElementById("draw");
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = room(numbers, Dungeon , name = " ", this.size, this.sizex, this.sizey);
