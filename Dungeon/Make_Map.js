@@ -9,41 +9,52 @@
   //?trying to get it to work with it being an entire class dose not work so far
   //try something else ? big ? though?
   // need tp spawn grid becuase its getting an error so ill console log everything
-  class ClassGrid {
-    constructor (size, sizex, sizey){
-       this.sizey = 200;
-       this.sizex = 100;
-       this.size = 300;
+  class ClassGrid{
+    constructor (name = "x", size, sizex, sizey){
+      this._size = size;
+      this._sizex = sizex;
+       this._sizey = sizey;
+       this._name = name
     }
     get sizex(){
-      return  this.sizex;
+      return  this._sizex;
     }
     set sizex(sizex){
-       this.sizex = sizex;
+      this._sizex = sizex;
     }
     get sizey(){
-      return  this.sizey;
+      return  this._sizey;
     }
     set sizey(sizey){
-       this.sizey = sizey;
+      this._sizey = sizey;
     }
     get size(){
-      return this.size;
+      return this._size;
     }
     set size(size){
-       this.size = size;
+      this._size = size;
+    }
+    gridObject(sizex, sizey, size){
+     gridObj = {
+       sizex : 100,
+       sizey : 200,
+     };
+     gridObj.size = gridObj.sizex + gridObj.sizey;
+     return gridObj;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(sizex, sizey, size, element){
+  grid(element, name = "x"){
+    var grid = this.gridObject(sizex, sizey, size)
+    console.log(grid);
   var make = [];
-  console.log( this.sizey);
-  console.log( this.sizex);
-   for (var i = 0; i < grid.sizex; i++) {
+  console.log( grid._sizey);
+  console.log( grid._sizex);
+   for (var i = 0; i < grid._sizex; i++) {
     make.push([]);
-  for (var j = 0; j < grid[0].sizey; j++) {
+  for (var j = 0; j < grid[0]._sizey; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
@@ -68,14 +79,14 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid.sizex;
+  var boarderlength = grid._sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid.sizex/1.58;
+  var fixes = grid._sizex/1.58;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -87,11 +98,11 @@
   text += top_type + "<BR>";//The "<BR>" is to make it a square boarder
 
   // This for satement is for the sides of the grid useing pipes
-  console.log(this.sizex + " Hello");
+  console.log(this._sizex + " Hello");
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < grid[0].sizex; j++) {
-    text += "" + grid[i][j].size;//Setting the grid text in the middle with no space
+  for (var j = 0; j < grid[0]._sizex; j++) {
+    text += "" + grid[i][j]._size;//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
   }
@@ -127,13 +138,13 @@
     numbers(grid, number = 200){
   //Storing random numbers from oddnums in varriables using different
   //variables to get different random odd numbers for different uses.
-  var oddnumx =  oddnums(number);//This is the x odd number
+  var oddnumx =  this.oddnums(number);//This is the x odd number
 
-  var oddnumy =  oddnums(number);//This is the y odd number
+  var oddnumy =  this.oddnums(number);//This is the y odd number
 
-  var oddnumlengthx =  oddnums(number);//This is the length x odd number
+  var oddnumlengthx =  this.oddnums(number);//This is the length x odd number
 
-  var oddnumlengthy =  oddnums(number);//This is the length y odd number
+  var oddnumlengthy =  this.oddnums(number);//This is the length y odd number
 
     var room = {//room is an object that makes lengthx and y
       lengthx: oddnumlengthx/15 +4, // Length x
@@ -191,15 +202,15 @@
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(numbers, element , name = " ", size, sizex, sizey){
-    var room =  numbers(grid, number = 200);
+    room(element , name = " ", size, sizex, sizey){
+    var room =  this.numbers(grid, number = 200);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid._sizex; i++) {
       // These if statement are to check if there is/are a(ny) room(s) in the location(s),
       if(i >= room.y && i <= (room.y + room.lengthy))//y if statement.
         //This inner for statement checks for grid.x for room locations.
-        for (var j = 0; j < grid.sizey; j++) {
+        for (var j = 0; j < grid._sizey; j++) {
           //This if satement is what check room locations on the grid.
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
@@ -220,15 +231,15 @@
 
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
-    for (var i = 0; i < grid.sizex; i++) {
+    for (var i = 0; i < grid._sizex; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
-        for (var j = 0; j < grid.sizey; j++) {
+        for (var j = 0; j < grid._sizey; j++) {
           if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j].size = new element(name);
+            grid[i][j]._size = new element(name);
             }
           }
         console.log("made");//This is just to tell us if a room has actually been made
@@ -272,16 +283,16 @@ connect to the vertical lines by useing the center array
 
       reset(element, name = "x", size, sizex, sizey){
       //These for statementjust make it so it gose over the entire grid.
-      for (var i = 0; i < grid.sizex; i++) {
-        for (var j = 0; j < grid.sizey; j++) {
+      for (var i = 0; i < grid._sizex; i++) {
+        for (var j = 0; j < grid._sizey; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
-          grid[i][j].size = new element(name);
+          grid[i][j]._size = new element(name);
         }
       }
       //Returns draw so it makes it so that the
       //grid is all one text after being changed.
-      return  draw(grid, this.size, this.sizex, this.sizey);
+      return  this.draw(grid, this._size, this._sizex, this._sizey);
     }
 
 //Function drawborder is going to make the rooms
@@ -289,15 +300,17 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var grid = grid(sizex, sizey, size, Dungeon);
+var classs = new ClassGrid(300,100,200)
+var grid = new ClassGrid(grid)
+var number = 200
   document.getElementById("grid").onclick = function(){
-    document.getElementById("grid").innerHTML = draw(grid)
+    document.getElementById("blah").innerHTML = classs.draw(grid)
   }
 
   var draw = document.getElementById("draw");
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 100; i++) {
-      document.getElementById("blah").innerHTML = room(numbers, Dungeon , name = " ", this.size, this.sizex, this.sizey);
+      document.getElementById("blah").innerHTML = classs.room(Dungeon , name = " ")
 
 
     }
@@ -309,7 +322,7 @@ var grid = grid(sizex, sizey, size, Dungeon);
   }
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = ClassGrid.reset(Dungeon,name = "x", ClassGrid.size, ClassGrid.sizex, ClassGrid.sizey)
+  document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x")
     }
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
