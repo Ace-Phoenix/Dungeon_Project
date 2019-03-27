@@ -67,7 +67,7 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid,sizex,size,sizey){
+  draw(grid, sizex, size, sizey){
     var grid = this.gridObject(sizex,sizey,size)
 console.log(grid.sizex);
    // grid.size = 300
@@ -302,9 +302,9 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var classs = new ClassGrid(300,100,200)
-var grid = new ClassGrid(grid)
-var number = 200
+var classs = new ClassGrid;
+var grid = new ClassGrid(grid);
+var number = 200;
   document.getElementById("grid").onclick = function(){
     document.getElementById("blah").innerHTML = classs.draw(grid)
   }
