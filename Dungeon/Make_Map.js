@@ -35,12 +35,12 @@
       this._size = size;
     }
     gridObject(sizex, sizey, size){
-     gridObj = {
+     grid = {
        sizex : 100,
        sizey : 200,
      };
-     gridObj.size = gridObj.sizex + gridObj.sizey;
-     return gridObj;
+     grid.size = grid.sizex + grid.sizey;
+     return grid;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -50,11 +50,11 @@
     var grid = this.gridObject(sizex, sizey, size)
     console.log(grid);
   var make = [];
-  console.log( grid._sizey);
-  console.log( grid._sizex);
-   for (var i = 0; i < grid._sizex; i++) {
+  console.log( grid.sizey);
+  console.log( grid.sizex);
+   for (var i = 0; i < grid.sizex; i++) {
     make.push([]);
-  for (var j = 0; j < grid[0]._sizey; j++) {
+  for (var j = 0; j < grid[0].sizey; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
@@ -67,8 +67,9 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid){
-
+  draw(grid,sizex,size,sizey){
+    var grid = this.gridObject(sizex,sizey,size)
+console.log(grid.sizex);
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
@@ -79,14 +80,14 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid._sizex;
+  var boarderlength = grid.sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid._sizex/1.58;
+  var fixes = grid.sizex;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -98,11 +99,12 @@
   text += top_type + "<BR>";//The "<BR>" is to make it a square boarder
 
   // This for satement is for the sides of the grid useing pipes
-  console.log(this._sizex + " Hello");
+  console.log(this.sizex + " Hello");
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < grid[0]._sizex; j++) {
-    text += "" + grid[i][j]._size;//Setting the grid text in the middle with no space
+    console.log(this.sizex + "Heloo");
+  for (var j = 0; j < grid[0]; j++) {
+    text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
   }
