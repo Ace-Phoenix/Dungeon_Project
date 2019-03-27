@@ -11,36 +11,36 @@
   // need tp spawn grid becuase its getting an error so ill console log everything
   class ClassGrid {
     constructor (size, sizex, sizey){
-       this.sizey = 200;
-       this.sizex = 100;
-       this.size = 300;
+       this.sizey = sizey;
+       this.sizex = sizex;
+       this.size = size;
     }
     get sizex(){
       return  this.sizex;
     }
     set sizex(sizex){
-       this.sizex = sizex;
+       this.sizex = 100;
     }
     get sizey(){
       return  this.sizey;
     }
     set sizey(sizey){
-       this.sizey = sizey;
+       this.sizey = 200;
     }
     get size(){
       return this.size;
     }
     set size(size){
-       this.size = size;
+       this.size = 300;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(sizex, sizey, size, element){
+  grid(sizex, sizey, size, name, element){
   var make = [];
-  console.log( this.sizey);
-  console.log( this.sizex);
+  console.log(this.sizey);
+  console.log(this.sizex);
    for (var i = 0; i < grid.sizex; i++) {
     make.push([]);
   for (var j = 0; j < grid[0].sizey; j++) {
@@ -56,7 +56,7 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid){
+  draw(grid, sizex, size, sizey){
 
    // grid.size = 300
    // grid.sizex = 100
@@ -289,9 +289,10 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var grid = grid(sizex, sizey, size, Dungeon);
+var grid = new ClassGrid.draw(grid, sizex, size, sizey);
   document.getElementById("grid").onclick = function(){
-    document.getElementById("grid").innerHTML = draw(grid)
+    document.getElementById("grid").innerHTML = draw(grid);
+
   }
 
   var draw = document.getElementById("draw");
@@ -309,7 +310,7 @@ var grid = grid(sizex, sizey, size, Dungeon);
   }
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML = ClassGrid.reset(Dungeon,name = "x", ClassGrid.size, ClassGrid.sizex, ClassGrid.sizey)
+  document.getElementById("blah").innerHTML = new ClassGrid.reset(Dungeon,name = "x", ClassGrid.size, ClassGrid.sizex, ClassGrid.sizey)
     }
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
