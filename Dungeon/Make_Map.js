@@ -46,15 +46,15 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name = "x"){
-    var grid = this.gridObject(sizex, sizey, size)
+  grid(element, name = "x", size, sizex, sizey){
+    var made = this.gridObject(sizex, sizey, size)
     console.log(grid);
   var make = [];
-  console.log( grid.sizey);
-  console.log( grid.sizex);
-   for (var i = 0; i < grid.sizex; i++) {
+  console.log( made.sizey + " worked");
+  console.log( made.sizex + " worked maybe");
+   for (var i = 0; i < made.sizex; i++) {
     make.push([]);
-  for (var j = 0; j < grid[0].sizey; j++) {
+  for (var j = 0; j < made.sizey; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
@@ -67,9 +67,9 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid,sizex,size,sizey){
-    var grid = this.gridObject(sizex,sizey,size)
-console.log(grid.sizex);
+  draw(grid, sizex, size, sizey){
+    var gridNum = this.gridObject(sizex, sizey, size);
+    var grid = this.grid(Dungeon, name = "x", sizex, sizey, size)
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
@@ -80,14 +80,14 @@ console.log(grid.sizex);
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid.sizex;
+  var boarderlength = gridNum.sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid.sizex;
+  var fixes = gridNum.sizex;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -99,11 +99,9 @@ console.log(grid.sizex);
   text += top_type + "<BR>";//The "<BR>" is to make it a square boarder
 
   // This for satement is for the sides of the grid useing pipes
-  console.log(this.sizex + " Hello");
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-    console.log(this.sizex + "Heloo");
-  for (var j = 0; j < grid[0]; j++) {
+  for (var j = 0; j < grid[0].length; j++) {
     text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
@@ -305,11 +303,8 @@ connect to the vertical lines by useing the center array
 var classs = new ClassGrid(300,100,200)
 var grid = new ClassGrid(grid)
 var number = 200
-  document.getElementById("grid").onclick = function(){
-    document.getElementById("blah").innerHTML = classs.draw(grid)
-  }
+document.getElementById("blah").innerHTML = classs.draw(grid)
 
-  var draw = document.getElementById("draw");
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = classs.room(Dungeon , name = " ")
