@@ -2,11 +2,12 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", size, sizex, sizey){
+    constructor (name = "x", size, sizex, sizey, number = 200){
       this._size = size;
       this._sizex = sizex;
        this._sizey = sizey;
        this._name = name
+       this._number = number
     }
 
     get sizex(){//getter
@@ -32,7 +33,12 @@
     set size(size){//setter
       this._size = size;
     }
-
+    get number(){
+      return this._number;
+    }
+    set number(number){
+      this._number = number;
+    }
     //gridObject is to create an object for the sizes
     gridObject(sizex, sizey, size){
      grid = {
@@ -200,8 +206,10 @@
 
   //Function room uses numbers, grid, element and name to make rooms randomly
     room(element , name = " ", size, sizex, sizey){
+      var number = 200;
       var draw = this.draw(grid, size, sizex, sizey)
     var room =  this.numbers(grid, number);
+    console.log(number + " num");
     var gridNum = this.gridObject(size, sizex, sizey);
     var grid = this.grid(Dungeon, name = "x", sizex, sizey, size)
     //This gives room from function numbers to function room
@@ -239,10 +247,11 @@
     -The outer for statement is to check for the y value of grid.            */
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-      if(i >= room.y && i <= (room.y + room.lengthy)){//y
+      if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
+        console.log("hello");
         //The inner for statement is to check for x values of the grid.
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x
+          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name = " ");
@@ -310,12 +319,8 @@ connect to the vertical lines by useing the center array
 }
 var classs = new ClassGrid(300,100,200)
 var grid = new ClassGrid(grid)
-var number = 200
 document.getElementById("blah").innerHTML = classs.draw(grid)
-document.getElementById("grid").onclick = function(){
-  document.getElementById("blah").innerHTML = classs.logsMadeEasy(name = " ")
 
-}
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = classs.room(Dungeon , name = " ")
