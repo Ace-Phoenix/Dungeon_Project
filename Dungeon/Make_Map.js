@@ -130,6 +130,7 @@
       return num;
   }
 
+//stil do not knoiw why it dose not go through that second for statement for the rooms
 
     /*-Numbers makes the random numbers for the rooms to be
        able to draw it in random lengths and random places. */
@@ -242,6 +243,7 @@
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy)){//y
         //The inner for statement is to check for x values of the grid.
+      //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
           if(j >= room.x && j <= (room.x + room.lengthx)){//x
             //This uses the rooms length and position of x & y and use
