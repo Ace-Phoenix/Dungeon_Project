@@ -14,7 +14,10 @@
       this._size = size;
       this._sizex = sizex;
        this._sizey = sizey;
-       this._name = name
+       this._name = name;
+       this.grid = grid;
+       this.centerx = centerx;
+       this.centery = centery;
     }
     get sizex(){
       return  this._sizex;
@@ -34,27 +37,27 @@
     set size(size){
       this._size = size;
     }
+    get centerx(){
+      return this._centerx;
+    }
     gridObject(sizex, sizey, size){
-     gridObj = {
+     grid = {
        sizex : 100,
        sizey : 200,
-     };
-     gridObj.size = gridObj.sizex + gridObj.sizey;
-     return gridObj;
+     }
+     grid.size = grid.sizex + grid.sizey;
+     return grid;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name = "x"){
-    var grid = this.gridObject(sizex, sizey, size)
-    console.log(grid);
+  grid(element, name = "x", size, sizex, sizey){
+    var made = this.gridObject(sizex, sizey, size)
   var make = [];
-  console.log( grid._sizey);
-  console.log( grid._sizex);
-   for (var i = 0; i < grid._sizex; i++) {
+   for (var i = 0; i < made.sizex; i++) {
     make.push([]);
-  for (var j = 0; j < grid[0]._sizey; j++) {
+  for (var j = 0; j < made.sizey; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
     make[i].push(new element(name,[i],[j]));
@@ -68,10 +71,11 @@
 
 //Function draw uses grid to make a border and draw the grid itself
   draw(grid, sizex, size, sizey){
-
+var gridNum = this.gridObject(sizex, sizey, size);
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
+   var grid =  this.grid(Dungeon, name = "x", sizex, sizey, size);
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -79,14 +83,14 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid._sizex;
+  var boarderlength = gridNum.sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid._sizex/1.58;
+  var fixes = gridNum.sizex;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -98,11 +102,10 @@
   text += top_type + "<BR>";//The "<BR>" is to make it a square boarder
 
   // This for satement is for the sides of the grid useing pipes
-  console.log(this._sizex + " Hello");
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < grid[0]._sizex; j++) {
-    text += "" + grid[i][j]._size;//Setting the grid text in the middle with no space
+  for (var j = 0; j < grid[0].length; j++) {
+    text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
   }
@@ -124,9 +127,9 @@
 
   //Function oddnums uses randomnumbers and creates only odd numbers
     oddnums(number = 200){
-    var num = randomnumbers(number);
+    var num = this.randomnumbers(number);
     while (num % 2 == 0) {
-        num =  randomnumbers(number);
+        num =  this.randomnumbers(number);
         }
         // console.log(num);
       return num;
@@ -184,7 +187,7 @@
 
     room.centery = Math.ceil(room.centery);//This makes it a rounded up #.
 
-    centerr = [];//Making an array to push the centers into.
+    var centerr = [];//Making an array to push the centers into.
 
     // console.log(room.y + " room.y" + " . " + room.x + " room.x");
     // console.log(room.lengthy + " room.lengthy" + " . " + room.lengthy + " room.lengthx");
@@ -196,28 +199,31 @@
     // console.log(room.centerr + " centerr");
     // console.log(room.centery + " centery");
     // console.log(room.centerx + " centerx");
-
+console.log(room)
     return room;//Returning room so that we can use it in other functionss
 }
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
     room(element , name = " ", size, sizex, sizey){
-    var room =  this.numbers(grid, number = 200);
+      var number = 200;
+    var room =  this.numbers(grid, number);
+    console.log(" begining of fucntion")
+    var grid = this.grid(Dungeon, name = "", sizex, sizey, size);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
-    for (var i = 0; i < grid._sizex; i++) {
+    for (var i = 0; i < grid.length; i++) {
       // These if statement are to check if there is/are a(ny) room(s) in the location(s),
       if(i >= room.y && i <= (room.y + room.lengthy))//y if statement.
         //This inner for statement checks for grid.x for room locations.
-        for (var j = 0; j < grid._sizey; j++) {
+        for (var j = 0; j < grid[0].length; j++) {
           //This if satement is what check room locations on the grid.
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == name){
        //Returns draw so nothhing happens because is is an overlap
-       return  draw(grid);
+       return  this.draw(grid);
        //If its not an overlap it will go threw the next set of for statements.
           }
         }
@@ -231,22 +237,26 @@
 
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.            */
-    for (var i = 0; i < grid._sizex; i++) {
+    for (var i = 0; i < grid.length; i++) {
+      console.log(" first for")
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
+        console.log("first if")
         //The inner for statement is to check for x values of the grid.
-        for (var j = 0; j < grid._sizey; j++) {
+        for (var j = 0; j < grid[0].length; j++) {
+          console.log("second for statement")
           if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
+            console.log("second if statement")
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j]._size = new element(name);
+            grid[i][j] = new element(name);
             }
           }
         console.log("made");//This is just to tell us if a room has actually been made
         }
       }
       // This returns the updated grid... yay
-      return  draw(grid);
+      return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
 /*
@@ -302,12 +312,8 @@ connect to the vertical lines by useing the center array
 }
 var classs = new ClassGrid(300,100,200)
 var grid = new ClassGrid(grid)
-var number = 200
-  document.getElementById("grid").onclick = function(){
     document.getElementById("blah").innerHTML = classs.draw(grid)
-  }
 
-  var draw = document.getElementById("draw");
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = classs.room(Dungeon , name = " ")
