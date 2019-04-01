@@ -7,8 +7,10 @@
       this._size = size;
       this._sizex = sizex;
        this._sizey = sizey;
-       this._name = name
-       this._grid = grid;
+       this._name = name;
+       this.grid = grid;
+       this.centerx = centerx;
+       this.centery = centery;
     }
 
     get sizex(){//getter
@@ -228,9 +230,11 @@
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
+        console.log("first if")
         //The inner for statement is to check for x values of the grid.
         for (var j = 0; j < grid[0].length; j++) {
           if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
+            console.log("second if statement")
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name);
