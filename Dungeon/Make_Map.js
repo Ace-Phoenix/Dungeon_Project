@@ -2,53 +2,62 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", size, sizex, sizey){
+    constructor (name = "x", size, sizex, sizey, centerx, centery){
       this._size = size;
       this._sizex = sizex;
        this._sizey = sizey;
-       this._name = name
+       this._name = name;
+       this.centerx = centerx;
+       this.centery = centery;
     }
 
     get sizex(){//getter
       return  this._sizex;
     }
-
-    set sizex(sizex){//setter
-      this._sizex = sizex;
-    }
-
-    get sizey(){//getter
+    get sizey(){
       return  this._sizey;
     }
-
-    set sizey(sizey){//setter
-      this._sizey = sizey;
+    get centery(){
+      return this._centerx;
     }
 
     get size(){//getter
       return this._size;
     }
-
-    set size(size){//setter
+    get centerx(){
+      return this._centerx;
+    }
+    set sizex(sizex){
+      this._sizex = sizex;
+    }
+    set sizey(sizey){
+      this._sizey = sizey;
+    }
+    set centery(centery){
+      this._centery = centery;
+    }
+    set size(size){
       this._size = size;
     }
+    set centerx(centerx){
+      this._centerx = centerx;
+    }
 
-    //gridObject is to create an object for the sizes
     gridObject(sizex, sizey, size){
      grid = {
        sizex : 100,
        sizey : 200,
-     };
-     grid.size = grid.sizex + grid.sizey;
+       total : grid.sizex *grid.sizey,
+     }
      return grid;
     }
-  //Grid creates the inside of the grid when you make the map
+    // This is going to be the empty array that we can pcuh and pull from
+    //var number = number;
+    // This is the empty array that u push and pull from
+    // This is to push into the make, array
   grid(element, name = "x", size, sizex, sizey){
-    //passing gridObject so we can use the sizes as an object
     var made = this.gridObject(sizex, sizey, size)
-    //make is an empty array so we can push to it
   var make = [];
-  //for loops to create the map later
    for (var i = 0; i < made.sizex; i++) {
     make.push([]);
   for (var j = 0; j < made.sizey; j++) {
@@ -63,11 +72,12 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid, sizex, size, sizey){
-    //passing grid object so we can use the sizes
-    var gridNum = this.gridObject(sizex, sizey, size);
-    //passing grid so we can also use that
-    var grid = this.grid(Dungeon, name = "x", sizex, sizey, size)
+  draw(grid, sizex, sizey, size){
+var gridNum = this.gridObject(sizex, sizey, size);
+   // grid.size = 300
+   // grid.sizex = 100
+   // grid.sizey = 200
+   var grid = this.grid(Dungeon, name = "x", sizex, sizey, size);
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -122,7 +132,6 @@
   //Function oddnums uses randomnumbers and creates only odd numbers
     oddnums(number = 200){
     var num = this.randomnumbers(number);
-
     while (num % 2 == 0) {
         num =  this.randomnumbers(number);
         }
@@ -195,17 +204,16 @@
     // console.log(room.centerr + " centerr");
     // console.log(room.centery + " centery");
     // console.log(room.centerx + " centerx");
-
+console.log(room)
     return room;//Returning room so that we can use it in other functionss
 }
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
     room(element , name = " ", size, sizex, sizey){
-      var draw = this.draw(grid, size, sizex, sizey)
+      var number = 200;
     var room =  this.numbers(grid, number);
-    var gridNum = this.gridObject(size, sizex, sizey);
-    var grid = this.grid(Dungeon, name = "x", sizex, sizey, size)
+    var grid = this.grid(Dungeon, name = " ", sizex, sizey, size);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -218,8 +226,10 @@
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == name){
+            console.log(i + " i")
+            console.log(" if grid[i][j] == name")
        //Returns draw so nothhing happens because is is an overlap
-       return draw
+        return this.draw(grid);
        //If its not an overlap it will go threw the next set of for statements.
           }
         }
@@ -238,24 +248,26 @@
     -These two for statements are for drawing the the rooms.
 
     -These if statement checks for the room.length to generate the room.
-    -The outer for statement is to check for the y value of grid.            */
+    -The outer for statement is to check for the y value of grid.*/
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy)){//y
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x
+          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //This uses the rooms length and position of x & y and use
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new element(name = " ");
+            grid[i][j] = new element(name);
+            console.log("new element")
             }
           }
         console.log("made");//This is just to tell us if a room has actually been made
         }
       }
+console.log("made room " + grid)
       // This returns the updated grid... yay
-      return draw
+      return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
 /*
@@ -311,23 +323,17 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var classs = new ClassGrid(300,100,200)
-var grid = new ClassGrid(grid)
-var number = 200
-document.getElementById("blah").innerHTML = classs.draw(grid)
-document.getElementById("grid").onclick = function(){
-  document.getElementById("blah").innerHTML = classs.logsMadeEasy(name = " ")
+var classs = new ClassGrid(300,100,200);
+var grid = new ClassGrid(grid);
+    document.getElementById("blah").innerHTML = classs.draw(grid)
 
-}
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 100; i++) {
-      document.getElementById("blah").innerHTML = classs.room(Dungeon , name = " ")
+    for (var i = 0; i < 10; i++) {
 
-
-    }
+      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ")
+}
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
-    console.log("clicked " + i + " times");
     //End of the rooms beeing made so we know its done clicking
     console.log("Rooms Made");
   }
