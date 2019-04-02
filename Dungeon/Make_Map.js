@@ -1,6 +1,7 @@
 
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
+<<<<<<< HEAD
   class ClassGrid extends Dungeon{
     constructor (name = "x", sizey = 200, sizex = 150,number = 200 ,centerx = 0, centery = 0, grid){
       super(name)
@@ -11,22 +12,26 @@
        this._centerx = centerx;
        this._grid = grid;
        this._number = number;
+=======
+  class ClassGrid{
+    constructor (name = "x", size, sizex, sizey, centerx, centery){
+      this._size = size;
+      this._sizex = sizex;
+       this._sizey = sizey;
+       this._name = name;
+       this.centerx = centerx;
+       this.centery = centery;
+>>>>>>> 15f8ad6daab00d2a011b50c34bdce94822cc5911
     }
 
     get sizex(){//getter
       return  this._sizex;
     }
-
-    set sizex(sizex){//setter
-      this._sizex = sizex;
-    }
-
-    get sizey(){//getter
+    get sizey(){
       return  this._sizey;
     }
-
-    set sizey(sizey){//setter
-      this._sizey = sizey;
+    get centery(){
+      return this._centerx;
     }
 
     get centerx(){//getter
@@ -251,11 +256,13 @@ console.log(oddnumx + " hello");
           //because the rooms are made of " "/blanks.
           console.log(name);
           if(grid[i][j] == name){
+          //  console.log(grid[i][j] + " grid IJ")
        //Returns draw so nothhing happens because is is an overlap
        console.log(grid[i][j]);
        console.log("hellollolol");
        return this.draw(grid)
        //If its not an overlap it will go threw the next set of for statements.
+       return this.draw(grid);
           }
         }
       }
@@ -263,11 +270,10 @@ console.log(oddnumx + " hello");
 
   /*-These next for statements will !only! happen if the first two statement
     are true and they will not overlap.
-
     -These two for statements are for drawing the the rooms.
 
     -These if statement checks for the room.length to generate the room.
-    -The outer for statement is to check for the y value of grid.            */
+    -The outer for statement is to check for the y value of grid.*/
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
@@ -277,6 +283,7 @@ console.log(oddnumx + " hello");
           if(j >= room.x && j <= (room.x + room.lengthx - 1)){//x
             // console.log("second if statement")
             //This uses the rooms length and position of x & y and use
+            if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] =  new element(name)
             console.log(typeof grid[i][j]);
@@ -284,9 +291,9 @@ console.log(oddnumx + " hello");
             console.log(i + " , " + j + ";" + "name " + name);
             }
           }
-        console.log("made");//This is just to tell us if a room has actually been made
         }
       }
+//This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
       // console.log("grid[0][0]");
       // console.log("grid[0][0]");
@@ -358,12 +365,12 @@ document.getElementById("blah").innerHTML = classs.draw()
       document.getElementById("blah").innerHTML = classs.room(ClassGrid, name = " ")
 
 
-    }
+      document.getElementById("blah").innerHTML = classs.room(Dungeon,name=" ");
+}
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
-    console.log("clicked " + i + " times");
     //End of the rooms beeing made so we know its done clicking
-    console.log("Rooms Made");
+
   }
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
