@@ -219,8 +219,6 @@ var gridNum = this.gridObject(sizex, sizey, size);
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == name){
-            console.log(grid[i][j].name + " is the name")
-            console.log(name == " ")
           //  console.log(grid[i][j] + " grid IJ")
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
@@ -245,8 +243,7 @@ var gridNum = this.gridObject(sizex, sizey, size);
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new Dungeon(name);
-            console.log("made room " + grid)
+            grid[i][j] = new element(name);
             }
           }
         }
