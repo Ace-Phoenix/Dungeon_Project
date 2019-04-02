@@ -223,10 +223,10 @@ var gridNum = this.gridObject(sizex, sizey, size);
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
        return this.draw(grid);
+            }
           }
         }
       }
-    }
 
   /*-These next for statements will !only! happen if the first two statement
     are true and they will not overlap.
