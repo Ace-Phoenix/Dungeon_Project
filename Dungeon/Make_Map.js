@@ -90,7 +90,7 @@ var gridNum = this.gridObject(sizex, sizey, size);
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
-  //Fixes is to make the top text fit with
+  //Fixes is to make the top text fit with 
   //larger grids and smaller grids it dose not work as well
   var fixes = gridNum.sizex;
 
