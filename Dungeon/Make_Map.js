@@ -44,10 +44,9 @@
     }
 
     gridObject(sizex, sizey, size){
-     grid = {
+     var grid = {
        sizex : 100,
        sizey : 200,
-       total : grid.sizex *grid.sizey,
      }
      return grid;
     }
@@ -199,21 +198,17 @@ var gridNum = this.gridObject(sizex, sizey, size);
     // console.log(room.centerx + " room.centerx" + " . " + room.centery + " room.cenetry");
 
     //Making center the absolute ceneter of the room
-    room.centerr = centerr.push([room.centerx,room.centery]);
-    // console.log(room.center + " center");
-    // console.log(room.centerr + " centerr");
-    // console.log(room.centery + " centery");
-    // console.log(room.centerx + " centerx");
-console.log(room)
+    room.centerr = centerr.push([room.centerx, room.centery]);
     return room;//Returning room so that we can use it in other functionss
 }
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element , name = " ", size, sizex, sizey){
+    room(element , name = " "){
       var number = 200;
     var room =  this.numbers(grid, number);
-    var grid = this.grid(Dungeon, name = " ", sizex, sizey, size);
+    var grid = this.grid(Dungeon, name = " ");
+    console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -226,25 +221,17 @@ console.log(room)
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == name){
-            console.log(i + " i")
-            console.log(" if grid[i][j] == name")
+          //  console.log(grid[i][j] + " grid IJ")
        //Returns draw so nothhing happens because is is an overlap
-        return this.draw(grid);
        //If its not an overlap it will go threw the next set of for statements.
+       return this.draw(grid);
+            }
           }
         }
       }
-    }
-    console.log(room[0] +  "[0] nothin");
-    console.log(room.lengthy + " lengthy");
-    console.log(room.lengthx + " lengthx");
-    console.log(room.x + " x");
-    console.log(room.y + " y");
-    console.log((room.y + room.lengthy) + " jimmey");
-    console.log((room.x + room.lengthx) + " jimmex");
+
   /*-These next for statements will !only! happen if the first two statement
     are true and they will not overlap.
-
     -These two for statements are for drawing the the rooms.
 
     -These if statement checks for the room.length to generate the room.
@@ -255,17 +242,16 @@ console.log(room)
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
-          if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
+          console.log(j + " j")
             //This uses the rooms length and position of x & y and use
+            if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name);
-            console.log("new element")
             }
           }
-        console.log("made");//This is just to tell us if a room has actually been made
         }
       }
-console.log("made room " + grid)
+//This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
       return  this.draw(grid);
     }
@@ -324,18 +310,18 @@ connect to the vertical lines by useing the center array
   //Rooms button make sthe rooms
 }
 var classs = new ClassGrid(300,100,200);
-var grid = new ClassGrid(grid);
-    document.getElementById("blah").innerHTML = classs.draw(grid)
+var grid = new ClassGrid(name = "x");
+    document.getElementById("blah").innerHTML = classs.draw(grid);
 
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ")
+      document.getElementById("blah").innerHTML = classs.room(Dungeon,name=" ");
 }
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
     //End of the rooms beeing made so we know its done clicking
-    console.log("Rooms Made");
+
   }
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
