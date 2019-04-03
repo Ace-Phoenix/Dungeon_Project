@@ -1,10 +1,10 @@
 
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
-  class ClassGrid{
-    constructor (name = "x", size, sizex, sizey, centerx, centery){
-      this._size = size;
-      this._sizex = sizex;
+  class ClassGrid extends Dungeon{
+    constructor (name = "x", sizey = 200, sizex = 150,number = 200 ,centerx = 0, centery = 0){
+      super(name = "x")
+      this._name = name;
        this._sizey = sizey;
        this._name = name;
        this.centerx = centerx;
@@ -43,12 +43,17 @@
       this._centerx = centerx;
     }
 
-    gridObject(sizex, sizey, size){
-     var grid = {
-       sizex : 100,
-       sizey : 200,
-     }
-     return grid;
+    //gridObject is to create an object for the sizes
+    gridObject(sizex, sizey){
+      sizex = this._sizex;
+      sizey = this._sizey;
+      name = this.name;
+    var grids = {
+      sizex : sizex,
+      sizey : sizey,
+      name : name
+    };
+    return grids;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -71,12 +76,10 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid, sizex, sizey, size){
-var gridNum = this.gridObject(sizex, sizey, size);
-   // grid.size = 300
-   // grid.sizex = 100
-   // grid.sizey = 200
-   var grid = this.grid(Dungeon, name = "x", sizex, sizey, size);
+  draw(grid, sizex, sizey){
+    //passing grid so we can also use that
+    grid = this.grid(ClassGrid, name = "x", sizex, sizey)
+    console.log(grid)
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -84,14 +87,14 @@ var gridNum = this.gridObject(sizex, sizey, size);
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = gridNum.sizex;
+  var boarderlength = grid[0].length;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
-  //Fixes is to make the top text fit with 
+  //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = gridNum.sizex;
+  var fixes = grid[0].length;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -106,7 +109,7 @@ var gridNum = this.gridObject(sizex, sizey, size);
   // This for satement is for the sides of the grid useing pipes
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < grid[0].length; j++) {
+  for (var j = 0; j < grid[i].length; j++) {//
     text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
@@ -142,7 +145,7 @@ var gridNum = this.gridObject(sizex, sizey, size);
 
     /*-Numbers makes the random numbers for the rooms to be
        able to draw it in random lengths and random places. */
-    numbers(grid, number = 200){
+    numbers(grid, number){
   //Storing random numbers from oddnums in varriables using different
   //variables to get different random odd numbers for different uses.
   var oddnumx =  this.oddnums(number);//This is the x odd number
@@ -204,11 +207,12 @@ var gridNum = this.gridObject(sizex, sizey, size);
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element , name = " "){
-      var number = 200;
+    room(element , name = " ",grid , sizex, sizey, number){
     var room =  this.numbers(grid, number);
-    var grid = this.grid(Dungeon, name = " ");
-    console.log(typeof(grid) +" this.grid")
+    console.log(room);
+    // console.log(number + " num");
+    // var grid = this.grid(ClassGrid, name = "x", sizex, sizey)
+    // console.log(grid);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -220,8 +224,7 @@ var gridNum = this.gridObject(sizex, sizey, size);
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
-          if(grid[i][j] == name){
-          //  console.log(grid[i][j] + " grid IJ")
+          if(grid[i][j] == (name =" ")){
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
        return this.draw(grid);
@@ -246,14 +249,19 @@ var gridNum = this.gridObject(sizex, sizey, size);
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new element(name);
+            grid[i][j] = new element(this._name = " ");
+            // console.log(grid[i][j]);
+            console.log(i + " , " + j + ";" + "name " + this._name);
             }
           }
         }
       }
 //This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
-      return  this.draw(grid);
+      // console.log("grid[0][0]");
+      // console.log("grid[0][0]");
+
+      return this.draw(grid)
     }
     //Function reset, resets the grid back to its original state/stage.
 /*
@@ -309,12 +317,14 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var classs = new ClassGrid(300,100,200);
-var grid = new ClassGrid(name = "x");
-    document.getElementById("blah").innerHTML = classs.draw(grid);
+var classs = new ClassGrid(this._sizey, this._sizex, this._number)
+var grid = (this._grid = classs.grid(ClassGrid, name = "x"))
+document.getElementById("blah").innerHTML = classs.draw(grid)
 
   document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 1; i++) {
+      document.getElementById("blah").innerHTML = classs.room(ClassGrid, name = " ", grid)
+
 
       document.getElementById("blah").innerHTML = classs.room(Dungeon,name=" ");
 }
