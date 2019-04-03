@@ -1,7 +1,6 @@
 
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
-<<<<<<< HEAD
   class ClassGrid extends Dungeon{
     constructor (name = "x", sizey = 200, sizex = 150,number = 200 ,centerx = 0, centery = 0, grid){
       super(name)
@@ -12,16 +11,6 @@
        this._centerx = centerx;
        this._grid = grid;
        this._number = number;
-=======
-  class ClassGrid{
-    constructor (name = "x", size, sizex, sizey, centerx, centery){
-      this._size = size;
-      this._sizex = sizex;
-       this._sizey = sizey;
-       this._name = name;
-       this.centerx = centerx;
-       this.centery = centery;
->>>>>>> 15f8ad6daab00d2a011b50c34bdce94822cc5911
     }
 
     get sizex(){//getter
