@@ -1,18 +1,6 @@
 
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
-<<<<<<< HEAD
-  class ClassGrid extends Dungeon{
-    constructor (name = "x", sizey = 200, sizex = 150,number = 200 ,centerx = 0, centery = 0, grid){
-      super(name)
-      this._name = name;
-       this._sizey = sizey;
-       this._sizex = sizex;
-       this._centery = centery;
-       this._centerx = centerx;
-       this._grid = grid;
-       this._number = number;
-=======
   class ClassGrid{
     constructor (name = "x", sizex = 150, sizey = 200, centerx = "ur mum", centery = "ur mum"){
       this._sizex = sizex;
@@ -20,7 +8,9 @@
        this._name = name;
        this.centerx = centerx;
        this.centery = centery;
->>>>>>> fbe43e88c5a9bca5babc95cd190110cd1af3fba1
+    }
+    get grid(){
+      return this._grid;
     }
     get sizex(){//getter
       return  this._sizex;
@@ -33,6 +23,9 @@
     }
     get centerx(){
       return this._centerx;
+    }
+    set grid(grid){
+      this._grid = grid;
     }
     set sizex(sizex){
       this._sizex = sizex;
@@ -57,7 +50,7 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name = "x", sizex, sizey){
+  grid(element, name, sizex, sizey){
   var made = this.gridObject(sizex, sizey)
   var make = [];
    for (var i = 0; i < made.sizex; i++) {
@@ -65,7 +58,7 @@
    for (var j = 0; j < made.sizey; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
-    make[i].push(new element(name,[i][j]));
+    make[i].push(new element(name,[i],[j]));
       }
     }
  // This is going to be the grid[i][j]
@@ -207,10 +200,10 @@ var gridNum = this.gridObject(sizex, sizey);
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element , name = " "){
+    room(grid, element , name){
     var number = 200;
     var room =  this.numbers(grid, number);
-    var grid = this.grid(Dungeon);
+    var grid = this.grid(Dungeon, name);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -247,9 +240,7 @@ var gridNum = this.gridObject(sizex, sizey);
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
-            console.log("last if ");
-              grid[i][j]._name = new element(name = " ");
-              console.log(grid[i][j] + " grid[i][j]")
+            grid[i][j] =  new element(name);
             }
           }
         }
@@ -274,7 +265,6 @@ horizontal halls
       console.log(i + " i");
       return  draw(grid);
     }
-
 /*
 This function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
@@ -292,8 +282,8 @@ connect to the vertical lines by useing the center array
     }
 
       reset(element, name = "x", sizex, sizey){
-        var gridNum = this.gridObject(size, sizex, sizey);
-        var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
+        var gridNum = this.gridObject( sizex, sizey);
+        var grid = this.grid(Dungeon, name = "x", sizex, sizey)
       //These for statementjust make it so it gose over the entire grid.
         for (var i = 0; i < gridNum.sizex; i++) {
         for (var j = 0; j < gridNum.sizey; j++) {
@@ -312,15 +302,14 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
   }
-      var classs = new ClassGrid(300,100,200);
-      var grid = new ClassGrid(grid);
-      document.getElementById("blah").innerHTML = classs.draw(grid);
 
+  var classs = new ClassGrid(name);
+  document.getElementById("blah").innerHTML = classs.draw(classs.grid, name = "x");
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ");
-        }
+      document.getElementById("blah").innerHTML = classs.room(classs.grid, Dungeon, name = " ");
+    }
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
     //End of the rooms beeing made so we know its done clicking
