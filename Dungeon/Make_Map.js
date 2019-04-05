@@ -311,7 +311,7 @@ connect to the vertical lines by useing the center array
 
         }
   //Reset button resets the grid back to normal state
-      document.getElementById("Reset").onclick = function()
+      document.getElementById("Reset").onclick = function(){
       document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x");
         }
 //     document.getElementById("hallways").onclick = function(){
