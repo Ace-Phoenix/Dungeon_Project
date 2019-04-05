@@ -191,9 +191,9 @@ console.log(grid);
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element , name = " ", sizey = 200, sizex = 150, grid){
+    room(element , name = " ", sizey = 200, sizex = 150){
       var number = 200;
-    var room =  this.numbers(grid, number);
+    var room =  this.numbers(number);
     // console.log(typeof(grid) +" this.grid")
 var grid = this._grid
     //This gives room from function numbers to function room
@@ -311,7 +311,7 @@ connect to the vertical lines by useing the center array
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ", classs.grid);
+      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ");
     }
   }
     //Just telling total clicks so that we will know it is useing the right
