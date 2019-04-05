@@ -38,24 +38,22 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name, sizey = 200, sizex = 150, grid){
+  grid(element, name = "x", sizey = 200, sizex = 150, grid){
     console.log(this._sizey + " thissizey");
     console.log(this._sizex + " this.sizex");
-    this._sizey = 200;
-    this._sizex = 150;
-    var grid = []
+    var gridArray = []
    for (var i = 0; i < this._sizey; i++) {
-    grid.push([]);
+    gridArray.push([]);
     // console.log(grid);
   for (var j = 0; j < this._sizex; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
-    grid[i].push(new element(this._name,[i][j]));
+    gridArray[i].push(new element(name,[i][j]));
       }
     }
  // This is going to be the grid[i][j]
  // console.log(grid);
- this._grid = grid
+ this._grid = gridArray
  return this._grid;
   }
 
@@ -65,7 +63,7 @@
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
-   var grid = this.grid(Dungeon,name , sizey, sizex, grid);
+   var grid = this.grid(Dungeon, name = "x", sizey = 200, sizex= 150, grid);
    console.log(this._grid);
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
@@ -197,7 +195,7 @@
     room(element , name = " ", sizex, sizey, grid){
       var number = 200;
     var room =  this.numbers(grid, number);
-    var grid = this.grid(Dungeon, name, sizey, sizex, grid);
+    var grid = this.grid(Dungeon, sizey, sizex, grid);
     // console.log(typeof(grid) +" this.grid")
 
     //This gives room from function numbers to function room
@@ -229,6 +227,8 @@
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.*/
     // console.log(grid.length + " lengtth");
+    console.log(name);
+    console.log("^");
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
 
@@ -243,7 +243,7 @@
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new element(name = " ");
+            grid[i][j] = new element(name);
             console.log(grid[i][j]);
             console.log(i + " i");
             console.log(j + " j");
@@ -290,7 +290,7 @@ connect to the vertical lines by useing the center array
 
       reset(element, name = "x", sizex, sizey){
         var gridNum = this.gridObject(size, sizex, sizey);
-        var grid = this.grid(ClassGrid, name = "x", size, sizex, sizey)
+        var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
       //These for statementjust make it so it gose over the entire grid.
       for (var i = 0; i < gridNum.sizex; i++) {
         for (var j = 0; j < gridNum.sizey; j++) {
@@ -309,16 +309,16 @@ connect to the vertical lines by useing the center array
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
 }
-var classs = new ClassGrid(name = "x", sizey = 200,sizex = 150);
-var grids = classs.grid(element = Dungeon, name);
+var classs = new ClassGrid(name);
+var grids = classs.grid(Dungeon, name);
 classes = new ClassGrid(name, sizey = 200, sizex = 150, this._number = 200, grids)
 console.log(classes);
-    document.getElementById("blah").innerHTML = classs.draw(grids);
+    document.getElementById("blah").innerHTML = classs.draw(sizex, sizey);
 
   document.getElementById("Rooms").onclick = function(){
     for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classes.room(Dungeon, name=" ");
+      document.getElementById("blah").innerHTML = classs.room(Dungeon, name=" ");
 }
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
@@ -327,7 +327,7 @@ console.log(classes);
   }
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML =  classes.reset(ClassGrid, name = "x")
+  document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
     }
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
