@@ -1,6 +1,32 @@
 
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
+<<<<<<< HEAD
+  class ClassGrid{
+    constructor (name = "x", sizex = 150, sizey = 200, centerx = "ur mum", centery = "ur mum"){
+      this._sizex = sizex;
+       this._sizey = sizey;
+       this._name = name;
+       this.centerx = centerx;
+       this.centery = centery;
+    }
+    get sizex(){//getter
+      return  this._sizex;
+    }
+    get sizey(){
+      return  this._sizey;
+    }
+    get centery(){
+      return this._centerx;
+    }
+    get centerx(){
+      return this._centerx;
+    }
+    set sizex(sizex){
+      this._sizex = sizex;
+    }
+    set sizey(sizey){
+=======
   class ClassGrid extends Dungeon{
     constructor (name = "x", sizey = 200, sizex = 150, number = 200, grid){
       super(name)
@@ -16,12 +42,24 @@
     }
 
     set sizey(sizey){//setter
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
       this._sizey = sizey;
     }
 
     get sizex(){//getter
       return  this._sizex;
     }
+<<<<<<< HEAD
+    set centerx(centerx){
+      this._centerx = centerx;
+    }
+    gridObject(sizex, sizey, size){
+     var grid = {
+       sizex : 100,
+       sizey : 200,
+     }
+     return grid;
+=======
 
     set sizex(sizex){//setter
       this._sizex = sizex;
@@ -33,12 +71,25 @@
 
     set grid(grid){//setter
       this._grid = grid;
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
+<<<<<<< HEAD
   grid(element, name = "x", sizey = 200, sizex = 150, grid){
+=======
+<<<<<<< HEAD
+  grid(element, name, sizex, sizey){
+  var made = this.gridObject(sizex, sizey)
+  var make = [];
+   for (var i = 0; i < made.sizex; i++) {
+    make.push([]);
+   for (var j = 0; j < made.sizey; j++) {
+=======
+  grid(element, name, sizey = 200, sizex = 150, grid){
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
     console.log(this._sizey + " thissizey");
     console.log(this._sizex + " this.sizex");
     var gridArray = []
@@ -46,6 +97,7 @@
     gridArray.push([]);
     // console.log(grid);
   for (var j = 0; j < this._sizex; j++) {
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
    //This is to push the new element into the
    //array so it has the name and grid locations
     gridArray[i].push(new element(name,[i][j]));
@@ -59,12 +111,21 @@
 
 
 //Function draw uses grid to make a border and draw the grid itself
+<<<<<<< HEAD
+  draw(grid, sizex, sizey){
+var gridNum = this.gridObject(sizex, sizey);
+   // grid.size = 300
+   // grid.sizex = 100
+   // grid.sizey = 200
+   var grid = this.grid(Dungeon, sizex, sizey);
+=======
   draw(grid,name, sizey, sizex){
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
    var grid = this.grid(Dungeon, name = "x", sizey = 200, sizex= 150, grid);
    console.log(this._grid);
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -192,12 +253,19 @@
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
+<<<<<<< HEAD
+    room(grid, element, name){
+    var number = 200;
+    var room =  this.numbers(grid, number);
+    var grid = this.grid(Dungeon, name = "x");
+=======
     room(element , name = " ", sizex, sizey, grid){
       var number = 200;
     var room =  this.numbers(grid, number);
     var grid = this.grid(Dungeon, sizey, sizex, grid);
     // console.log(typeof(grid) +" this.grid")
 
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -210,25 +278,38 @@
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == " "){
+<<<<<<< HEAD
+          //  console.log(grid[i][j] + " grid IJ")
+       //Returns draw so nothhing happens because is is an overlap
+       //If its not an overlap it will go threw the next set of for statements.
+       return this.draw(grid) + console.log("true");;
+=======
             // console.log(grid[i][j]._name);
             // console.log(name);
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
        return this.draw(grid) + console.log("true");
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
             }
           }
         }
       }
-
   /*-These next for statements will !only! happen if the first two statement
     are true and they will not overlap.
     -These two for statements are for drawing the the rooms.
 
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.*/
+<<<<<<< HEAD
+    console.log(" begining of second part");
+=======
     // console.log(grid.length + " lengtth");
+<<<<<<< HEAD
     console.log(name);
     console.log("^");
+=======
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
 
@@ -238,15 +319,27 @@
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
+<<<<<<< HEAD
+=======
           // console.log(j + " j")
 
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
+<<<<<<< HEAD
             grid[i][j] = new element(name);
+=======
+<<<<<<< HEAD
+            grid[i][j] =  new element(name = " ");
+            console.log(grid[i][j] + " jirqwemo[kl]")
+=======
+            grid[i][j] = new element(name = " ");
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
             console.log(grid[i][j]);
             console.log(i + " i");
             console.log(j + " j");
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
             }
           }
         }
@@ -271,12 +364,11 @@ horizontal halls
       console.log(i + " i");
       return  draw(grid);
     }
-
 /*
 This function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
 */
-    horizhalls(grid, numbers, element, name = " "){
+      horizhalls(grid, numbers, element, name = " "){
       var room = this.numbers(grid, number = 200);
       var oldroom = room.y;
         for (var j = 0; j < room.x - oldroom; j++) {
@@ -289,10 +381,19 @@ connect to the vertical lines by useing the center array
     }
 
       reset(element, name = "x", sizex, sizey){
+<<<<<<< HEAD
+        var gridNum = this.gridObject( sizex, sizey);
+        var grid = this.grid(Dungeon, name = "x", sizex, sizey)
+=======
         var gridNum = this.gridObject(size, sizex, sizey);
+<<<<<<< HEAD
         var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
+=======
+        var grid = this.grid(ClassGrid, name = "x", size, sizex, sizey)
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
       //These for statementjust make it so it gose over the entire grid.
-      for (var i = 0; i < gridNum.sizex; i++) {
+        for (var i = 0; i < gridNum.sizex; i++) {
         for (var j = 0; j < gridNum.sizey; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
@@ -308,27 +409,52 @@ connect to the vertical lines by useing the center array
 //have a boarder using room, numbers and grid
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
+<<<<<<< HEAD
+  }
+=======
 }
 var classs = new ClassGrid(name);
 var grids = classs.grid(Dungeon, name);
 classes = new ClassGrid(name, sizey = 200, sizex = 150, this._number = 200, grids)
 console.log(classes);
+<<<<<<< HEAD
     document.getElementById("blah").innerHTML = classs.draw(sizex, sizey);
+=======
+    document.getElementById("blah").innerHTML = classs.draw(grids);
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
 
-  document.getElementById("Rooms").onclick = function(){
-    for (var i = 0; i < 10; i++) {
+  var classs = new ClassGrid(name);
+  document.getElementById("blah").innerHTML = classs.draw(classs.grid, name = "x");
+      document.getElementById("Rooms").onclick = function(){
+      for (var i = 0; i < 10; i++) {
 
+<<<<<<< HEAD
       document.getElementById("blah").innerHTML = classs.room(Dungeon, name=" ");
+=======
+<<<<<<< HEAD
+      document.getElementById("blah").innerHTML = classs.room(classs.grid, Dungeon, name = " " );
+    }
+=======
+      document.getElementById("blah").innerHTML = classes.room(Dungeon, name=" ");
+>>>>>>> 7558db61b81231304c2b5d018e9d41851163e693
 }
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
     //End of the rooms beeing made so we know its done clicking
 
-  }
+        }
   //Reset button resets the grid back to normal state
+<<<<<<< HEAD
+      document.getElementById("Reset").onclick = function(){
+      document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x")
+        }
+=======
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
     }
+>>>>>>> 67e11ef3efd87940a1d292d323d6c9391b9fedd3
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
 //         document.getElementById("blah").innerHTML = classGrid.horizhalls(grid, numbers, Dungeon);
