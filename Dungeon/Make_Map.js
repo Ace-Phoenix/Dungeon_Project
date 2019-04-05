@@ -9,9 +9,6 @@
        this.centerx = centerx;
        this.centery = centery;
     }
-    get grid(){
-      return this._grid;
-    }
     get sizex(){//getter
       return  this._sizex;
     }
@@ -23,9 +20,6 @@
     }
     get centerx(){
       return this._centerx;
-    }
-    set grid(grid){
-      this._grid = grid;
     }
     set sizex(sizex){
       this._sizex = sizex;
@@ -200,10 +194,10 @@ var gridNum = this.gridObject(sizex, sizey);
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(grid, element , name){
+    room(grid, element, name){
     var number = 200;
     var room =  this.numbers(grid, number);
-    var grid = this.grid(Dungeon, name);
+    var grid = this.grid(Dungeon, name = "x");
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -215,11 +209,11 @@ var gridNum = this.gridObject(sizex, sizey);
           if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
-          if(grid[i][j]._name == " "){
+          if(grid[i][j] == " "){
           //  console.log(grid[i][j] + " grid IJ")
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
-       return this.draw(grid);
+       return this.draw(grid) + console.log("true");;
             }
           }
         }
@@ -240,7 +234,8 @@ var gridNum = this.gridObject(sizex, sizey);
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] =  new element(name);
+            grid[i][j] =  new element(name = " ");
+            console.log(grid[i][j] + " jirqwemo[kl]")
             }
           }
         }
@@ -308,7 +303,7 @@ connect to the vertical lines by useing the center array
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(classs.grid, Dungeon, name = " ");
+      document.getElementById("blah").innerHTML = classs.room(classs.grid, Dungeon, name = " " );
     }
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
