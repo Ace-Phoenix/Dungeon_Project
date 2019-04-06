@@ -2,12 +2,12 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", sizey = 200, sizex = 150, number = 200, grid){
-      this._name = "x";
+    constructor (name, sizey = 200, sizex = 150, number = 200, grid){
        this._sizey = sizey;
        this._sizex = sizex;
        this._grid = grid;
        this._number = number;
+       this._name = "x";
     }
 
     get sizey(){//getter
@@ -37,7 +37,7 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, sizey = 200, sizex = 150){
+  grid(element, name = "x", sizey = 200, sizex = 150){
     console.log(this._sizey + " thissizey");
     console.log(this._sizex + " this.sizex");
     var gridArray = []
@@ -228,19 +228,16 @@ var grid = this._grid
     console.log("^");
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-
-      // console.log("hello");
-
+      // console.log("hello")
       if(i >= room.y && i <= (room.y + room.lengthy)){//y
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
           // console.log(j + " j")
-
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new element(name = " ");
+            this._name = new element(name = " ");
             console.log(i + " i");
             console.log(j + " j");
             }
