@@ -2,36 +2,24 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", sizey = 200, sizex = 150, number = 200, grid){
-      this._name = "x";
+    constructor (name = "x", sizex = 150, sizey = 200){
+      this._sizex = sizex;
        this._sizey = sizey;
        this._sizex = sizex;
        this._number = number;
        this._grid = grid;
     }
-
-    get sizey(){//getter
-      return  this._sizey;
-    }
-
-    set sizey(sizey){//setter
-      this._sizey = sizey;
-    }
-
     get sizex(){//getter
       return  this._sizex;
     }
-
-    set sizex(sizex){//setter
+    set sizex(sizex){
       this._sizex = sizex;
     }
-
-    get grid(){//getter
-      return this._grid;
+    get sizey(){
+      return  this._sizey;
     }
-
-    set grid(grid){//setter
-      this._grid = grid;
+    set sizey(sizey){
+      this._sizey = sizey;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
@@ -44,7 +32,7 @@
   for (var j = 0; j < this._sizex; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
-    gridArray[i].push(new element(this._name,[i][j]));
+    make[i].push(new element(this._name,[i],[j]));
       }
     }
  // This is going to be the grid[i][j]
@@ -66,7 +54,7 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = grid.length;
+  var boarderlength = gridNum.sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
@@ -224,17 +212,12 @@ console.log(grid);
     console.log("^");
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
-
-      // console.log("hello");
-
       if(i >= room.y && i <= (room.y + room.lengthy)){//y
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
-          // console.log(j + " j")
-
             //This uses the rooms length and position of x & y and use
-            if(j >= room.x && j <= (room.x + room.lengthx)){//
+            if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j] = new element(name = "o");
             console.log(i + " i");
@@ -281,8 +264,8 @@ connect to the vertical lines by useing the center array
     }
 
       reset(element, name = "x", sizex, sizey){
-        var gridNum = this.gridObject(size, sizex, sizey);
-        var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
+        var gridNum = this.gridObject( sizex, sizey);
+        var grid = this.grid(Dungeon, name = "x", sizex, sizey)
       //These for statementjust make it so it gose over the entire grid.
         for (var i = 0; i < gridNum.sizex; i++) {
         for (var j = 0; j < gridNum.sizey; j++) {
@@ -302,18 +285,24 @@ connect to the vertical lines by useing the center array
   //Rooms button make sthe rooms
   }
 
-  var classs = new ClassGrid(name);
-  document.getElementById("blah").innerHTML = classs.draw(name);
+  var classs = new ClassGrid;
+  var grid = classs.grid(Dungeon);
+  document.getElementById("blah").innerHTML = classs.draw(grid, name);
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ");
+      document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
     //Just telling total clicks so that we will know it is useing the right
     //number for the ammount of clicks and even if it does.
     //End of the rooms beeing made so we know its done clicking
   //Reset button resets the grid back to normal state
+
+      document.getElementById("Reset").onclick = function(){
+      document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x");
+        }
+
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
     }
