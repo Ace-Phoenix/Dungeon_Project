@@ -6,8 +6,8 @@
       this._name = "x";
        this._sizey = sizey;
        this._sizex = sizex;
-       this._grid = grid;
        this._number = number;
+       this._grid = grid;
     }
 
     get sizey(){//getter
@@ -38,12 +38,9 @@
     // This is the empty array that u push and pull from
     // This is to push into the make, array
   grid(element, sizey = 200, sizex = 150){
-    console.log(this._sizey + " thissizey");
-    console.log(this._sizex + " this.sizex");
     var gridArray = []
    for (var i = 0; i < this._sizey; i++) {
     gridArray.push([]);
-    // console.log(grid);
   for (var j = 0; j < this._sizex; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
@@ -51,19 +48,17 @@
       }
     }
  // This is going to be the grid[i][j]
- // console.log(grid);
- this._grid = gridArray
- return this._grid;
+
+ return gridArray;
   }
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(sizey, sizex, grid){
+  draw(name, sizey, sizex, grid){
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
    grid = this.grid(Dungeon, sizey = 200, sizex= 150);
-console.log(grid);
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -78,7 +73,7 @@ console.log(grid);
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = grid.length ; console.log(grid.length + " ?");
+  var fixes = grid.length;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -195,7 +190,8 @@ console.log(grid);
       var number = 200;
     var room =  this.numbers(number);
     // console.log(typeof(grid) +" this.grid")
-var grid = this._grid
+var grid = this.grid(Dungeon, sizex, sizey)
+console.log(grid);
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
     for (var i = 0; i < grid.length; i++) {
@@ -240,7 +236,7 @@ var grid = this._grid
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j] = new element(name = " ");
+            grid[i][j] = new element(name = "o");
             console.log(i + " i");
             console.log(j + " j");
             }
@@ -249,7 +245,7 @@ var grid = this._grid
       }
 //This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
-      console.log(grid);
+      console.log(this._name);
       return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
@@ -292,7 +288,7 @@ connect to the vertical lines by useing the center array
         for (var j = 0; j < gridNum.sizey; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
-          grid[i][j] = new element(name = " ");
+          grid[i][j] = new element(this._name = " ");
         }
       }
       //Returns draw so it makes it so that the
