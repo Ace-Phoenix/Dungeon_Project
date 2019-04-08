@@ -307,7 +307,7 @@ connect to the vertical lines by useing the center array
   }
 
   var classs = new ClassGrid(name);
-  var grid = classs.grid(Dungeon, name = "x");
+  var grid = classs.grid(Dungeon, name);
   document.getElementById("blah").innerHTML = classs.draw(grid, name);
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
