@@ -2,12 +2,16 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", sizex = 150, sizey = 200, centerx = "ur mum", centery = "ur mum"){
+    constructor (name, sizex = 150, sizey = 200, centerx = "ur mum", centery = "ur mum"){
       this._sizex = sizex;
        this._sizey = sizey;
        this._name = name;
-       this.centerx = centerx;
-       this.centery = centery;
+       this._centerx = centerx;
+       this._centery = centery;
+       this._name = name;
+    }
+    get name(){
+      return this._name;
     }
     get sizex(){//getter
       return  this._sizex;
@@ -20,6 +24,9 @@
     }
     get centerx(){
       return this._centerx;
+    }
+    set name(name){
+      this._name = name;
     }
     set sizex(sizex){
       this._sizex = sizex;
@@ -44,7 +51,7 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name, sizex, sizey){
+  grid(element, name = "x", sizex, sizey){
   var made = this.gridObject(sizex, sizey)
   var make = [];
    for (var i = 0; i < made.sizex; i++) {
@@ -237,7 +244,7 @@ var gridNum = this.gridObject(sizex, sizey);
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx - 1)){//
             //it to put it on the grid not draw it just make it part of it.
-          grid.name =  new element(name = " ");
+          grid[i][j] = new element(name = " ");
             }
           }
         }
@@ -278,7 +285,6 @@ connect to the vertical lines by useing the center array
       console.log(j + " j");
       return  this.draw(grid)
     }
-
       reset(element, name = "x", sizex, sizey){
         var gridNum = this.gridObject( sizex, sizey);
         var grid = this.grid(Dungeon, name = "x", sizex, sizey)
@@ -294,15 +300,14 @@ connect to the vertical lines by useing the center array
       //grid is all one text after being changed.
       return  this.draw(grid);
     }
-
 //Function drawborder is going to make the rooms
 //have a boarder using room, numbers and grid
   // This is what physiaclly draws the grid
   //Rooms button make sthe rooms
   }
 
-  var classs = new ClassGrid;
-  var grid = classs.grid(Dungeon);
+  var classs = new ClassGrid(name);
+  var grid = classs.grid(Dungeon, name = "x");
   document.getElementById("blah").innerHTML = classs.draw(grid, name);
       document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
