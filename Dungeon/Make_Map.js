@@ -5,7 +5,6 @@
     constructor (name = "x", sizex = 150, sizey = 200){
       this._sizex = sizex;
        this._sizey = sizey;
-       this._sizex = sizex;
        this._number = number;
        this._grid = grid;
     }
