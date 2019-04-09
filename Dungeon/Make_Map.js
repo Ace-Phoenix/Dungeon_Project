@@ -36,8 +36,7 @@
     // This is the empty array that u push and pull from
     // This is to push into the make, array
   grid(element, sizey = 200, sizex = 150){
-    console.log(this._sizey + " thissizey");
-    console.log(this._sizex + " this.sizex");
+
     var gridArray = []
    for (var i = 0; i < this._sizey; i++) {
     gridArray.push([]);
@@ -189,7 +188,6 @@
     room(element ,grid , name = " ", sizey = 200, sizex = 150){
       var number = 200;
     var room =  this.numbers(number);
-    
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
@@ -219,8 +217,6 @@
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.*/
     // console.log(grid.length + " lengtth");
-    console.log(name);
-    console.log("^");
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       // console.log("hello")
@@ -233,15 +229,12 @@
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j]._name = " "
-            console.log(i + " i");
-            console.log(j + " j");
             }
           }
         }
       }
 //This is just to tell us if a room has actually been made
-      // This returns the updated grid... yay
-      console.log(grid);
+      // This returns the updated grid... y
       return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
