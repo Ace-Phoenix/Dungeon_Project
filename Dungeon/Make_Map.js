@@ -2,62 +2,73 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name, sizey = 200, sizex = 150, number = 200, grid){
-      this._name = "x";
+    constructor (name = "x", sizey = 200, sizex = 200, centerx = "ur mum", centery = "ur mum"){
        this._sizey = sizey;
        this._sizex = sizex;
-       this._number = number;
-       this._grid = grid
+       this._name = name;
+       this._centerx = centerx;
+       this._centery = centery;
     }
-
+    get centerx() {
+      return this._centerx;
+    }
+    set centerx(centerx) {
+      this._centerx = centerx;
+    }
+    get centery() {
+      return this.centery;
+    }
+    set centery(centery) {
+      this._centery = centery;
+    }
     get sizey(){//getter
       return  this._sizey;
     }
-
     set sizey(sizey){//setter
       this._sizey = sizey;
     }
-
     get sizex(){//getter
       return  this._sizex;
     }
-
     set sizex(sizex){//setter
       this._sizex = sizex;
     }
-    get grid(){
-      return grid
-    }
-    set grid(grid){
-      this._grid = grid
+    gridObject(sizex, sizey){
+      var grid = {
+        sizex : 200,
+        sizey : 200,
+      }
+      return grid;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, sizey = 200, sizex = 150){
-
-    var gridArray = []
-   for (var i = 0; i < this._sizey; i++) {
-    gridArray.push([]);
+  grid(element, name, sizey, sizex){
+    var made = this.gridObject(sizex, sizey);
+    var make = [];
+   for (var i = 0; i < made.sizey; i++) {
+    make.push([]);
     // console.log(grid);
-  for (var j = 0; j < this._sizex; j++) {
+  for (var j = 0; j < made.sizex; j++) {
    //This is to push the new element into the
    //array so it has the name and grid locations
-    gridArray[i].push(new element(this._name,[i][j]));
+    make[i].push(new element(this._name,[i][j]));
       }
     }
  // This is going to be the grid[i][j]
  // console.log(grid);
- return gridArray
+ return make;
   }
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid, sizey = 200, sizex = 150){
+  draw(grid, name, sizey, sizex){
+  var gridNum = this.gridObject(sizex, sizey);
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
+
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -65,14 +76,14 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = this._sizex;
+  var boarderlength = gridNum.sizex;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = this._sizex ;
+  var fixes = gridNum.sizex;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -87,8 +98,8 @@
   // This for satement is for the sides of the grid useing pipes
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < this._sizey; j++) {
-    text += "" + "x";//Setting the grid text in the middle with no space
+  for (var j = 0; j < gridNum.sizey; j++) {
+    text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
   }
@@ -123,7 +134,7 @@
 
     /*-Numbers makes the random numbers for the rooms to be
        able to draw it in random lengths and random places. */
-    numbers(number = 200){
+    numbers(grid, number = 200){
   //Storing random numbers from oddnums in varriables using different
   //variables to get different random odd numbers for different uses.
   var oddnumx =  this.oddnums(number);//This is the x odd number
@@ -185,9 +196,9 @@
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element ,grid , name = " ", sizey = 200, sizex = 150){
-      var number = 200;
-    var room =  this.numbers(number);
+    room(grid, element, name){
+    var number = 200;
+    var room =  this.numbers(grid, number);
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
@@ -205,7 +216,7 @@
             // console.log(name);
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
-       return this.draw(grid) + console.log("true");
+       return this.draw(grid)
             }
           }
         }
@@ -228,13 +239,13 @@
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx)){//
             //it to put it on the grid not draw it just make it part of it.
-            grid[i][j]._name = " "
+            grid[i][j].name = " ";
             }
           }
         }
       }
 //This is just to tell us if a room has actually been made
-      // This returns the updated grid... y
+      // This returns the updated grid... yay
       return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
@@ -271,6 +282,7 @@ connect to the vertical lines by useing the center array
 
       reset(element, name = "x", sizex, sizey){
         var gridNum = this.gridObject(size, sizex, sizey);
+        var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
       //These for statementjust make it so it gose over the entire grid.
         for (var i = 0; i < gridNum.sizex; i++) {
         for (var j = 0; j < gridNum.sizey; j++) {
@@ -291,11 +303,12 @@ connect to the vertical lines by useing the center array
   }
 
   var classs = new ClassGrid(name);
-  document.getElementById("blah").innerHTML = classs.draw(name);
-      document.getElementById("Rooms").onclick = function(){
+  var grid = classs.grid(Dungeon, name);
+  document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
+  document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 10; i++) {
 
-      document.getElementById("blah").innerHTML = classs.room(Dungeon, name = " ");
+      document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
     //Just telling total clicks so that we will know it is useing the right
@@ -303,7 +316,7 @@ connect to the vertical lines by useing the center array
     //End of the rooms beeing made so we know its done clicking
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML =  classs.draw(name);
+  document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
     }
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
