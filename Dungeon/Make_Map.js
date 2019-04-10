@@ -2,7 +2,7 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", sizey = 200, sizex = 200, centerx = "ur mum", centery = "ur mum"){
+    constructor (name = "x", sizey = 150, sizex = 200, centerx = "ur mum", centery = "ur mum"){
        this._sizey = sizey;
        this._sizex = sizex;
        this._name = name;
@@ -36,7 +36,7 @@
     gridObject(sizex, sizey){
       var grid = {
         sizex : 200,
-        sizey : 200,
+        sizey : 150,
       }
       return grid;
     }
@@ -76,14 +76,14 @@
   var text = "";  // This is going to be the text variable
 
   // This var is for the grid.length to be able to store it
-  var boarderlength = gridNum.sizex;
+  var boarderlength = gridNum.sizey;
 
   // This is the length of the grid to put the text in
   var top_text = boarderlength;
 
   //Fixes is to make the top text fit with
   //larger grids and smaller grids it dose not work as well
-  var fixes = gridNum.sizex;
+  var fixes = gridNum.sizey;
 
   text += top_type;//Text is used to determin the text type for border
 
@@ -98,7 +98,7 @@
   // This for satement is for the sides of the grid useing pipes
   for (var i = 0; i < boarderlength; i++) {
     text += walls_type;//Makeing the text to the walls text
-  for (var j = 0; j < gridNum.sizey; j++) {
+  for (var j = 0; j < gridNum.sizex; j++) {
     text += "" + grid[i][j];//Setting the grid text in the middle with no space
   }
     text += walls_type + "<BR>";//Setting wall text again
@@ -231,13 +231,13 @@
     for (var i = 0; i < grid.length; i++) {
       //These if statments are to check if the room is on the grid.
       // console.log("hello")
-      if(i >= room.y && i <= (room.y + room.lengthy)){//y
+      if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
         for (var j = 0; j < grid[0].length; j++) {
           // console.log(j + " j")
             //This uses the rooms length and position of x & y and use
-            if(j >= room.x && j <= (room.x + room.lengthx)){//
+            if(j >= room.x && j <= (room.x + room.lengthx- 1)){//
             //it to put it on the grid not draw it just make it part of it.
             grid[i][j].name = " ";
             }
@@ -306,7 +306,7 @@ connect to the vertical lines by useing the center array
   var grid = classs.grid(Dungeon, name);
   document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
   document.getElementById("Rooms").onclick = function(){
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 90; i++) {
 
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
