@@ -9,7 +9,6 @@
        this._number = number;
        this._grid = grid
     }
-
     get sizey(){//getter
       return  this._sizey;
     }
@@ -193,8 +192,12 @@
     this.grid(element, sizey, sizex)
       var number = 200;
     var room =  this.numbers(number);
+<<<<<<< HEAD
     grid = this._grid
     console.log(this._grid);
+=======
+
+>>>>>>> 14bee5c75db116fbbb6158fc7f0e3d86f34a764e
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
