@@ -9,7 +9,7 @@
        this._number = number;
        this._grid = grid
     }
-
+ 
     get sizey(){//getter
       return  this._sizey;
     }
