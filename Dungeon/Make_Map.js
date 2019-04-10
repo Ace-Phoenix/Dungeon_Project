@@ -2,7 +2,7 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name, sizey = 200, sizex = 150, number = 200, grid){
+    constructor (name, sizey = 200, sizex = 150, number = 200, grid = null){
       this._name = "x";
        this._sizey = sizey;
        this._sizex = sizex;
@@ -35,7 +35,7 @@
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, sizey = 200, sizex = 150){
+  grid(element, sizey = 200, sizex = 150, grid){
     console.log(this._sizey + " thissizey");
     console.log(this._sizex + " this.sizex");
     var gridArray = []
@@ -50,7 +50,9 @@
     }
  // This is going to be the grid[i][j]
  // console.log(grid);
- return gridArray
+ console.log(gridArray);
+ console.log(this._grid);
+ return this._grid = gridArray;
   }
 
 
@@ -59,6 +61,7 @@
    // grid.size = 300
    // grid.sizex = 100
    // grid.sizey = 200
+   console.log(this._grid);
   var top_type = "&#8943";// This is the text that is used for the top and bottom
 
   var walls_type = "&#8942";// This is the text that is used for the sides
@@ -186,10 +189,12 @@
 
 
   //Function room uses numbers, grid, element and name to make rooms randomly
-    room(element ,grid , name = " ", sizey = 200, sizex = 150){
+    room(element ,grid, name = " ", sizey = 200, sizex = 150){
+    this.grid(element, sizey, sizex)
       var number = 200;
     var room =  this.numbers(number);
-    
+    grid = this._grid
+    console.log(this._grid);
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
