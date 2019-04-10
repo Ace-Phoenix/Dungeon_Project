@@ -252,6 +252,8 @@
 /*
 This function is going to make verticalhalls than get connected to the
 horizontal halls
+this is going to need to get passed the grid so it knows it locaiton and is
+going to need to make only vertical halls
 */
      verthalls(grid, numbers, element, name = " "){
       var room = this.numbers(grid, number);
@@ -267,6 +269,10 @@ horizontal halls
 /*
 This function is going to make horizontal lines that
 connect to the vertical lines by useing the center array
+this is yes going to need its location to make vertical halls and is going
+to be passed grid so it can keep its locations
+i feel like we should make two rooms than the hallways to connect them and
+continue on
 */
       horizhalls(grid, numbers, element, name = " "){
       var room = this.numbers(grid, number = 200);
