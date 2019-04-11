@@ -2,7 +2,7 @@
 //ClassGrid is a class so we can utilize our grid
 //alot more than without it being a class
   class ClassGrid{
-    constructor (name = "x", sizey = 150, sizex = 200, centerx = "ur mum", centery = "ur mum"){
+    constructor (name = "x", sizey = 150, sizex = 200, centerx, centery){
        this._sizey = sizey;
        this._sizex = sizex;
        this._name = name;
@@ -38,13 +38,14 @@
         sizex : 200,
         sizey : 150,
       }
+
       return grid;
     }
     // This is going to be the empty array that we can pcuh and pull from
     //var number = number;
     // This is the empty array that u push and pull from
     // This is to push into the make, array
-  grid(element, name, sizey, sizex){
+    grid(element, name, sizey, sizex){
     var made = this.gridObject(sizex, sizey);
     var make = [];
    for (var i = 0; i < made.sizey; i++) {
@@ -58,12 +59,13 @@
     }
  // This is going to be the grid[i][j]
  // console.log(grid);
+
  return make;
   }
 
 
 //Function draw uses grid to make a border and draw the grid itself
-  draw(grid, name, sizey, sizex){
+    draw(grid, name, sizey, sizex){
   var gridNum = this.gridObject(sizex, sizey);
    // grid.size = 300
    // grid.sizex = 100
@@ -117,6 +119,7 @@
     var random = Math.random() *number;
     var num = Math.floor(random);
     // console.log(num);
+
     return num;
   }
 
@@ -127,6 +130,7 @@
         num =  this.randomnumbers(number);
         }
          // console.log(num);
+
       return num;
   }
 
@@ -158,7 +162,6 @@
     //These two are floors to get whole numbers
     room.lengthy = Math.floor(room.lengthy);//y
     room.lengthx = Math.floor(room.lengthx);//x
-
     //These are floors to get whole numbers
     room.y = Math.floor(room.y);//y
     room.x = Math.floor(room.x);//x
@@ -176,21 +179,16 @@
 
     //These first four lines here create centers parts x and y
     room.centerx = (room.lengthx/2);//This is center x.
-
     room.centery = (room.lengthy/2);//This is center y.
-
     room.centerx = Math.ceil(room.centerx);//This makes it a rounded up #.
-
     room.centery = Math.ceil(room.centery);//This makes it a rounded up #.
-
     var centerr = [];//Making an array to push the centers into.
-
     // console.log(room.y + " room.y" + " . " + room.x + " room.x");
     // console.log(room.lengthy + " room.lengthy" + " . " + room.lengthy + " room.lengthx");
     // console.log(room.centerx + " room.centerx" + " . " + room.centery + " room.cenetry");
-
     //Making center the absolute ceneter of the room
     room.centerr = centerr.push([room.centerx, room.centery]);
+
     return room;//Returning room so that we can use it in other functionss
 }
 
@@ -199,6 +197,7 @@
     room(grid, element, name){
     var number = 200;
     var room =  this.numbers(grid, number);
+    var center = room.centerr;
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
@@ -216,6 +215,7 @@
             // console.log(name);
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
+
        return this.draw(grid)
             }
           }
@@ -246,6 +246,7 @@
       }
 //This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
+
       return  this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
@@ -257,13 +258,12 @@ going to need to make only vertical halls
 */
      verthalls(grid, numbers, element, name = " "){
       var room = this.numbers(grid, number);
-      var oldroom = room.x;
-        for (var i = 0; i < room.y - oldroom; i++) {
+        for (var i = 0; i < room.y - oldroom; i++){
         if (grid[i] == "x") {
-          grid[i] = new element(name);
+          grid[i].name = " ";
         }
       }
-      console.log(i + " i");
+
       return  draw(grid);
     }
 /*
@@ -276,13 +276,12 @@ continue on
 */
       horizhalls(grid, numbers, element, name = " "){
       var room = this.numbers(grid, number = 200);
-      var oldroom = room.y;
         for (var j = 0; j < room.x - oldroom; j++) {
           if (grid[j] == "x") {
-            grid[j] = new element(name);
+            grid[j].name = " ";
           }
       }
-      console.log(j + " j");
+
       return  this.draw(grid)
     }
 
@@ -299,6 +298,7 @@ continue on
       }
       //Returns draw so it makes it so that the
       //grid is all one text after being changed.
+
       return  this.draw(grid);
     }
 
@@ -312,8 +312,7 @@ continue on
   var grid = classs.grid(Dungeon, name);
   document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
   document.getElementById("Rooms").onclick = function(){
-      for (var i = 0; i < 90; i++) {
-
+      for (var i = 0; i < 2; i++) {
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
