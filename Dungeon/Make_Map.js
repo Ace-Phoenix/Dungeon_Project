@@ -9,16 +9,16 @@
        this._centerx = centerx;
        this._centery = centery;
     }
-    get centerx() {
+    get centerx(){
       return this._centerx;
     }
-    set centerx(centerx) {
+    set centerx(centerx){
       this._centerx = centerx;
     }
-    get centery() {
+    get centery(){
       return this.centery;
     }
-    set centery(centery) {
+    set centery(centery){
       this._centery = centery;
     }
     get sizey(){//getter
@@ -197,26 +197,24 @@
     room(grid, element, name){
     var number = 200;
     var room =  this.numbers(grid, number);
-    var center = room.centerr;
+    var center1 = room.centerr;
+    var center2 = room.centerr;
     // console.log(typeof(grid) +" this.grid")
     //This gives room from function numbers to function room
     //This is what makes it so that they do not overlap
-    for (var i = 0; i < grid.length; i++) {
+    for (var i = 0; i < grid.length; i++){
       // These if statement are to check if there is/are a(ny) room(s) in the location(s),
-      if(i >= room.y && i <= (room.y + room.lengthy))//y if statement.
+      if(i >= room.y && i <= (room.y + room.lengthy)){//y if statement.
         //This inner for statement checks for grid.x for room locations.
-        for (var j = 0; j < grid[0].length; j++) {
+        for (var j = 0; j < grid[0].length; j++){
           //This if satement is what check room locations on the grid.
-          if(j >= room.x && j <= (room.x + room.lengthx)){//x if statement.
           //This if statement checks for the " " or the rooms
           //because the rooms are made of " "/blanks.
           if(grid[i][j] == " "){
-            // console.log(grid[i][j]._name);
-            // console.log(name);
        //Returns draw so nothhing happens because is is an overlap
        //If its not an overlap it will go threw the next set of for statements.
 
-       return this.draw(grid)
+       return this.draw(grid);
             }
           }
         }
@@ -228,13 +226,13 @@
     -These if statement checks for the room.length to generate the room.
     -The outer for statement is to check for the y value of grid.*/
     // console.log(grid.length + " lengtth");
-    for (var i = 0; i < grid.length; i++) {
+    for (var i = 0; i < grid.length; i++){
       //These if statments are to check if the room is on the grid.
       // console.log("hello")
       if(i >= room.y && i <= (room.y + room.lengthy - 1)){//y
         //The inner for statement is to check for x values of the grid.
       //???it looks right on all logs yet still noe effect after hear??
-        for (var j = 0; j < grid[0].length; j++) {
+        for (var j = 0; j < grid[0].length; j++){
           // console.log(j + " j")
             //This uses the rooms length and position of x & y and use
             if(j >= room.x && j <= (room.x + room.lengthx- 1)){//
@@ -247,7 +245,7 @@
 //This is just to tell us if a room has actually been made
       // This returns the updated grid... yay
 
-      return  this.draw(grid);
+      return this.draw(grid);
     }
     //Function reset, resets the grid back to its original state/stage.
 /*
