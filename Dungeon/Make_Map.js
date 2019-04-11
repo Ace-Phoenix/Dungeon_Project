@@ -21,18 +21,23 @@
     set centery(centery){
       this._centery = centery;
     }
+
     get sizey(){//getter
       return  this._sizey;
     }
+
     set sizey(sizey){//setter
       this._sizey = sizey;
     }
+
     get sizex(){//getter
       return  this._sizex;
     }
+
     set sizex(sizex){//setter
       this._sizex = sizex;
     }
+
     gridObject(sizex, sizey){
       var grid = {
         sizex : 200,
@@ -192,7 +197,6 @@
     return room;//Returning room so that we can use it in other functionss
 }
 
-
   //Function room uses numbers, grid, element and name to make rooms randomly
     room(grid, element, name){
     var number = 200;
@@ -287,8 +291,8 @@ continue on
         var gridNum = this.gridObject(size, sizex, sizey);
         var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
       //These for statementjust make it so it gose over the entire grid.
-        for (var i = 0; i < gridNum.sizex; i++) {
-        for (var j = 0; j < gridNum.sizey; j++) {
+        for (var i = 0; i < this._sizex; i++) {
+        for (var j = 0; j < this._sizey; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
           grid[i][j] = new element(name = " ");
@@ -299,24 +303,17 @@ continue on
 
       return  this.draw(grid);
     }
-
-//Function drawborder is going to make the rooms
-//have a boarder using room, numbers and grid
-  // This is what physiaclly draws the grid
-  //Rooms button make sthe rooms
   }
-
+  //var classs is so that we can call the functions in the class
   var classs = new ClassGrid(name);
   var grid = classs.grid(Dungeon, name);
-  document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
+  document.getElementById("blah").innerHTML = classs.draw(grid, name);
   document.getElementById("Rooms").onclick = function(){
       for (var i = 0; i < 2; i++) {
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
-    //Just telling total clicks so that we will know it is useing the right
-    //number for the ammount of clicks and even if it does.
-    //End of the rooms beeing made so we know its done clicking
+
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
