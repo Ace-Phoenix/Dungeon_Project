@@ -284,7 +284,6 @@
       return  this.draw(grid);
     }
   }
-
   //var classs is so that we can call the functions in the class
   var classs = new ClassGrid(name);
   var grid = classs.grid(Dungeon, name);
