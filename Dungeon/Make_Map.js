@@ -313,7 +313,7 @@ continue on
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
-
+ 
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x")
