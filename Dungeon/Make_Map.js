@@ -309,7 +309,7 @@ continue on
   var grid = classs.grid(Dungeon, name);
   document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
   document.getElementById("Rooms").onclick = function(){
-      for (var i = 0; i < 2; i++) {
+      for (var i = 0; i < 100; i++) {
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
