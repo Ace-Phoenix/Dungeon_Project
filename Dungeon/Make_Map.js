@@ -269,14 +269,13 @@
     }
 
       reset(element, name = "x", sizex, sizey){
-        var gridNum = this.gridObject(size, sizex, sizey);
-        var grid = this.grid(Dungeon, name = "x", size, sizex, sizey)
+        var gridNum = this.gridObject(sizex, sizey);
       //These for statementjust make it so it gose over the entire grid.
-        for (var i = 0; i < this._sizex; i++) {
-        for (var j = 0; j < this._sizey; j++) {
+        for (var i = 0; i < gridNum.sizex; i++) {
+        for (var j = 0; j < gridNum.sizey; j++) {
           //This make it so that it makes the
           //entire grid "x"(or any text) again.
-          grid[i][j] = new element(name = " ");
+          grid[i][j] = new element(name = "x");
         }
       }
       //Returns draw so it makes it so that the
@@ -284,12 +283,13 @@
       return  this.draw(grid);
     }
   }
+
   //var classs is so that we can call the functions in the class
   var classs = new ClassGrid(name);
   var grid = classs.grid(Dungeon, name);
-  document.getElementById("blah").innerHTML = classs.draw(grid, name);
+  document.getElementById("blah").innerHTML = classs.draw(grid, name = "x");
   document.getElementById("Rooms").onclick = function(){
-      for (var i = 0; i < 50; i++) {
+      for (var i = 0; i < 100; i++) {
 
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
@@ -297,7 +297,7 @@
 
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
-  document.getElementById("blah").innerHTML =  classes.reset(Dungeon, name = "x")
+  document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x")
     }
 //     document.getElementById("hallways").onclick = function(){
 //         document.getElementById("blah").innerHTML = classGrid.verthalls(grid, numbers, Dungeon);
