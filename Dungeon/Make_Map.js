@@ -195,7 +195,7 @@
     room.centerr = centerr.push([room.centerx, room.centery]);
 
     return room;//Returning room so that we can use it in other functionss
-}
+  }
 
   //Function room uses numbers, grid, element and name to make rooms randomly
     room(grid, element, name){
@@ -313,7 +313,7 @@ continue on
       document.getElementById("blah").innerHTML = classs.room(grid, Dungeon);
     }
   }
- 
+
   //Reset button resets the grid back to normal state
   document.getElementById("Reset").onclick = function(){
   document.getElementById("blah").innerHTML =  classs.reset(Dungeon, name = "x")
